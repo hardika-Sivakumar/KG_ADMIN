@@ -20,6 +20,9 @@ app.get("/add_student", async (req, res) => {
 app.get("/add_teacher", async (req, res) => {
     return res.render('add-teacher');
 })
+app.get("/add_event", async (req, res) => {
+    return res.render('add-event');
+})
 
 app.locals.BACKEND_URL = CONFIG?.BACKEND_URL
 

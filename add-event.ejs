@@ -1615,289 +1615,208 @@
             class="d-md-flex d-block align-items-center justify-content-between mb-3"
           >
             <div class="my-auto mb-2">
-              <h3 class="mb-1">Add Student</h3>
-              <nav>
-                <ol class="breadcrumb mb-0">
-                  <li class="breadcrumb-item">
-                    <a href="index.html">Dashboard</a>
-                  </li>
-                  <li class="breadcrumb-item">
-                    <a href="teachers.html">Student</a>
-                  </li>
-                  <li class="breadcrumb-item active" aria-current="page">
-                    Add Student
-                  </li>
-                </ol>
-              </nav>
+              <h3 class="mb-1">Add Event</h3>
+        <nav>
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="events.html">Events</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Event</li>
+          </ol>
+        </nav>
             </div>
           </div>
           <!-- /Page Header -->
 
-          <div class="row">
-            <div class="col-md-12">
-              <form action="teachers.html" id="studentForm">
-                <!-- Personal Information -->
-                <div class="card">
-                  <div class="card-body pb-1">
-                    <div class="row row-cols-xxl-5 row-cols-md-6">
-                      <div class="col">
-                        <div class="mb-3">
-                          <label class="form-label">Student ID</label>
-                          <input
-                            type="text"
-                            name="student_id"
-                            id="student_id"
-                            class="form-control"
-                            placeholder="Auto Filled"
-                            readonly
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="mb-3">
-                          <label class="form-label">First Name</label>
-                          <input
-                            type="text"
-                            name="first_name"
-                            id="first_name"
-                            class="form-control"
-                            placeholder="Eg: John"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="mb-3">
-                          <label class="form-label">Last Name</label>
-                          <input
-                            type="text"
-                            name="last_name"
-                            id="last_name"
-                            class="form-control"
-                            placeholder="Eg: Doe"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="mb-3">
-                          <label class="form-label">Date of Birth</label>
-                          <input
-                            type="date"
-                            name="date_of_birth"
-                            id="date_of_birth"
-                            class="form-control"
-                            placeholder="Eg: 21-10-1999"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="mb-3">
-                          <label class="form-label">Gender</label>
-                          <select
-                            name="gender"
-                            id="gender"
-                            class="select form-select"
-                          >
-                            <option>Select</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Other</option>
-                          </select>
-                        </div>
-                      </div>
+           <div class="row">
+      <div class="col-md-12">
+        <form action="events.html" id="eventForm">
+          <div class="card">
+            <div class="card-body pb-1">
+              <div class="row row-cols-xxl-5 row-cols-md-6">
+
+                <!-- Event Title -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Event Title</label>
+                    <input type="text" name="event_title" class="form-control" placeholder="Eg: Annual Food Fest 2025" />
+                  </div>
+                </div>
+
+                <!-- Event Type -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Event Type</label>
+                    <select name="event_type" class="select form-select">
+                      <option>Select</option>
+                      <option>Food Fest</option>
+                      <option>Science Fair</option>
+                      <option>Cultural Program</option>
+                      <option>Sports Day</option>
+                      <option>Seminar</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Organizer Name -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Organizer</label>
+                    <input type="text" name="organizer" class="form-control" placeholder="Eg: Science Club" />
+                  </div>
+                </div>
+
+                <!-- Event Date -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Event Date</label>
+                    <input type="date" name="event_date" class="form-control" />
+                  </div>
+                </div>
+
+                <!-- Event Status -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Status</label>
+                    <select name="event_status" class="form-select">
+                      <option>Draft</option>
+                      <option>Upcoming</option>
+                      <option>Completed</option>
+                      <option>Cancelled</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <!-- Description -->
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <label class="form-label">Event Description</label>
+                    <textarea name="event_description" class="form-control" rows="3" placeholder="Describe the event"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row row-cols-xxl-4 row-cols-md-6">
+                <!-- Start Time -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Start Time</label>
+                    <input type="time" name="start_time" class="form-control" />
+                  </div>
+                </div>
+
+                <!-- End Time -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">End Time</label>
+                    <input type="time" name="end_time" class="form-control" />
+                  </div>
+                </div>
+
+                <!-- Location -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Venue</label>
+                    <input type="text" name="location" class="form-control" placeholder="Eg: Auditorium" />
+                  </div>
+                </div>
+
+                <!-- Target Audience -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Target Audience</label>
+                    <input type="text" name="audience" class="form-control" placeholder="Eg: Grade 10–12, Teachers" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row row-cols-xxl-4 row-cols-md-6">
+                <!-- Registration Required -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label d-block">Registration Required?</label>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="registration_required" value="Yes" />
+                      <label class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="registration_required" value="No" />
+                      <label class="form-check-label">No</label>
                     </div>
                   </div>
                 </div>
-                <!-- Guardian Information -->
-                <div class="card">
-                  <div class="card-body pb-1">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label">Father's Name</label>
-                          <input
-                            type="text"
-                            name="father_name"
-                            id="father_name"
-                            class="form-control"
-                            placeholder="Eg: John Doe"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label">Mother's Name</label>
-                          <input
-                            type="text"
-                            name="mother_name"
-                            id="mother_name"
-                            class="form-control"
-                            placeholder="Eg: Jane Doe"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label">Guardian Contact No</label>
-                          <input
-                            type="text"
-                            name="guardian_contact_no"
-                            id="guardian_contact_no"
-                            class="form-control"
-                            placeholder="Eg: 1234567890"
-                          />
-                        </div>
-                      </div>
-                    </div>
+
+                <!-- Registration Deadline -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Registration Deadline</label>
+                    <input type="date" name="registration_deadline" class="form-control" />
                   </div>
                 </div>
-                <!-- Academic Details -->
-                <div class="card">
-                  <div class="card-body pb-1">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label">Class</label>
-                          <select
-                            name="class_name"
-                            id="class_name"
-                            class="select form-select"
-                          >
-                            <option>Select</option>
-                            <option>Nursery</option>
-                            <option>Grade 1</option>
-                            <option>Grade 2</option>
-                            <option>Grade 10</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label">Section</label>
-                          <select
-                            name="section"
-                            id="section"
-                            class="select form-select"
-                          >
-                            <option>Select</option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label">Roll Number</label>
-                          <input
-                            type="text"
-                            name="roll_no"
-                            id="roll_no"
-                            class="form-control"
-                            placeholder="Eg: 1"
-                          />
-                        </div>
-                      </div>
-                    </div>
+
+                <!-- Max Participants -->
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label">Max Participants</label>
+                    <input type="number" name="max_participants" class="form-control" placeholder="Eg: 100" />
                   </div>
                 </div>
-                <!-- Contact & Address -->
-                <div class="card">
-                  <div class="card-body pb-1">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label"
-                            >Email Address(Parent)</label
-                          >
-                          <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            class="form-control"
-                            placeholder="Eg: 6V5D1@example.com"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label"
-                            >Mobile Number(Parent)</label
-                          >
-                          <input
-                            type="text"
-                            name="parent_contact_no"
-                            id="parent_contact_no"
-                            class="form-control"
-                            placeholder="Eg: 1234567890"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="mb-3">
-                          <label class="form-label">Current Address</label>
-                          <input
-                            type="text"
-                            name="address"
-                            id="address"
-                            class="form-control"
-                            placeholder="Eg: 123, Street, City, Country"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Documents -->
-                <div class="card">
-                  <div class="card-body pb-1">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <label class="form-label">Upload Student Photo</label>
-                        <input
-                          type="file"
-                          name="student_profile_photo"
-                          id="student_profile_photo"
-                          class="form-control"
-                        />
-                        <small class="text-muted"
-                          >Max size 4MB. JPG/PNG only.</small
-                        >
-                        <div id="student_profile_photo_preview"></div>
-                      </div>
-                      <div class="col-md-6">
-                        <label class="form-label"
-                          >Upload Birth Certificate</label
-                        >
-                        <input
-                          type="file"
-                          name="student_birth_certificate"
-                          id="student_birth_certificate"
-                          class="form-control"
-                        />
-                        <small class="text-muted"
-                          >Max size 4MB. PDF only.</small
-                        >
-                        <div id="student_birth_certificate_preview"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Action Buttons -->
-                <div class="text-end mt-3">
-                  <button type="button" class="btn btn-light me-3">
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    class="btn btn-primary"
-                    id="add-student-btn"
-                  >
-                    Add Student
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
+
+          <!-- Uploads -->
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="form-label">Event Cover Image</label>
+                  <input type="file" name="cover_image" class="form-control"  />
+                  <small class="text-muted">Max size 4MB. JPG/PNG only.</small>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Poster / Banner</label>
+                  <input type="file" name="poster_banner" class="form-control" />
+                  <small class="text-muted">Max size 4MB. JPG/PDF only.</small>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                  <label class="form-label">Additional Attachments</label>
+                  <input type="file" name="attachments" class="form-control" />
+                  <small class="text-muted">Eg: Program Schedule, Rules (PDF)</small>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                  <label class="form-label">Event Media Gallery</label>
+                  <input type="file" name="media_gallery[]" class="form-control" multiple />
+                  <small class="text-muted">Upload photos/videos (optional)</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post-Event Section -->
+          <div class="card">
+            <div class="card-body pb-1">
+              <div class="mb-3">
+                <label class="form-label">Event Highlights (Post-Event)</label>
+                <textarea name="event_highlights" class="form-control" rows="3" placeholder="Eg: 200+ students attended, 5 awards given"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="text-end mt-3">
+            <button type="button" class="btn btn-light me-3">Cancel</button>
+            <button type="submit" class="btn btn-primary">Add Event</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
         </div>
       </div>
       <!-- /Page Wrapper -->
