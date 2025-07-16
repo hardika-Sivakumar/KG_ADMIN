@@ -118,13 +118,42 @@
                       <div class="mb-3">
                         <label class="form-label">Gender</label>
                         <select name="gender" id="gender" class="select form-select">
-                          <option>Select</option>
-                          <option>Male</option>
-                          <option>Female</option>
-                          <option>Other</option>
+                          <option value="">Select</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
                         </select>
                       </div>
                     </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label class="form-label">Blood Group</label>
+                        <input type="text" name="blood_group" id="blood_group" class="form-control"
+                          placeholder="Eg: O+ve" />
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="mb-3">
+                        <label class="form-label">Religion</label>
+                        <input type="text" name="religion" id="religion" class="form-control" placeholder="Eg: hindu" />
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="mb-3">
+                        <label class="form-label">Caste</label>
+                        <input type="text" name="caste" id="caste" class="form-control" placeholder="Eg: general" />
+                      </div>
+                    </div>
+
+                     <div class="col">
+                      <div class="mb-3">
+                        <label class="form-label">Mother Tongue</label>
+                        <input type="text" name="mother_tongue" id="mother_tongue" class="form-control" placeholder="Eg: hindi" />
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -217,6 +246,49 @@
                           placeholder="Eg: 123, Street, City, Country" />
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-body pb-1">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label">Email Address(Parent)</label>
+                        <input type="email" name="email" id="email" class="form-control"
+                          placeholder="Eg: 6V5D1@example.com" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label">Mobile Number(Parent)</label>
+                        <input type="text" name="parent_contact_no" id="parent_contact_no" class="form-control"
+                          placeholder="Eg: 1234567890" />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <label class="form-label">Current Address</label>
+                        <input type="text" name="address" id="address" class="form-control"
+                          placeholder="Eg: 123, Street, City, Country" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-body pb-1">
+                  <div class="row">
+                    <div class="mb-3 row">
+                      <label class="form-label col-md-2">Other Notes</label>
+                      <div class="col-md-10">
+                        <textarea rows="5" cols="5" class="form-control" name="other_notes" placeholder="Enter text here"></textarea>
+                      </div>
+                    </div>
+
+
                   </div>
                 </div>
               </div>
@@ -361,10 +433,18 @@
         // Now transform to nested structure
         const nestedObject = {
           student_id: jsonObject.student_id || "",
-          name: jsonObject.name || "",
+          first_name: jsonObject.first_name || "",
+          last_name: jsonObject.last_name || "",
           address: jsonObject.address || "",
           student_profile_photo: jsonObject.student_profile_photo || "",
           student_birth_certificate: jsonObject.student_birth_certificate || "",
+          gender: jsonObject.gender || "",
+          date_of_birth: jsonObject.date_of_birth || "",
+          blood_group: jsonObject.blood_group || "",
+          religion: jsonObject.religion || "",
+          caste: jsonObject.caste || "",
+          other_notes: jsonObject.other_notes || "",
+          mother_tongue: jsonObject.mother_tongue || "",
           student_created_on: new Date().toISOString(), // or your desired format
 
           student_class: {

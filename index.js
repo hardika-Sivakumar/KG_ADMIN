@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const session = require('express-session');
 const { CONFIG } = require("./config");
+const {getStudentDetails} = require("./services/studentService");
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, ''));
@@ -25,13 +26,35 @@ app.get("/add_event", async (req, res) => {
 })
 
 app.get("/student_lists",async (req, res) => {
-    return res.render('student-list');
+    const headers={
+        'content-type':'application/json'
+    }
+    const studentList=await getStudentDetails(headers,{
+        get_all:true
+    });
+    if(!studentList.success){
+        //handle 500 server error
+        return
+    }
+    return res.render('student-list',{studentData:studentList?.students});
 })
 
 app.get("/student_details",async (req, res) => {
     const studentId=req.query.studentID
-    console.log(studentId)
-    return res.render('student-details');
+    const headers={
+        'content-type':'application/json'
+    }
+    const studentData=await getStudentDetails(headers,{
+        filters:{
+        student_id:studentId
+        }
+    })
+    console.log(studentData)
+    if(!studentData.success){
+        //handle 500 server error
+        return
+    }
+    return res.render('student-details',{studentDetails:studentData?.students?.[0]});
 })
 
 app.locals.BACKEND_URL = CONFIG?.BACKEND_URL
