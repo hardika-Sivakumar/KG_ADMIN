@@ -24,6 +24,16 @@ app.get("/add_event", async (req, res) => {
     return res.render('add-event');
 })
 
+app.get("/student_lists",async (req, res) => {
+    return res.render('student-list');
+})
+
+app.get("/student_details",async (req, res) => {
+    const studentId=req.query.studentID
+    console.log(studentId)
+    return res.render('student-details');
+})
+
 app.locals.BACKEND_URL = CONFIG?.BACKEND_URL
 
 app.listen(CONFIG.PORT, () => {
