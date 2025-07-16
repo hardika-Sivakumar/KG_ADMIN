@@ -2399,6 +2399,7 @@ ul .btn-primary:not(:disabled):not(.disabled).active:focus {
 
 .sidebar .sidebar-inner {
     width: 100%;
+    overflow-y: auto;
 }
 
 .sidebar .sidebar-menu {
