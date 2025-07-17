@@ -137,7 +137,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label">Organizer</label>
-                    <input type="text" name="organizer" class="form-control" placeholder="Eg: Science Club" />
+                    <input type="text" name="event_organizer" class="form-control" placeholder="Eg: Science Club" />
                   </div>
                 </div>
 
@@ -179,7 +179,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label">Start Time</label>
-                    <input type="time" name="start_time" class="form-control" />
+                    <input type="time" name="event_start_time" class="form-control" />
                   </div>
                 </div>
 
@@ -187,7 +187,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label">End Time</label>
-                    <input type="time" name="end_time" class="form-control" />
+                    <input type="time" name="event_end_time" class="form-control" />
                   </div>
                 </div>
 
@@ -195,7 +195,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label">Venue</label>
-                    <input type="text" name="location" class="form-control" placeholder="Eg: Auditorium" />
+                    <input type="text" name="event_venue" class="form-control" placeholder="Eg: Auditorium" />
                   </div>
                 </div>
 
@@ -203,7 +203,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label">Target Audience</label>
-                    <input type="text" name="audience" class="form-control" placeholder="Eg: Grade 10–12, Teachers" />
+                    <input type="text" name="event_target_audience" class="form-control" placeholder="Eg: Grade 10–12, Teachers" />
                   </div>
                 </div>
               </div>
@@ -214,11 +214,11 @@
                   <div class="mb-3">
                     <label class="form-label d-block">Registration Required?</label>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="registration_required" value="Yes" />
+                      <input class="form-check-input" type="radio" name="is_registration_required" value="Yes" />
                       <label class="form-check-label">Yes</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="registration_required" value="No" />
+                      <input class="form-check-input" type="radio" name="is_registration_required" value="No" />
                       <label class="form-check-label">No</label>
                     </div>
                   </div>
@@ -228,7 +228,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label">Registration Deadline</label>
-                    <input type="date" name="registration_deadline" class="form-control" />
+                    <input type="date" name="event_registration_deadline" class="form-control" />
                   </div>
                 </div>
 
@@ -236,7 +236,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label">Max Participants</label>
-                    <input type="number" name="max_participants" class="form-control" placeholder="Eg: 100" />
+                    <input type="number" name="event_max_participants" class="form-control" placeholder="Eg: 100" />
                   </div>
                 </div>
               </div>
@@ -265,11 +265,6 @@
                   <small class="text-muted">Eg: Program Schedule, Rules (PDF)</small>
                 </div>
 
-                <div class="col-md-6 mt-3">
-                  <label class="form-label">Event Media Gallery</label>
-                  <input type="file" name="media_gallery[]" class="form-control" multiple />
-                  <small class="text-muted">Upload photos/videos (optional)</small>
-                </div>
               </div>
             </div>
           </div>
@@ -279,7 +274,7 @@
             <div class="card-body pb-1">
               <div class="mb-3">
                 <label class="form-label">Event Highlights (Post-Event)</label>
-                <textarea name="event_highlights" class="form-control" rows="3" placeholder="Eg: 200+ students attended, 5 awards given"></textarea>
+                <textarea name="event_hightlights" class="form-control" rows="3" placeholder="Eg: 200+ students attended, 5 awards given"></textarea>
               </div>
             </div>
           </div>
@@ -362,7 +357,7 @@
     ></script>
 
     <script
-      src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+      src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
       data-cf-settings="6dc0a9d0ac43462e72fa7502-|49"
       defer
     ></script>
@@ -392,38 +387,8 @@
 
           console.log("Payload:", jsonObject);
 
-          try {
-            const response = await fetch(
-              `${BACKEND_URL}/students/update_new_student`,
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(jsonObject),
-              }
-            );
-
-            const data = await response.json();
-
-            if (data?.success) {
-              showToast(
-                "success",
-                data?.message || "Student added successfully."
-              );
-            } else {
-              showToast("error", data?.message || "Failed to add student.");
-            }
-          } catch (error) {
-            console.error("Error:", error);
-            showToast(
-              "error",
-              "Something went wrong while adding the student."
-            );
-          }
+         
         });
-    </script>
-    <script>
   document.getElementById("student_birth_certificate").addEventListener("change", function (event) {
     const file = event.target.files[0];
 
@@ -449,9 +414,7 @@
       `;
     }
   });
-</script>
 
-    <script>
   document.getElementById("student_profile_photo").addEventListener("change", function (event) {
     const file = event.target.files[0];
 

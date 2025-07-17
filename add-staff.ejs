@@ -106,7 +106,8 @@
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">First Name</label>
-                            <input type="text" class="form-control" placeholder="Eg : John" name="first_name" />
+                            <input type="text" class="form-control" placeholder="Eg : John" id="first_name"
+                              name="first_name" />
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
@@ -158,9 +159,9 @@
                           <div class="mb-3">
                             <label class="form-label">Gender</label>
                             <select class="select form-select" name="gender">
-                              <option>Select</option>
-                              <option>Male</option>
-                              <option>Female</option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                              <option value="other">Other</option>
                             </select>
                           </div>
                         </div>
@@ -187,7 +188,7 @@
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Father’s Name</label>
-                            <input type="text" class="form-control" name="fathers_name" />
+                            <input type="text" class="form-control" name="fathers_name" id="fathers_name" />
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
@@ -349,7 +350,8 @@
                             <div class="d-flex align-items-center flex-wrap">
                               <div class="btn btn-primary drag-upload-btn mb-2 me-2">
                                 <i class="ti ti-file-upload me-1"></i>Change
-                                <input type="file" class="form-control image_sign" multiple="" name="resume_file" />
+                                <input type="file" class="form-control image_sign" multiple="" id="resume"
+                                  name="resume_file" />
                               </div>
                               <p class="mb-2">Resume.pdf</p>
                             </div>
@@ -365,7 +367,8 @@
                               <div class="btn btn-primary drag-upload-btn mb-2 me-2">
                                 <i class="ti ti-file-upload me-1"></i>Upload
                                 Document
-                                <input type="file" class="form-control image_sign" multiple="" name="joining_letter" />
+                                <input type="file" class="form-control image_sign" multiple="" id="joining_letter"
+                                  name="joining_letter" />
                               </div>
                               <p class="mb-2">Resume.pdf</p>
                             </div>
@@ -392,28 +395,37 @@
         <!-- /Page Wrapper -->
   </div>
 
+  <script src="js/api.js"></script>
+  <script src="js/uploadFile.js"></script>
+
 
   <script>
+    const BACKEND_URL = "<%= BACKEND_URL %>";
+    let staff_resume = undefined
+    let staff_joining_letter = undefined
     document.getElementById("add-teacher-btn").addEventListener("click", async function (event) {
       event.preventDefault();
       const formElement = document.getElementById("teacher-form");
       const formData = new FormData(formElement);
+      const listItemsKey = ["handling_classes", "subject", "language_known"]
 
       // Step 1: Build flat payload
       let payload = {};
       for (const [key, value] of formData.entries()) {
+        if (listItemsKey.includes(key)) {
+          payload[key] = formData.getAll(key)
+          console.log(formData.getAll(key))
+          continue
+        }
         payload[key] = value instanceof File ? value.name : value;
       }
 
       // Step 2: Transform to nested structure
       const finalPayload = {
-        staff_id: "", // or generate dynamically
-        student_created_on: new Date().toISOString(), // or use form field
-
         staff_info: {
           first_name: payload?.first_name || "",
           last_name: payload?.last_name || "",
-          gender: payload?.gender !== "Select" ? payload?.gender : "",
+          gender: payload?.gender || "male",
           primary_contact_number: payload?.primary_contact_number || "",
           email_address: payload?.email_address || "",
           blood_group: payload?.blood_group || "",
@@ -449,15 +461,60 @@
         },
 
         staff_kyc_info: {
-          resume_file: payload?.resume_file || "",
-          joining_letter: payload?.joining_letter || "",
+          resume_file: staff_resume || "",
+          joining_letter: staff_joining_letter || "",
           id_number: payload?.id_number || "",
         }
       };
 
       console.log("Final Payload:", finalPayload);
 
+      const saveTeacherRequest = await fetchWithTimeout(
+        `${BACKEND_URL}/staff/update_new_staff_details`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(finalPayload),
+        }
+      )
+
       // Step 3: Send to backend (optional)
+    });
+
+    function handleFileUpload(inputId, fileTypeLabel, pathPrefix, backendUrl, callback) {
+      document.getElementById(inputId).addEventListener("change", async function (event) {
+        const file = event.target.files[0];
+
+        if (!file) return;
+
+        const maxSize = 4 * 1024 * 1024; // 4MB
+        if (file.size > maxSize) {
+          alert("File size exceeds 4MB.");
+          return;
+        }
+
+        const first_name = document.getElementById("first_name").value || "Unknown";
+        const father_name = document.getElementById("fathers_name").value || "Unknown";
+        const uploadPath = `${pathPrefix}_${first_name}_${father_name}`;
+
+        try {
+          const uploadedUrl = await uploadFile(file, uploadPath, backendUrl);
+          callback(uploadedUrl); // set variable or update UI
+        } catch (error) {
+          console.error(`Error uploading ${fileTypeLabel}:`, error);
+          alert(`Failed to upload ${fileTypeLabel}`);
+        }
+      });
+    }
+
+    handleFileUpload("resume", "Resume", "/teacher/profile/resume", BACKEND_URL, (url) => {
+      staff_resume = url;
+    });
+
+    handleFileUpload("joining_letter", "Joining Letter", "/teacher/profile/joining_letter", BACKEND_URL, (url) => {
+      staff_joining_letter = url;
     });
 
   </script>

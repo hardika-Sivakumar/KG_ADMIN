@@ -4,7 +4,7 @@ const app = express();
 const session = require('express-session');
 const { CONFIG } = require("./config");
 const {getStudentDetails} = require("./services/studentService");
-
+const {getStaffDetails} = require("./services/staffService");
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, ''));
 app.use(express.urlencoded({ extended: true }));
@@ -18,8 +18,8 @@ app.get("/", async (req, res) => {
 app.get("/add_student", async (req, res) => {
     return res.render('add-student');
 })
-app.get("/add_teacher", async (req, res) => {
-    return res.render('add-teacher');
+app.get("/add_staff", async (req, res) => {
+    return res.render('add-staff');
 })
 app.get("/add_event", async (req, res) => {
     return res.render('add-event');
@@ -55,6 +55,22 @@ app.get("/student_details",async (req, res) => {
         return
     }
     return res.render('student-details',{studentDetails:studentData?.students?.[0]});
+})
+
+
+app.get("/staff_lists",async (req, res) => {
+    const headers={
+        'content-type':'application/json'
+    }
+    const staffList=await getStaffDetails(headers,{
+        get_all:true
+    });
+    console.log(staffList)
+    if(!staffList.success){
+        //handle 500 server error
+        return
+    }
+    return res.render('staff-list',{staffData:staffList?.staffs});
 })
 
 app.locals.BACKEND_URL = CONFIG?.BACKEND_URL

@@ -332,8 +332,8 @@
 
   <!-- jQuery -->
   <script src="js/api.js">
-
   </script>
+  <script src="js/uploadFile.js"></script>
   <script src="assets/js/jquery-3.7.1.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
   <!-- Bootstrap Core JS -->
@@ -376,36 +376,7 @@
     let student_image_uri = undefined
     let birth_certificate = undefined
 
-    const uploadFile = async (file, image_path) => {
-
-      const father_name = document.getElementById("father_name").value
-      const first_name = document.getElementById("first_name").value
-
-      const formData = new FormData()
-      formData.append("file", file)
-      formData.append("image_path", image_path + first_name + father_name)
-
-      const uploadRequest = await fetchWithTimeout(
-        `${BACKEND_URL}/store/upload_file`,
-        {
-          method: "POST",
-          body: formData
-        },
-      )
-
-      const uploadResponse = await uploadRequest.json()
-
-      if (!uploadResponse.success) {
-        //handle error
-        alert(uploadResponse.message)
-        return ""
-      }
-      else {
-        //handleSucces
-        return uploadResponse?.image_url
-      }
-
-    }
+   
     document
       .getElementById("add-student-btn")
       .addEventListener("click", async function (event) {
@@ -463,7 +434,7 @@
         };
 
         try {
-          const response = await fetch(
+          const response = await fetchWithTimeout(
             `${BACKEND_URL}/students/update_new_student`,
             {
               method: "POST",
@@ -544,7 +515,10 @@
 
         reader.readAsDataURL(file);
 
-        student_image_uri = await uploadFile(file, "/student/profile/photo")
+        const first_name = document.getElementById("first_name").value;
+        const father_name = document.getElementById("father_name").value;
+
+        student_image_uri = await uploadFile(file, "/student/profile/photo"+first_name+father_name,BACKEND_URL)
 
 
       }
