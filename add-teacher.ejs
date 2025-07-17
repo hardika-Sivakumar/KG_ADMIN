@@ -1,664 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=0"
-    />
-    <meta name="description" content="Preskool - Bootstrap Admin Template" />
-    <meta
-      name="keywords"
-      content="admin, estimates, bootstrap, business, html5, responsive, Projects"
-    />
-    <meta
-      name="author"
-      content="Dreams technologies - Bootstrap Admin Template"
-    />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Preskool Admin Template</title>
 
-    <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/img/favicon.png"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <meta name="description" content="Preskool - Bootstrap Admin Template" />
+  <meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects" />
+  <meta name="author" content="Dreams technologies - Bootstrap Admin Template" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Preskool Admin Template</title>
 
-    <!-- Theme Script -->
-    <script
-      src="assets/js/theme-script.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <!-- Theme Script -->
+  <script src="assets/js/theme-script.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Feather CSS -->
-    <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-    <!-- Tabler Icon CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/tabler-icons/tabler-icons.css"
-    />
+  <!-- Feather CSS -->
+  <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css" />
 
-    <!-- Daterangepikcer CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/daterangepicker/daterangepicker.css"
-    />
+  <!-- Tabler Icon CSS -->
+  <link rel="stylesheet" href="assets/plugins/tabler-icons/tabler-icons.css" />
 
-    <!-- Fontawesome CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/fontawesome/css/fontawesome.min.css"
-    />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+  <!-- Daterangepikcer CSS -->
+  <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
 
-    <!-- Select2 CSS -->
-    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-    <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+  <!-- Select2 CSS -->
+  <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-    <!-- Bootstrap Tagsinput CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css"
-    />
+  <!-- Datetimepicker CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
+  <!-- Bootstrap Tagsinput CSS -->
+  <link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" />
 
-  <body>
-    <!-- Main Wrapper -->
-    <div class="main-wrapper">
-      <!-- Header -->
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Main Wrapper -->
+  <div class="main-wrapper">
+    <!-- Header -->
     <%- include('header') %>
       <!-- /Header -->
 
       <!-- Sidebar -->
-     <%- include('sidebar') %>
-      <!-- /Sidebar -->
+      <%- include('sidebar') %>
+        <!-- /Sidebar -->
 
-      <!-- Page Wrapper -->
-      <div class="page-wrapper">
-        <div class="content content-two">
-          <!-- Page Header -->
-          <div
-            class="d-md-flex d-block align-items-center justify-content-between mb-3"
-          >
-            <div class="my-auto mb-2">
-              <h3 class="mb-1">Add Teacher</h3>
-              <nav>
-                <ol class="breadcrumb mb-0">
-                  <li class="breadcrumb-item">
-                    <a href="index.html">Dashboard</a>
-                  </li>
-                  <li class="breadcrumb-item">
-                    <a href="teachers.html">Teachers</a>
-                  </li>
-                  <li class="breadcrumb-item active" aria-current="page">
-                    Add Teacher
-                  </li>
-                </ol>
-              </nav>
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+          <div class="content content-two">
+            <!-- Page Header -->
+            <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
+              <div class="my-auto mb-2">
+                <h3 class="mb-1">Add Teacher</h3>
+                <nav>
+                  <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                      <a href="index.html">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <a href="teachers.html">Teachers</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Add Teacher
+                    </li>
+                  </ol>
+                </nav>
+              </div>
             </div>
-          </div>
-          <!-- /Page Header -->
+            <!-- /Page Header -->
 
-          <div class="row">
-            <div class="col-md-12">
-              <form action="teachers.html" id="teacher-form">
-                <!-- Personal Information -->
-                <div class="card">
-                  <div class="card-header bg-light">
-                    <div class="d-flex align-items-center">
-                      <span
-                        class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0"
-                      >
-                        <i class="ti ti-info-square-rounded fs-16"></i>
-                      </span>
-                      <h4 class="text-dark">Personal Information</h4>
-                    </div>
-                  </div>
-                  <div class="card-body pb-1">
-                    <div class="row row-cols-xxl-5 row-cols-md-6">
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Teacher ID</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            readonly
-                            placeholder="Auto Fetch"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">First Name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Eg : John"
-                            name="first_name"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Last Name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Eg : Doe"
-                            name="last_name"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Handling Classes</label>
-                          <select
-                            class="select form-select"
-                            name="handling_classes"
-                          >
-                            <option>Select</option>
-                            <option>III A</option>
-                            <option>II (A)</option>
-                            <option>VI (A)</option>
-                            <option>VIII</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Subject</label>
-                          <select class="select form-select" name="subject">
-                            <option>Select</option>
-                            <option>Physics</option>
-                            <option>Computer</option>
-                            <option>English</option>
-                            <option>Spanish</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Gender</label>
-                          <select class="select form-select" name="gender">
-                            <option>Select</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label"
-                            >Primary Contact Number</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="primary_contact_number"
-                            placeholder="Eg : 1234567890"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Email Address</label>
-                          <input
-                            type="email"
-                            class="form-control"
-                            name="email_address"
-                            placeholder="Eg : yDf2T@example.com"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Blood Group</label>
-                          <select class="select form-select" name="blood_group">
-                            <option>Select</option>
-                            <option>O +ve</option>
-                            <option>B +ve</option>
-                            <option>B -ve</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Date of Joining</label>
-                          <input
-                            type="date"
-                            class="form-control"
-                            name="date_of_joining"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Father’s Name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="fathers_name"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Mother’s Name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="mothers_name"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Date of Birth</label>
-                          <input
-                            type="date"
-                            class="form-control"
-                            name="date_of_birth"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Marital Status</label>
-                          <select
-                            class="select form-select"
-                            name="marital_status"
-                          >
-                            <option>Select</option>
-                            <option>Single</option>
-                            <option>Married</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Language Known</label>
-                          <input
-                            class="input-tags form-control"
-                            type="text"
-                            data-role="tagsinput"
-                            name="language_known"
-                            value="English, Spanish"
-                            placeholder="Eg : English, Spanish"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Qualification</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="qualification"
-                            placeholder="Eg : B.Tech, M.Tech"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Work Experience</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="work_experience"
-                            placeholder="Eg : 5 years"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl-3 col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Address</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="address"
-                            placeholder="Eg : 123, Street, City, State, Country"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl-3 col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Permanent Address</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="permanent_address"
-                            placeholder="Eg : 123, Street, City, State, Country"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl-3 col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label"
-                            >PAN Number / ID Number</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="id_number"
-                            placeholder="Eg : AAAAA1234A"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-xxl-3 col-xl-3 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Status</label>
-                          <select
-                            class="select form-select"
-                            name="status"
-                            id="status"
-                          >
-                            <option>Select</option>
-                            <option>Active</option>
-                            <option>Inactive</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-xxl-12 col-xl-12">
-                        <div class="mb-3">
-                          <label class="form-label">Notes</label>
-                          <textarea
-                            class="form-control"
-                            placeholder="Other Information"
-                            rows="4"
-                            name="notes"
-                          ></textarea>
-                        </div>
+            <div class="row">
+              <div class="col-md-12">
+                <form onsubmit="return false" id="teacher-form">
+                  <!-- Personal Information -->
+                  <div class="card">
+                    <div class="card-header bg-light">
+                      <div class="d-flex align-items-center">
+                        <span class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0">
+                          <i class="ti ti-info-square-rounded fs-16"></i>
+                        </span>
+                        <h4 class="text-dark">Personal Information</h4>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- /Personal Information -->
-
-                <!-- Bank Details -->
-                <div class="card">
-                  <div class="card-header bg-light">
-                    <div class="d-flex align-items-center">
-                      <span
-                        class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0"
-                      >
-                        <i class="ti ti-map fs-16"></i>
-                      </span>
-                      <h4 class="text-dark">Bank Account Detail</h4>
-                    </div>
-                  </div>
-                  <div class="card-body pb-1">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Account Name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="account_name"
-                            placeholder="Eg : John Doe"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Account Number</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="account_number"
-                            placeholder="Eg : 1234567890"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Bank Name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="bank_name"
-                            placeholder="Eg : HDFC Bank"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">IFSC Code</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="ifsc_code"
-                            placeholder="Eg : HDFC0001234"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="mb-3">
-                          <label class="form-label">Branch Name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="branch_name"
-                            placeholder="Eg : Newyork"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /Bank Details -->
-
-                <!-- Documents -->
-                <div class="card">
-                  <div class="card-header bg-light">
-                    <div class="d-flex align-items-center">
-                      <span
-                        class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0"
-                      >
-                        <i class="ti ti-file fs-16"></i>
-                      </span>
-                      <h4 class="text-dark">Documents</h4>
-                    </div>
-                  </div>
-                  <div class="card-body pb-1">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="mb-2">
+                    <div class="card-body pb-1">
+                      <div class="row row-cols-xxl-5 row-cols-md-6">
+                        <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
-                            <label class="form-label">Upload Resume</label>
-                            <p>Upload image size of 4MB, Accepted Format PDF</p>
-                          </div>
-                          <div class="d-flex align-items-center flex-wrap">
-                            <div
-                              class="btn btn-primary drag-upload-btn mb-2 me-2"
-                            >
-                              <i class="ti ti-file-upload me-1"></i>Change
-                              <input
-                                type="file"
-                                class="form-control image_sign"
-                                multiple=""
-                                name="resume_file"
-                              />
-                            </div>
-                            <p class="mb-2">Resume.pdf</p>
+                            <label class="form-label">Teacher ID</label>
+                            <input type="text" class="form-control" readonly placeholder="Auto Fetch" />
                           </div>
                         </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="mb-2">
+                        <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
-                            <label class="form-label"
-                              >Upload Joining Letter</label
-                            >
-                            <p>Upload image size of 4MB, Accepted Format PDF</p>
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control" placeholder="Eg : John" name="first_name" />
                           </div>
-                          <div class="d-flex align-items-center flex-wrap">
-                            <div
-                              class="btn btn-primary drag-upload-btn mb-2 me-2"
-                            >
-                              <i class="ti ti-file-upload me-1"></i>Upload
-                              Document
-                              <input
-                                type="file"
-                                class="form-control image_sign"
-                                multiple=""
-                                name="joining_letter"
-                              />
-                            </div>
-                            <p class="mb-2">Resume.pdf</p>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" placeholder="Eg : Doe" name="last_name" />
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Handling Classes</label>
+                            <select class="select2" name="handling_classes" multiple="multiple">
+                              <option value="pre-kg">Pre-KG</option>
+                              <option value="lkg">LKG (Lower Kindergarten)</option>
+                              <option value="ukg">UKG (Upper Kindergarten)</option>
+                              <option value="kg-1">KG-1</option>
+                              <option value="kg-2">KG-2</option>
+                              <option value="nursery">Nursery</option>
+                              <option value="montessori-1">Montessori-1</option>
+                              <option value="montessori-2">Montessori-2</option>
+                              <option value="early-years">Early Years Program</option>
+                            </select>
+
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <select class="select2" name="subject" multiple="multiple">
+                              <option>English</option>
+                              <option>Mathematics</option>
+                              <option>Environmental Studies</option>
+                              <option>Science</option>
+                              <option>Social Science</option>
+                              <option>Computer</option>
+                              <option>General Knowledge</option>
+                              <option>Hindi</option>
+                              <option>Spanish</option>
+                              <option>French</option>
+                              <option>Drawing</option>
+                              <option>Music</option>
+                              <option>Physical Education</option>
+                              <option>Value Education</option>
+                            </select>
+
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Gender</label>
+                            <select class="select form-select" name="gender">
+                              <option>Select</option>
+                              <option>Male</option>
+                              <option>Female</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Primary Contact Number</label>
+                            <input type="text" class="form-control" name="primary_contact_number"
+                              placeholder="Eg : 1234567890" />
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" name="email_address"
+                              placeholder="Eg : yDf2T@example.com" />
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Blood Group</label>
+                            <input type="text" class="form-control" name="blood_group" placeholder="Eg : O+ve" />
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Father’s Name</label>
+                            <input type="text" class="form-control" name="fathers_name" />
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Mother’s Name</label>
+                            <input type="text" class="form-control" name="mothers_name" />
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" name="date_of_birth" />
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Marital Status</label>
+                            <select class="select form-select" name="marital_status">
+                              <option>Select</option>
+                              <option>Single</option>
+                              <option>Married</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Language Known</label>
+                            <input class="input-tags form-control" type="text" data-role="tagsinput"
+                              name="language_known" value="English, Spanish" placeholder="Eg : English, Spanish" />
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Qualification</label>
+                            <input type="text" class="form-control" name="qualification"
+                              placeholder="Eg : B.Tech, M.Tech" />
+                          </div>
+                        </div>
+                        <div class="col-xxl col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Work Experience</label>
+                            <input type="text" class="form-control" name="work_experience" placeholder="Eg : 5 years" />
+                          </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" name="address"
+                              placeholder="Eg : 123, Street, City, State, Country" />
+                          </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Permanent Address</label>
+                            <input type="text" class="form-control" name="permanent_address"
+                              placeholder="Eg : 123, Street, City, State, Country" />
+                          </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">PAN Number / ID Number</label>
+                            <input type="text" class="form-control" name="id_number" placeholder="Eg : AAAAA1234A" />
+                          </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select class="select form-select" name="status" id="status">
+                              <option>Select</option>
+                              <option>Active</option>
+                              <option>Inactive</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-xxl-12 col-xl-12">
+                          <div class="mb-3">
+                            <label class="form-label">Notes</label>
+                            <textarea class="form-control" placeholder="Other Information" rows="4"
+                              name="notes"></textarea>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <!-- /Documents -->
+                  <!-- /Personal Information -->
 
-                <div class="text-end">
-                  <button type="button" class="btn btn-light me-3">
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    id="add-teacher-btn"
-                    class="btn btn-primary"
-                  >
-                    Add Teacher
-                  </button>
-                </div>
-              </form>
+                  <!-- Bank Details -->
+                  <div class="card">
+                    <div class="card-header bg-light">
+                      <div class="d-flex align-items-center">
+                        <span class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0">
+                          <i class="ti ti-map fs-16"></i>
+                        </span>
+                        <h4 class="text-dark">Bank Account Detail</h4>
+                      </div>
+                    </div>
+                    <div class="card-body pb-1">
+                      <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Salary</label>
+                            <input type="text" class="form-control" name="salary" placeholder="Eg : 10000" />
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Account Name</label>
+                            <input type="text" class="form-control" name="account_name" placeholder="Eg : John Doe" />
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Account Number</label>
+                            <input type="text" class="form-control" name="account_number"
+                              placeholder="Eg : 1234567890" />
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Bank Name</label>
+                            <input type="text" class="form-control" name="bank_name" placeholder="Eg : HDFC Bank" />
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">IFSC Code</label>
+                            <input type="text" class="form-control" name="ifsc_code" placeholder="Eg : HDFC0001234" />
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Branch Name</label>
+                            <input type="text" class="form-control" name="branch_name" placeholder="Eg : Newyork" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Bank Details -->
+
+                  <!-- Documents -->
+                  <div class="card">
+                    <div class="card-header bg-light">
+                      <div class="d-flex align-items-center">
+                        <span class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0">
+                          <i class="ti ti-file fs-16"></i>
+                        </span>
+                        <h4 class="text-dark">Documents</h4>
+                      </div>
+                    </div>
+                    <div class="card-body pb-1">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="mb-2">
+                            <div class="mb-3">
+                              <label class="form-label">Upload Resume</label>
+                              <p>Upload image size of 4MB, Accepted Format PDF</p>
+                            </div>
+                            <div class="d-flex align-items-center flex-wrap">
+                              <div class="btn btn-primary drag-upload-btn mb-2 me-2">
+                                <i class="ti ti-file-upload me-1"></i>Change
+                                <input type="file" class="form-control image_sign" multiple="" name="resume_file" />
+                              </div>
+                              <p class="mb-2">Resume.pdf</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="mb-2">
+                            <div class="mb-3">
+                              <label class="form-label">Upload Joining Letter</label>
+                              <p>Upload image size of 4MB, Accepted Format PDF</p>
+                            </div>
+                            <div class="d-flex align-items-center flex-wrap">
+                              <div class="btn btn-primary drag-upload-btn mb-2 me-2">
+                                <i class="ti ti-file-upload me-1"></i>Upload
+                                Document
+                                <input type="file" class="form-control image_sign" multiple="" name="joining_letter" />
+                              </div>
+                              <p class="mb-2">Resume.pdf</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Documents -->
+
+                  <div class="text-end">
+                    <button type="button" class="btn btn-light me-3">
+                      Cancel
+                    </button>
+                    <button type="submit" id="add-teacher-btn" class="btn btn-primary">
+                      Add Teacher
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- /Page Wrapper -->
-    </div>
-    <!-- /Main Wrapper -->
+        <!-- /Page Wrapper -->
+  </div>
 
-    <!-- jQuery -->
-    <script
-      src="assets/js/jquery-3.7.1.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
 
-    <!-- Bootstrap Core JS -->
-    <script
-      src="assets/js/bootstrap.bundle.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <script>
+    document.getElementById("add-teacher-btn").addEventListener("click", async function (event) {
+      event.preventDefault();
+      const formElement = document.getElementById("teacher-form");
+      const formData = new FormData(formElement);
 
-    <!-- Daterangepikcer JS -->
-    <script
-      src="assets/js/moment.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
-    <script
-      src="assets/plugins/daterangepicker/daterangepicker.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+      // Step 1: Build flat payload
+      let payload = {};
+      for (const [key, value] of formData.entries()) {
+        payload[key] = value instanceof File ? value.name : value;
+      }
 
-    <!-- Feather Icon JS -->
-    <script
-      src="assets/js/feather.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+      // Step 2: Transform to nested structure
+      const finalPayload = {
+        staff_id: "", // or generate dynamically
+        student_created_on: new Date().toISOString(), // or use form field
 
-    <!-- Slimscroll JS -->
-    <script
-      src="assets/js/jquery.slimscroll.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+        staff_info: {
+          first_name: payload?.first_name || "",
+          last_name: payload?.last_name || "",
+          gender: payload?.gender !== "Select" ? payload?.gender : "",
+          primary_contact_number: payload?.primary_contact_number || "",
+          email_address: payload?.email_address || "",
+          blood_group: payload?.blood_group || "",
+          date_of_birth: payload?.date_of_birth || "",
+          marital_status: payload?.marital_status !== "Select" ? payload?.marital_status : "",
+        },
 
-    <!-- Select2 JS -->
-    <script
-      src="assets/plugins/select2/js/select2.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+        staff_experience_info: {
+          handling_classes: payload?.handling_classes || "",
+          subject: payload?.subject || "",
+          date_of_joining: payload?.date_of_joining || "",
+          qualification: payload?.qualification || "",
+          language_known: payload?.language_known || "",
+          work_experience: payload?.work_experience || "",
+          notes: payload?.notes || "",
+        },
 
-    <!-- Datetimepicker JS -->
-    <script
-      src="assets/js/moment.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
-    <script
-      src="assets/js/bootstrap-datetimepicker.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+        staff_parent_info: {
+          fathers_name: payload?.fathers_name || "",
+          mothers_name: payload?.mothers_name || "",
+          parent_contact_no: payload?.parent_contact_no || "",
+          address: payload?.address || "",
+          permanent_address: payload?.permanent_address || "",
+        },
 
-    <!-- Bootstrap Tagsinput JS -->
-    <script
-      src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+        staff_bank_info: {
+          account_name: payload?.account_name || "",
+          account_number: payload?.account_number || "",
+          bank_name: payload?.bank_name || "",
+          ifsc_code: payload?.ifsc_code || "",
+          branch_name: payload?.branch_name || "",
+          salary: payload?.salary || "",
+        },
 
-    <!-- Custom JS -->
-    <script
-      src="assets/js/script.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+        staff_kyc_info: {
+          resume_file: payload?.resume_file || "",
+          joining_letter: payload?.joining_letter || "",
+          id_number: payload?.id_number || "",
+        }
+      };
 
-    <script
-      src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
-      data-cf-settings="6dc0a9d0ac43462e72fa7502-|49"
-      defer
-    ></script>
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-      data-cf-beacon='{"rayId":"95d12b338917a908","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"3ca157e612a14eccbb30cf6db6691c29"}'
-      crossorigin="anonymous"
-    ></script>
+      console.log("Final Payload:", finalPayload);
 
-    <script>
-      document
-        .getElementById("add-teacher-btn")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault();
-          // Here you can add your form submission logic
-          const formElement = document.getElementById("teacher-form");
-          const formData = new FormData(formElement);
-          //                 for (const [key, value] of formData.entries()) {
-          //     console.log(`${key}: ${value instanceof File ? value.name : value}`);
-          // }
-          try {
-            // Send the form data to the backend API
-            const response = await fetch(`${BACKEND_URL}/teacher/add_teacher`, {
-              method: "POST",
-              headers: {
-                Authorization: `Bearer ${access_token}`, // Include authentication token
-              },
-              body: formData, // Send FormData directly (no need to set Content-Type manually)
-            });
+      // Step 3: Send to backend (optional)
+    });
 
-            const data = await response.json();
+  </script>
+  <!-- /Main Wrapper -->
 
-            if (data?.success) {
-              showToast(
-                "success",
-                data?.message || "Teacher added successfully."
-              );
-            } else {
-              showToast("error", data?.message || "Failed to add teacher.");
-            }
-          } catch (error) {
-            console.error("Error:", error);
-            showToast(
-              "error",
-              "Something went wrong while adding the teacher."
-            );
-          }
-        });
-    </script>
-  </body>
+  <!-- jQuery -->
+  <script src="assets/js/jquery-3.7.1.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+  <!-- Bootstrap Core JS -->
+  <script src="assets/js/bootstrap.bundle.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+  <!-- Daterangepikcer JS -->
+  <script src="assets/js/moment.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+  <script src="assets/plugins/daterangepicker/daterangepicker.js"
+    type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+  <!-- Feather Icon JS -->
+  <script src="assets/js/feather.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+  <!-- Slimscroll JS -->
+  <script src="assets/js/jquery.slimscroll.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+  <!-- Select2 JS -->
+  <script src="assets/plugins/select2/js/select2.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+  <!-- Datetimepicker JS -->
+  <script src="assets/js/moment.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+  <script src="assets/js/bootstrap-datetimepicker.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+  <!-- Bootstrap Tagsinput JS -->
+  <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"
+    type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+  <!-- Custom JS -->
+  <script src="assets/js/script.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+  <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+    data-cf-settings="6dc0a9d0ac43462e72fa7502-|49" defer></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+
+
+</body>
+
 </html>
