@@ -1,447 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=0"
-    />
-    <meta name="description" content="Preskool - Bootstrap Admin Template" />
-    <meta
-      name="keywords"
-      content="admin, estimates, bootstrap, business, html5, responsive, Projects"
-    />
-    <meta
-      name="author"
-      content="Dreams technologies - Bootstrap Admin Template"
-    />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Preskool Admin Template</title>
 
-    <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/img/favicon.png"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <meta name="description" content="Preskool - Bootstrap Admin Template" />
+  <meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects" />
+  <meta name="author" content="Dreams technologies - Bootstrap Admin Template" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Preskool Admin Template</title>
 
-    <!-- Theme Script -->
-    <script
-      src="assets/js/theme-script.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <!-- Theme Script -->
+  <script src="assets/js/theme-script.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Feather CSS -->
-    <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-    <!-- Tabler Icon CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/tabler-icons/tabler-icons.css"
-    />
+  <!-- Feather CSS -->
+  <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css" />
 
-    <!-- Daterangepikcer CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/daterangepicker/daterangepicker.css"
-    />
+  <!-- Tabler Icon CSS -->
+  <link rel="stylesheet" href="assets/plugins/tabler-icons/tabler-icons.css" />
 
-    <!-- Fontawesome CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/fontawesome/css/fontawesome.min.css"
-    />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+  <!-- Daterangepikcer CSS -->
+  <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
 
-    <!-- Select2 CSS -->
-    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-    <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+  <!-- Select2 CSS -->
+  <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-    <!-- Bootstrap Tagsinput CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css"
-    />
+  <!-- Datetimepicker CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
+  <!-- Bootstrap Tagsinput CSS -->
+  <link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" />
 
-  <body>
-    <!-- Main Wrapper -->
-    <div class="main-wrapper">
-      <!-- Header -->
-      <%- include('header') %>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Main Wrapper -->
+  <div class="main-wrapper">
+    <!-- Header -->
+    <%- include('header') %>
       <!-- /Header -->
 
       <!-- Sidebar -->
       <%- include('sidebar') %>
-      <!-- /Sidebar -->
+        <!-- /Sidebar -->
 
-      <!-- Page Wrapper -->
-      <div class="page-wrapper">
-        <div class="content content-two">
-          <!-- Page Header -->
-          <div
-            class="d-md-flex d-block align-items-center justify-content-between mb-3"
-          >
-            <div class="my-auto mb-2">
-              <h3 class="mb-1">Add Event</h3>
-        <nav>
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="events.html">Events</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Add Event</li>
-          </ol>
-        </nav>
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+          <div class="content content-two">
+            <!-- Page Header -->
+            <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
+              <div class="my-auto mb-2">
+                <h3 class="mb-1">Add Event</h3>
+                <nav>
+                  <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="events.html">Events</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Event</li>
+                  </ol>
+                </nav>
+              </div>
             </div>
-          </div>
-          <!-- /Page Header -->
+            <!-- /Page Header -->
 
-           <div class="row">
-      <div class="col-md-12">
-        <form action="events.html" id="eventForm">
-          <div class="card">
-            <div class="card-body pb-1">
-              <div class="row row-cols-xxl-5 row-cols-md-6">
+            <div class="row">
+              <div class="col-md-12">
+                <form onsubmit="return false" id="eventForm">
+                  <div class="card">
+                    <div class="card-body pb-1">
+                      <div class="row row-cols-xxl-5 row-cols-md-6">
 
-                <!-- Event Title -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Event Title</label>
-                    <input type="text" name="event_title" class="form-control" placeholder="Eg: Annual Food Fest 2025" />
-                  </div>
-                </div>
+                        <!-- Event Title -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Event Title</label>
+                            <input type="text" id="event_title" name="event_title" class="form-control"
+                              placeholder="Eg: Annual Food Fest 2025" />
+                          </div>
+                        </div>
 
-                <!-- Event Type -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Event Type</label>
-                    <select name="event_type" class="select form-select">
-                      <option>Select</option>
-                      <option>Food Fest</option>
-                      <option>Science Fair</option>
-                      <option>Cultural Program</option>
-                      <option>Sports Day</option>
-                      <option>Seminar</option>
-                    </select>
-                  </div>
-                </div>
+                        <!-- Event Type -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Event Type</label>
+                            <select name="event_type" class="select form-select">
+                              <option>Select</option>
+                              <option>Food Fest</option>
+                              <option>Science Fair</option>
+                              <option>Cultural Program</option>
+                              <option>Sports Day</option>
+                              <option>Seminar</option>
+                            </select>
+                          </div>
+                        </div>
 
-                <!-- Organizer Name -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Organizer</label>
-                    <input type="text" name="event_organizer" class="form-control" placeholder="Eg: Science Club" />
-                  </div>
-                </div>
+                        <!-- Organizer Name -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Organizer</label>
+                            <input type="text" name="event_organizer" class="form-control"
+                              placeholder="Eg: Science Club" />
+                          </div>
+                        </div>
 
-                <!-- Event Date -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Event Date</label>
-                    <input type="date" name="event_date" class="form-control" />
-                  </div>
-                </div>
+                        <!-- Event Date -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Event Date</label>
+                            <input type="date" name="event_date" class="form-control" />
+                          </div>
+                        </div>
 
-                <!-- Event Status -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Status</label>
-                    <select name="event_status" class="form-select">
-                      <option>Draft</option>
-                      <option>Upcoming</option>
-                      <option>Completed</option>
-                      <option>Cancelled</option>
-                    </select>
-                  </div>
-                </div>
+                        <!-- Event Status -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select name="event_status" class="form-select">
+                              <option>Draft</option>
+                              <option>Upcoming</option>
+                              <option>Completed</option>
+                              <option>Cancelled</option>
+                            </select>
+                          </div>
+                        </div>
 
-              </div>
+                      </div>
 
-              <div class="row">
-                <!-- Description -->
-                <div class="col-md-12">
-                  <div class="mb-3">
-                    <label class="form-label">Event Description</label>
-                    <textarea name="event_description" class="form-control" rows="3" placeholder="Describe the event"></textarea>
-                  </div>
-                </div>
-              </div>
+                      <div class="row">
+                        <!-- Description -->
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <label class="form-label">Event Description</label>
+                            <textarea name="event_description" class="form-control" rows="3"
+                              placeholder="Describe the event"></textarea>
+                          </div>
+                        </div>
+                      </div>
 
-              <div class="row row-cols-xxl-4 row-cols-md-6">
-                <!-- Start Time -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Start Time</label>
-                    <input type="time" name="event_start_time" class="form-control" />
-                  </div>
-                </div>
+                      <div class="row row-cols-xxl-4 row-cols-md-6">
+                        <!-- Start Time -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Start Time</label>
+                            <input type="time" name="event_start_time" class="form-control" />
+                          </div>
+                        </div>
 
-                <!-- End Time -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">End Time</label>
-                    <input type="time" name="event_end_time" class="form-control" />
-                  </div>
-                </div>
+                        <!-- End Time -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">End Time</label>
+                            <input type="time" name="event_end_time" class="form-control" />
+                          </div>
+                        </div>
 
-                <!-- Location -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Venue</label>
-                    <input type="text" name="event_venue" class="form-control" placeholder="Eg: Auditorium" />
-                  </div>
-                </div>
+                        <!-- Location -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Venue</label>
+                            <input type="text" name="event_venue" class="form-control" placeholder="Eg: Auditorium" />
+                          </div>
+                        </div>
 
-                <!-- Target Audience -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Target Audience</label>
-                    <input type="text" name="event_target_audience" class="form-control" placeholder="Eg: Grade 10–12, Teachers" />
-                  </div>
-                </div>
-              </div>
+                        <!-- Target Audience -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Target Audience</label>
+                            <input type="text" name="event_target_audience" class="form-control"
+                              placeholder="Eg: Grade 10–12, Teachers" />
+                          </div>
+                        </div>
+                      </div>
 
-              <div class="row row-cols-xxl-4 row-cols-md-6">
-                <!-- Registration Required -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label d-block">Registration Required?</label>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="is_registration_required" value="Yes" />
-                      <label class="form-check-label">Yes</label>
+                      <div class="row row-cols-xxl-4 row-cols-md-6">
+                        <!-- Registration Required -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label d-block">Registration Required?</label>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="is_registration_required"
+                                value="Yes" />
+                              <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="is_registration_required" value="No" />
+                              <label class="form-check-label">No</label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Registration Deadline -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Registration Deadline</label>
+                            <input type="date" name="event_registration_deadline" class="form-control" />
+                          </div>
+                        </div>
+
+                        <!-- Max Participants -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label">Max Participants</label>
+                            <input type="number" name="event_max_participants" class="form-control"
+                              placeholder="Eg: 100" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="is_registration_required" value="No" />
-                      <label class="form-check-label">No</label>
+                  </div>
+
+                  <!-- Uploads -->
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="form-label">Event Cover Image</label>
+                          <input type="file" name="cover_image" class="form-control" id="event_cover_image" />
+                          <small class="text-muted">Max size 4MB. JPG/PNG only.</small>
+                        </div>
+
+                        <div class="col-md-6">
+                          <label class="form-label">Poster / Banner</label>
+                          <input type="file" name="poster_banner" id="poster_banner" class="form-control" />
+                          <small class="text-muted">Max size 4MB. JPG/PDF only.</small>
+                        </div>
+
+                        <div class="col-md-6 mt-3">
+                          <label class="form-label">Additional Attachments</label>
+                          <input type="file" name="attachments" id="attachments" class="form-control" />
+                          <small class="text-muted">Eg: Program Schedule, Rules (PDF)</small>
+                        </div>
+
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Registration Deadline -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Registration Deadline</label>
-                    <input type="date" name="event_registration_deadline" class="form-control" />
+                  <!-- Post-Event Section -->
+                  <div class="card">
+                    <div class="card-body pb-1">
+                      <div class="mb-3">
+                        <label class="form-label">Event Highlights (Post-Event)</label>
+                        <textarea name="event_hightlights" class="form-control" rows="3"
+                          placeholder="Eg: 200+ students attended, 5 awards given"></textarea>
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <!-- Max Participants -->
-                <div class="col">
-                  <div class="mb-3">
-                    <label class="form-label">Max Participants</label>
-                    <input type="number" name="event_max_participants" class="form-control" placeholder="Eg: 100" />
+                  <!-- Action Buttons -->
+                  <div class="text-end mt-3">
+                    <button type="button" class="btn btn-light me-3">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="add-event-btn">Add Event</button>
                   </div>
-                </div>
+
+                </form>
               </div>
             </div>
           </div>
-
-          <!-- Uploads -->
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <label class="form-label">Event Cover Image</label>
-                  <input type="file" name="cover_image" class="form-control"  />
-                  <small class="text-muted">Max size 4MB. JPG/PNG only.</small>
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Poster / Banner</label>
-                  <input type="file" name="poster_banner" class="form-control" />
-                  <small class="text-muted">Max size 4MB. JPG/PDF only.</small>
-                </div>
-
-                <div class="col-md-6 mt-3">
-                  <label class="form-label">Additional Attachments</label>
-                  <input type="file" name="attachments" class="form-control" />
-                  <small class="text-muted">Eg: Program Schedule, Rules (PDF)</small>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <!-- Post-Event Section -->
-          <div class="card">
-            <div class="card-body pb-1">
-              <div class="mb-3">
-                <label class="form-label">Event Highlights (Post-Event)</label>
-                <textarea name="event_hightlights" class="form-control" rows="3" placeholder="Eg: 200+ students attended, 5 awards given"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="text-end mt-3">
-            <button type="button" class="btn btn-light me-3">Cancel</button>
-            <button type="submit" class="btn btn-primary">Add Event</button>
-          </div>
-
-        </form>
-      </div>
-    </div>
         </div>
-      </div>
-      <!-- /Page Wrapper -->
-    </div>
-    <!-- /Main Wrapper -->
+        <!-- /Page Wrapper -->
+  </div>
+  <!-- /Main Wrapper -->
+  <script src="js/api.js"></script>
+  <script src="js/uploadFile.js"></script>
 
-    <!-- jQuery -->
-    <script
-      src="assets/js/jquery-3.7.1.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- jQuery -->
+  <script src="assets/js/jquery-3.7.1.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Bootstrap Core JS -->
-    <script
-      src="assets/js/bootstrap.bundle.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Bootstrap Core JS -->
+  <script src="assets/js/bootstrap.bundle.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Daterangepikcer JS -->
-    <script
-      src="assets/js/moment.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
-    <script
-      src="assets/plugins/daterangepicker/daterangepicker.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Daterangepikcer JS -->
+  <script src="assets/js/moment.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+  <script src="assets/plugins/daterangepicker/daterangepicker.js"
+    type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Feather Icon JS -->
-    <script
-      src="assets/js/feather.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Feather Icon JS -->
+  <script src="assets/js/feather.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Slimscroll JS -->
-    <script
-      src="assets/js/jquery.slimscroll.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Slimscroll JS -->
+  <script src="assets/js/jquery.slimscroll.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Select2 JS -->
-    <script
-      src="assets/plugins/select2/js/select2.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Select2 JS -->
+  <script src="assets/plugins/select2/js/select2.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Datetimepicker JS -->
-    <script
-      src="assets/js/moment.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
-    <script
-      src="assets/js/bootstrap-datetimepicker.min.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Datetimepicker JS -->
+  <script src="assets/js/moment.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+  <script src="assets/js/bootstrap-datetimepicker.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Bootstrap Tagsinput JS -->
-    <script
-      src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Bootstrap Tagsinput JS -->
+  <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"
+    type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <!-- Custom JS -->
-    <script
-      src="assets/js/script.js"
-      type="6dc0a9d0ac43462e72fa7502-text/javascript"
-    ></script>
+  <!-- Custom JS -->
+  <script src="assets/js/script.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-    <script
-      src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
-      data-cf-settings="6dc0a9d0ac43462e72fa7502-|49"
-      defer
-    ></script>
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-      data-cf-beacon='{"rayId":"95d12b338917a908","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"3ca157e612a14eccbb30cf6db6691c29"}'
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+    data-cf-settings="6dc0a9d0ac43462e72fa7502-|49" defer></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"rayId":"95d12b338917a908","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"3ca157e612a14eccbb30cf6db6691c29"}'
+    crossorigin="anonymous"></script>
 
-    <script>
-      const BACKEND_URL = "<%= BACKEND_URL %>";
-      document
-        .getElementById("add-student-btn")
-        .addEventListener("click", async function (event) {
-          event.preventDefault();
-          // Here you can add your form submission logic
-          const formElement = document.getElementById("studentForm");
-          const formData = new FormData(formElement);
+  <script>
+    const BACKEND_URL = "<%= BACKEND_URL %>";
+    let event_cover_image = undefined
+    let poster_banner = undefined
+    let event_attachments = undefined
+    document
+      .getElementById("add-event-btn")
+      .addEventListener("click", async function (event) {
+        event.preventDefault();
+        // Here you can add your form submission logic
+        const formElement = document.getElementById("eventForm");
+        const formData = new FormData(formElement);
 
-          // Convert FormData to a plain object
-          const jsonObject = {};
-          for (const [key, value] of formData.entries()) {
-            jsonObject[key] = value instanceof File ? value.name : value;
-          }
+        // Convert FormData to a plain object
+        const jsonObject = {};
+        for (const [key, value] of formData.entries()) {
+          jsonObject[key] = value instanceof File ? value.name : value;
+        }
+          const isRegistrationRequired = jsonObject["is_registration_required"]?.toLowerCase() === "yes";
 
-          console.log("Payload:", jsonObject);
+        const payload = {
+          event_title: jsonObject["event_title"] || "",
+          event_description: jsonObject["event_description"] || "",
+          event_type: jsonObject["event_type"] || "",
+          event_organizer: jsonObject["event_organizer"] || "",
+          event_date: jsonObject["event_date"] || "",
+          event_status: (jsonObject["event_status"] || "").toLowerCase() === "completed",
+          event_time: {
+            event_start_time: jsonObject["event_start_time"] || "",
+            event_end_time: jsonObject["event_end_time"] || "",
+            event_venue: jsonObject["event_venue"] || "",
+            event_target_audience: jsonObject["event_target_audience"] || "",
+            is_registration_required:isRegistrationRequired,
+            event_registration_deadline: jsonObject["event_registration_deadline"] || "",
+            event_max_participants: parseInt(jsonObject["event_max_participants"]) || 0,
+          },
+          event_poster: {
+            event_cover_photo: event_cover_image || "",
+            event_banner_photo: poster_banner || "",
+            event_additional_media: event_attachments|| "",
+          },
+          event_hightlights: jsonObject["event_hightlights"] || ""
+        };
 
-         
-        });
-  document.getElementById("student_birth_certificate").addEventListener("change", function (event) {
-    const file = event.target.files[0];
+        const saveEventRequest=await fetchWithTimeout(
+          `${BACKEND_URL}/event/update_event_details`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          },
+        )
+        if(!saveEventRequest.success){
+          // showToast("error", "Failed to update event details.")
+          return
+        }
+        // showToast("success", "Event added successfully.")
 
-    if (file) {
-      const maxSize = 4 * 1024 * 1024; // 4MB
 
-      if (file.type !== "application/pdf") {
-        alert("Only PDF files are allowed.");
-        return;
-      }
 
-      if (file.size > maxSize) {
-        alert("File size exceeds 4MB.");
-        return;
-      }
+      });
 
-      const previewDiv = document.getElementById("student_birth_certificate_preview");
-      previewDiv.innerHTML = `
-        <div style="margin-top: 10px; display: flex; align-items: center; gap: 8px;">
-          <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" style="width: 24px; height: 24px;" />
-          <span>${file.name}</span>
-        </div>
-      `;
+    function handleFileUpload(inputId, fileTypeLabel, pathPrefix, backendUrl, fileTypes, callback) {
+      document.getElementById(inputId).addEventListener("change", async function (event) {
+        const file = event.target.files[0];
+
+        if (!file) return;
+
+        if (!fileTypes.includes(file.type)) {
+          alert("Only JPG or PNG files are allowed.");
+          return;
+        }
+
+        const maxSize = 4 * 1024 * 1024; // 4MB
+        if (file.size > maxSize) {
+          alert("File size exceeds 4MB.");
+          return;
+        }
+
+        const event_title = document.getElementById("event_title").value || "Unknown";
+        const uploadPath = `${pathPrefix}_${event_title}`;
+
+        try {
+          const uploadedUrl = await uploadFile(file, uploadPath, backendUrl);
+          callback(uploadedUrl); // set variable or update UI
+        } catch (error) {
+          console.error(`Error uploading ${fileTypeLabel}:`, error);
+          alert(`Failed to upload ${fileTypeLabel}`);
+        }
+      });
     }
-  });
 
-  document.getElementById("student_profile_photo").addEventListener("change", function (event) {
-    const file = event.target.files[0];
+    handleFileUpload("event_cover_image", "Cover_Image", "/event/image/cover", BACKEND_URL, ["image/jpeg", "image/png"], (url) => {
+      event_cover_image = url;
+    });
 
-    if (file) {
-      const allowedTypes = ["image/jpeg", "image/png"];
-      const maxSize = 4 * 1024 * 1024; // 4MB
+    handleFileUpload("poster_banner", "Poster_Banner", "/event/image/poster", BACKEND_URL, ["image/jpeg", "image/png"], (url) => {
+      poster_banner = url;
+    });
 
-      if (!allowedTypes.includes(file.type)) {
-        alert("Only JPG or PNG files are allowed.");
-        return;
-      }
+    handleFileUpload("attachments", "Attachments", "/event/file/attachments", BACKEND_URL, ["application/pdf"], (url) => {
+      event_attachments = url;
+    });
 
-      if (file.size > maxSize) {
-        alert("File size exceeds 4MB.");
-        return;
-      }
+  </script>
 
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const previewDiv = document.getElementById("student_profile_photo_preview");
-        previewDiv.innerHTML = `<img src="${e.target.result}" alt="Preview" style="max-width: 100%; height: auto; margin-top: 10px;" />`;
-      };
+</body>
 
-      reader.readAsDataURL(file);
-    }
-  });
-</script>
-
-  </body>
 </html>

@@ -480,6 +480,12 @@
         }
       )
 
+      if (!saveTeacherRequest.success) {
+        // showToast("error", "Failed to add teacher.");
+        return;
+      }
+      // showToast("success", "Teacher added successfully.");
+
       // Step 3: Send to backend (optional)
     });
 
