@@ -74,6 +74,10 @@ app.get("/staff_lists",async (req, res) => {
     return res.render('staff-list',{staffData:staffList?.staffs});
 })
 
+app.get("/gallery",async (req, res) => {
+    return res.render('gallery');
+})
+
 app.get("/event_lists",async (req, res) => {
     const headers={
         'content-type':'application/json'
