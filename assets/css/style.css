@@ -1682,8 +1682,8 @@ ul .btn-primary:not(:disabled):not(.disabled).active:focus {
     align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    justify-content: center;
-    -webkit-justify-content: center;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
     -ms-flex-pack: center;
     margin: 0;
     position: relative;
