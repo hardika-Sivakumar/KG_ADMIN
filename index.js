@@ -3,9 +3,10 @@ const path = require('path');
 const app = express();
 const session = require('express-session');
 const { CONFIG } = require("./config");
-const {getStudentDetails} = require("./services/studentService");
-const {getStaffDetails} = require("./services/staffService");
-const {getEventDetails} = require("./services/eventService");
+const { getStudentDetails } = require("./services/studentService");
+const { getStaffDetails } = require("./services/staffService");
+const { getEventDetails } = require("./services/eventService");
+const { getGalleryDetails } = require("./services/galleryService");
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, ''));
 app.use(express.urlencoded({ extended: true }));
@@ -26,71 +27,76 @@ app.get("/add_event", async (req, res) => {
     return res.render('add-event');
 })
 
-app.get("/student_lists",async (req, res) => {
-    const headers={
-        'content-type':'application/json'
+app.get("/student_lists", async (req, res) => {
+    const headers = {
+        'content-type': 'application/json'
     }
-    const studentList=await getStudentDetails(headers,{
-        get_all:true
+    const studentList = await getStudentDetails(headers, {
+        get_all: true
     });
-    if(!studentList.success){
+    if (!studentList.success) {
         //handle 500 server error
         return
     }
-    return res.render('student-list',{studentData:studentList?.students});
+    return res.render('student-list', { studentData: studentList?.students });
 })
 
-app.get("/student_details",async (req, res) => {
-    const studentId=req.query.studentID
-    const headers={
-        'content-type':'application/json'
+app.get("/student_details", async (req, res) => {
+    const studentId = req.query.studentID
+    const headers = {
+        'content-type': 'application/json'
     }
-    const studentData=await getStudentDetails(headers,{
-        filters:{
-        student_id:studentId
+    const studentData = await getStudentDetails(headers, {
+        filters: {
+            student_id: studentId
         }
     })
     console.log(studentData)
-    if(!studentData.success){
+    if (!studentData.success) {
         //handle 500 server error
         return
     }
-    return res.render('student-details',{studentDetails:studentData?.students?.[0]});
+    return res.render('student-details', { studentDetails: studentData?.students?.[0] });
 })
 
 
-app.get("/staff_lists",async (req, res) => {
-    const headers={
-        'content-type':'application/json'
+app.get("/staff_lists", async (req, res) => {
+    const headers = {
+        'content-type': 'application/json'
     }
-    const staffList=await getStaffDetails(headers,{
-        get_all:true
+    const staffList = await getStaffDetails(headers, {
+        get_all: true
     });
-    console.log(staffList)
-    if(!staffList.success){
+    if (!staffList.success) {
         //handle 500 server error
         return
     }
-    return res.render('staff-list',{staffData:staffList?.staffs});
+    return res.render('staff-list', { staffData: staffList?.staffs });
 })
 
-app.get("/gallery",async (req, res) => {
-    return res.render('gallery');
-})
-
-app.get("/event_lists",async (req, res) => {
-    const headers={
-        'content-type':'application/json'
+app.get("/gallery", async (req, res) => {
+    const galleryData = await getGalleryDetails();
+    console.log(galleryData)
+    if (!galleryData.success) {
+        //handle 500 server error
+        return
     }
-    const eventList=await getEventDetails(headers,{
-        get_all:true
+    return res.render('gallery', { galleryData: galleryData?.gallery });
+})
+
+app.get("/event_lists", async (req, res) => {
+    const headers = {
+        'content-type': 'application/json'
+    }
+    const eventList = await getEventDetails(headers, {
+        get_all: true
     });
     console.log(eventList)
-    if(!eventList.success){
+    if (!eventList.success) {
         //handle 500 server error
         return
     }
-    return res.render('event-list',{eventData:eventList?.events});
+    return res.render('event-list', { eventData: eventList?.events });
 })
 
 app.locals.BACKEND_URL = CONFIG?.BACKEND_URL

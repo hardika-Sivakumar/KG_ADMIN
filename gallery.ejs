@@ -1,841 +1,720 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <meta name="description" content="Preskool - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, html5, responsive, Projects"
+    />
+    <meta
+      name="author"
+      content="Dreams technologies - Bootstrap Admin Template"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Preskool Admin</title>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<meta name="description" content="Preskool - Bootstrap Admin Template">
-	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
-	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
-	<meta name="robots" content="noindex, nofollow">
-	<title>Preskool Admin</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicon.png"
+    />
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Theme Script js -->
+    <script
+      src="assets/js/theme-script.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
 
-	<!-- Theme Script js -->
-	<script src="assets/js/theme-script.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css" />
 
-	<!-- Feather CSS -->
-	<link rel="stylesheet" href="assets/plugins/icons/feather/feather.css">
+    <!-- Tabler Icon CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/tabler-icons/tabler-icons.css"
+    />
 
-	<!-- Tabler Icon CSS -->
-	<link rel="stylesheet" href="assets/plugins/tabler-icons/tabler-icons.css">
+    <!-- Daterangepikcer CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/daterangepicker/daterangepicker.css"
+    />
 
-	<!-- Daterangepikcer CSS -->
-	<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
+    <!-- Fontawesome CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/fontawesome/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-	<!-- Datatable CSS -->
-	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-	<!-- Select2 CSS -->
-	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+  </head>
 
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <%- include('header') %>
+      <!-- /Header -->
 
+      <!-- Sidebar -->
+      <%- include('sidebar') %>
 
-</head>
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content content-two">
+          <!-- Page Header -->
+          <div
+            class="d-md-flex d-block align-items-center justify-content-between mb-3"
+          >
+            <div class="my-auto mb-2">
+              <h3 class="page-title mb-1">Notice Board</h3>
+              <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html">Dashboard</a>
+                  </li>
+                  <li class="breadcrumb-item">Announcement</li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Notice Board
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              class="d-flex my-xl-auto right-content align-items-center flex-wrap"
+            >
+              <div class="pe-1 mb-2">
+                <a
+                  href="#"
+                  class="btn btn-outline-light bg-white btn-icon me-1"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  aria-label="Refresh"
+                  data-bs-original-title="Refresh"
+                >
+                  <i class="ti ti-refresh"></i>
+                </a>
+              </div>
+              <div class="pe-1 mb-2">
+                <button
+                  type="button"
+                  class="btn btn-outline-light bg-white btn-icon me-1"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  aria-label="Print"
+                  data-bs-original-title="Print"
+                >
+                  <i class="ti ti-printer"></i>
+                </button>
+              </div>
+              <div class="dropdown me-2 mb-2">
+                <a
+                  href="javascript:void(0);"
+                  class="dropdown-toggle btn btn-light fw-medium d-inline-flex align-items-center"
+                  data-bs-toggle="dropdown"
+                >
+                  <i class="ti ti-file-export me-2"></i>Export
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end p-3">
+                  <li>
+                    <a
+                      href="javascript:void(0);"
+                      class="dropdown-item rounded-1"
+                      ><i class="ti ti-file-type-pdf me-2"></i>Export as PDF</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0);"
+                      class="dropdown-item rounded-1"
+                      ><i class="ti ti-file-type-xls me-2"></i>Export as Excel
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mb-2">
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#add_message"
+                  class="btn btn-primary d-flex align-items-center"
+                  ><i class="ti ti-square-rounded-plus me-2"></i>Add Message</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- /Page Header -->
 
-<body>
+          <div
+            class="d-flex align-items-center justify-content-end flex-wrap mb-2"
+          >
+            <div class="form-check me-2 mb-3">
+              <input class="form-check-input" type="checkbox" />
+              <span class="checkmarks">Mark & Delete All</span>
+            </div>
+            <div class="d-flex align-items-center flex-wrap">
+              <div class="input-icon-start mb-3 me-2 position-relative">
+                <span class="icon-addon">
+                  <i class="ti ti-calendar"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control date-range bookingrange"
+                  placeholder="Select"
+                  value="Academic Year : 2024 / 2025"
+                />
+              </div>
+              <div class="dropdown mb-3">
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-outline-light bg-white dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  data-bs-auto-close="outside"
+                  ><i class="ti ti-filter me-2"></i>Filter</a
+                >
+                <div class="dropdown-menu drop-width">
+                  <form action="notice-board.html">
+                    <div class="d-flex align-items-center border-bottom p-3">
+                      <h4>Filter</h4>
+                    </div>
+                    <div class="p-3 border-bottom pb-0">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <label class="form-label">Message to</label>
+                            <select class="select">
+                              <option>Select</option>
+                              <option>Staff</option>
+                              <option>Student</option>
+                              <option>Teacher</option>
+                              <option>Parent</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <label class="form-label">Added Date</label>
+                            <select class="select">
+                              <option>Select</option>
+                              <option>15 May 2024</option>
+                              <option>16 May 2024</option>
+                              <option>17 May 2024</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="p-3 d-flex align-items-center justify-content-end"
+                    >
+                      <a href="#" class="btn btn-light me-3">Reset</a>
+                      <button type="submit" class="btn btn-primary">
+                        Apply
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
-	<!-- Main Wrapper -->
-	<div class="main-wrapper">
+          <!-- Notice Board List -->
+          <% galleryData?.map((gallery)=>{ %>
+          <div class="card board-hover mb-3">
+            <div
+              class="card-body d-md-flex align-items-center justify-content-between pb-1"
+            >
+              <div class="d-flex align-items-center mb-3">
+                <div class="form-check form-check-md me-2">
+                  <input class="form-check-input" type="checkbox" />
+                </div>
+                <span
+                  class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0"
+                >
+                  <img src="<%= gallery?.gallery_image_uri%>" alt="img" />
+                </span>
+                <div>
+                  <h6 class="mb-1 fw-semibold">
+                    <a
+                      href="#"
+                      data-bs-toggle="modal"
+                      data-bs-target="#view_details"
+                      data-galleryData="<%= JSON.stringify(gallery) %>"
+                      ><%= gallery?.gallery_title%></a
+                    >
+                  </h6>
+                  <p>
+                    <i class="ti ti-calendar me-1"></i>Added on :
+                    <%=gallery?.gallery_created_on%>
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center board-action mb-3">
+                <a
+                  href="javascript:void(0);"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_message"
+                  data-galleryData="<%= JSON.stringify(gallery) %>"
+                  class="text-primary border rounded p-1 badge me-1 primary-btn-hover"
+                >
+                  <i class="ti ti-edit-circle fs-16"></i>
+                </a>
+                <a
+                  href="javascript:void(0);"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete-modal"
+                  data-id="<%= gallery?.gallery_id%>"
+                  class="text-danger border rounded p-1 badge danger-btn-hover"
+                >
+                  <i class="ti ti-trash-x fs-16"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <!-- /Page Wrapper -->
 
-       <%- include('header') %>
-        <!-- /Header -->
+      <!-- Add Messase -->
+      <div class="modal fade" id="add_message">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">New Gallery</h4>
+              <button
+                type="button"
+                class="btn-close custom-btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="ti ti-x"></i>
+              </button>
+            </div>
+            <form onsubmit="return false" id="galleryForm">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <label class="form-label">Gallery General Title</label>
+                      <input
+                        type="text"
+                        name="gallery_title"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <div class="bg-light p-3 pb-2 rounded">
+                        <div class="mb-3">
+                          <label class="form-label">Attachment</label>
+                          <p>
+                            Upload size of 4MB, Accepted Format PNG,JPEG,JPG
+                          </p>
+                        </div>
+                        <div class="d-flex align-items-center flex-wrap">
+                          <div
+                            class="btn btn-primary drag-upload-btn mb-2 me-2"
+                          >
+                            <i class="ti ti-file-upload me-1"></i>Upload
+                            <input
+                              type="file"
+                              class="form-control image_sign"
+                              multiple="false"
+                              name="gallery_image_uri"
+                              onchange="handleUploadImage(event)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Description</label>
+                      <textarea
+                        class="form-control"
+                        rows="4"
+                        name="gallery_description"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="btn btn-light me-2" data-bs-dismiss="modal"
+                  >Cancel</a
+                >
+                <button type="submit" class="btn btn-primary" id="add_gallery">
+                  Add New Mesaage
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /Add Messase -->
 
-        <!-- Sidebar -->
-       <%- include('sidebar') %>
+      <!-- Edit Messase -->
+      <div class="modal fade" id="edit_message">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Gallery</h4>
+              <button
+                type="button"
+                class="btn-close custom-btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="ti ti-x"></i>
+              </button>
+            </div>
+            <form onsubmit="return false" id="galleryForm">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <label class="form-label">Gallery General Title</label>
+                      <input
+                        type="text"
+                        name="gallery_title"
+                        class="form-control"
+                        id="gallery_title"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <div class="bg-light p-3 pb-2 rounded">
+                        <div class="mb-3">
+                          <label class="form-label">Attachment</label>
+                          <p>
+                            Upload size of 4MB, Accepted Format PNG,JPEG,JPG
+                          </p>
+                        </div>
+                        <div class="d-flex align-items-center flex-wrap">
+                          <div
+                            class="btn btn-primary drag-upload-btn mb-2 me-2"
+                          >
+                            <i class="ti ti-file-upload me-1"></i>Upload
+                            <input
+                              type="file"
+                              class="form-control image_sign"
+                              multiple="false"
+                              name="gallery_image_uri"
+                              onchange="handleUploadImage(event)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Description</label>
+                      <textarea
+                        class="form-control"
+                        rows="4"
+                        name="gallery_description"
+                        id="gallery_description"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="btn btn-light me-2" data-bs-dismiss="modal"
+                  >Cancel</a
+                >
+                <button type="submit" class="btn btn-primary" id="add_gallery">
+                  Add New Mesaage
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /Edit Messase -->
 
+      <!-- View Details -->
+      <div class="modal fade" id="view_details">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Gallery Info</h4>
+              <button
+                type="button"
+                class="btn-close custom-btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="ti ti-x"></i>
+              </button>
+            </div>
+            <div class="modal-body pb-0">
+              <div class="mb-3">
+                <p id="gallery_title"></p>
+                <p id="gallery_description"></p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Created Date</label>
+                    <p
+                      class="d-flex align-items-center"
+                      id="gallery_created_on"
+                    ></p>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="p-3 pb-2 rounded">
+                  <div class="mb-0">
+                    <img src="" id="gallery_image_uri" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /View Details -->
+      </div>
+      <!-- /Main Wrapper -->
 
-		<!-- Page Wrapper -->
-		<div class="page-wrapper">
-			<div class="content content-two">
+      <!-- Delete Modal -->
+      <div class="modal fade" id="delete-modal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <form action="notice-board.html">
+              <div class="modal-body text-center">
+                <span class="delete-icon">
+                  <i class="ti ti-trash-x"></i>
+                </span>
+                <h4>Confirm Deletion</h4>
+                <p>
+                  You want to delete the gallery, this cant be undone once you
+                  delete.
+                </p>
+                <div class="d-flex justify-content-center">
+                  <a
+                    href="javascript:void(0);"
+                    class="btn btn-light me-3"
+                    data-bs-dismiss="modal"
+                    >Cancel</a
+                  >
+                  <button
+                    type="submit"
+                    class="btn btn-danger"
+                    onclick="deleteGallery()"
+                  >
+                    Yes, Delete
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /Delete Modal -->
+    </div>
 
-				<!-- Page Header -->
-				<div class="d-md-flex d-block align-items-center justify-content-between mb-3">
-					<div class="my-auto mb-2">
-						<h3 class="page-title mb-1">Notice Board</h3>
-						<nav>
-							<ol class="breadcrumb mb-0">
-								<li class="breadcrumb-item">
-									<a href="index.html">Dashboard</a>
-								</li>
-								<li class="breadcrumb-item">Announcement</li>
-								<li class="breadcrumb-item active" aria-current="page">Notice
-									Board</li>
-							</ol>
-						</nav>
-					</div>
-					<div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
-						<div class="pe-1 mb-2">
-							<a href="#" class="btn btn-outline-light bg-white btn-icon me-1" data-bs-toggle="tooltip"
-								data-bs-placement="top" aria-label="Refresh" data-bs-original-title="Refresh">
-								<i class="ti ti-refresh"></i>
-							</a>
-						</div>
-						<div class="pe-1 mb-2">
-							<button type="button" class="btn btn-outline-light bg-white btn-icon me-1"
-								data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Print"
-								data-bs-original-title="Print">
-								<i class="ti ti-printer"></i>
-							</button>
-						</div>
-						<div class="dropdown me-2 mb-2">
-							<a href="javascript:void(0);"
-								class="dropdown-toggle btn btn-light fw-medium d-inline-flex align-items-center"
-								data-bs-toggle="dropdown">
-								<i class="ti ti-file-export me-2"></i>Export
-							</a>
-							<ul class="dropdown-menu  dropdown-menu-end p-3">
-								<li>
-									<a href="javascript:void(0);" class="dropdown-item rounded-1"><i
-											class="ti ti-file-type-pdf me-2"></i>Export as PDF</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" class="dropdown-item rounded-1"><i
-											class="ti ti-file-type-xls me-2"></i>Export as Excel </a>
-								</li>
-							</ul>
-						</div>
-						<div class="mb-2">
-							<a href="#" data-bs-toggle="modal" data-bs-target="#add_message"
-								class="btn btn-primary d-flex align-items-center"><i
-									class="ti ti-square-rounded-plus me-2"></i>Add Message</a>
-						</div>
-					</div>
-				</div>
-				<!-- /Page Header -->
+    <script src="js/api.js"></script>
+    <script src="js/uploadFile.js"></script>
 
-				<div class="d-flex align-items-center justify-content-end flex-wrap mb-2">
-					<div class="form-check me-2 mb-3">
-						<input class="form-check-input" type="checkbox">
-						<span class="checkmarks">Mark & Delete All</span>
-					</div>
-					<div class="d-flex align-items-center flex-wrap">
-						<div class="input-icon-start mb-3 me-2 position-relative">
-							<span class="icon-addon">
-								<i class="ti ti-calendar"></i>
-							</span>
-							<input type="text" class="form-control date-range bookingrange" placeholder="Select"
-								value="Academic Year : 2024 / 2025">
-						</div>
-						<div class="dropdown mb-3">
-							<a href="javascript:void(0);" class="btn btn-outline-light bg-white dropdown-toggle"
-								data-bs-toggle="dropdown" data-bs-auto-close="outside"><i
-									class="ti ti-filter me-2"></i>Filter</a>
-							<div class="dropdown-menu drop-width">
-								<form action="notice-board.html">
-									<div class="d-flex align-items-center border-bottom p-3">
-										<h4>Filter</h4>
-									</div>
-									<div class="p-3 border-bottom pb-0">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="mb-3">
-													<label class="form-label">Message to</label>
-													<select class="select">
-														<option>Select</option>
-														<option>Staff</option>
-														<option>Student</option>
-														<option>Teacher</option>
-														<option>Parent</option>
-													</select>
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="mb-3">
-													<label class="form-label">Added Date</label>
-													<select class="select">
-														<option>Select</option>
-														<option>15 May 2024</option>
-														<option>16 May 2024</option>
-														<option>17 May 2024</option>
-													</select>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="p-3 d-flex align-items-center justify-content-end">
-										<a href="#" class="btn btn-light me-3">Reset</a>
-										<button type="submit" class="btn btn-primary">Apply</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
+    <script>
+      let galleryImage = undefined;
+      let currGalleryId = undefined;
+      const BACKEND_URL = "<%= BACKEND_URL %>";
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold">
-									<a href="#" data-bs-toggle="modal" data-bs-target="#view_details">Classes
-										Preparation</a>
-								</h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 24 May 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+      const deleteModal = document.getElementById("delete-modal");
+      const view_details = document.getElementById("view_details");
+      const edit_message = document.getElementById("edit_message");
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold"><a href="#" data-bs-toggle="modal"
-										data-bs-target="#view_details">Fees Reminder</a></h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 12 May 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+      edit_message.addEventListener("show.bs.modal", function (event) {
+        const trigger = event.relatedTarget;
+        let galleryData = trigger.getAttribute("data-galleryData");
+        galleryData = JSON.parse(galleryData);
+        document.getElementById("gallery_title").value =
+          galleryData?.gallery_title;
+        document.getElementById("gallery_description").value =
+          galleryData?.gallery_description;
+      });
+      view_details.addEventListener("show.bs.modal", function (event) {
+        const trigger = event.relatedTarget;
+        let galleryData = trigger.getAttribute("data-galleryData");
+        galleryData = JSON.parse(galleryData);
+        document.getElementById("gallery_title").innerHTML =
+          galleryData?.gallery_title;
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold"><a href="#" data-bs-toggle="modal"
-										data-bs-target="#view_details">Parents Teacher Meeting</a></h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 10 May 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+        document.getElementById("gallery_description").innerHTML =
+          galleryData?.gallery_description;
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold"><a href="#" data-bs-toggle="modal"
-										data-bs-target="#view_details">New Academic Session For Admission
-										(2024-25)</a></h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 28 Apr 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+        document.getElementById("gallery_image_uri").src =
+          galleryData?.gallery_image_uri;
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold"><a href="#" data-bs-toggle="modal"
-										data-bs-target="#view_details">Staff Meeting</a></h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 23 Apr 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+        document.getElementById("gallery_created_on").innerHTML =
+          '<i class="ti ti-calendar me-1"></i>' +
+          galleryData?.gallery_created_on;
+      });
+      deleteModal.addEventListener("show.bs.modal", function (event) {
+        const trigger = event.relatedTarget;
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold"><a href="#" data-bs-toggle="modal"
-										data-bs-target="#view_details">World Environment Day
-										Program.....!!!</a></h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 21 Apr 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+        const id = trigger.getAttribute("data-id");
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold"><a href="#" data-bs-toggle="modal"
-										data-bs-target="#view_details">New Syllabus Instructions</a></h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 11 Mar 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+        currGalleryId = id;
+      });
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold"><a href="#" data-bs-toggle="modal"
-										data-bs-target="#view_details">Exam Preparation
-										Notification!</a></h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 18 Mar 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+      const deleteGallery = async () => {
+        if (!currGalleryId) {
+          return;
+        }
+        const deleteGalleryResponse = await fetchWithTimeout(
+          `${BACKEND_URL}/gallery/delete_gallery_details?gallery_id=${currGalleryId}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const deleteResponseData = await deleteGalleryResponse.json();
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold"><a href="#" data-bs-toggle="modal"
-										data-bs-target="#view_details">Gandhi Jayanti Programmed</a></h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 16 Feb 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+        if (deleteResponseData?.success) {
+          location.reload();
+        }
+      };
 
-				<!-- Notice Board List -->
-				<div class="card board-hover mb-3">
-					<div class="card-body d-md-flex align-items-center justify-content-between pb-1">
-						<div class="d-flex align-items-center mb-3">
-							<div class="form-check form-check-md me-2">
-								<input class="form-check-input" type="checkbox">
-							</div>
-							<span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
-								<i class="ti ti-notification fs-16"></i>
-							</span>
-							<div>
-								<h6 class="mb-1 fw-semibold"><a href="#" data-bs-toggle="modal"
-										data-bs-target="#view_details">Republic Day Celebration</a></h6>
-								<p><i class="ti ti-calendar me-1"></i>Added on : 24 Jan 2024</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-center board-action mb-3">
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
-								class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
-								<i class="ti ti-edit-circle fs-16"></i>
-							</a>
-							<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
-								class="text-danger border rounded p-1 badge danger-btn-hover">
-								<i class="ti ti-trash-x fs-16"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Notice Board List -->
+      const handleUploadImage = async (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          const maxSize = 4 * 1024 * 1024; // 4MB
+          if (file.size > maxSize) {
+            alert("File size exceeds 4MB.");
+            return;
+          }
+        }
+        galleryImage = await uploadFile(file, "/gallery/image", BACKEND_URL);
+      };
 
-				<div class="text-center">
-					<a href="#" class="btn btn-primary"><i class="ti ti-loader-3 me-2"></i>Load More</a>
-				</div>
+      document
+        .getElementById("add_gallery")
+        .addEventListener("click", async (event) => {
+          event.preventDefault();
+          const galleryForm = document.getElementById("galleryForm");
+          const formData = new FormData(galleryForm);
+          let payload = {};
+          for (const [key, value] of formData.entries()) {
+            payload[key] = value instanceof File ? value.name : value;
+          }
+          payload["gallery_image_uri"] = galleryImage;
 
-			</div>
-		</div>
-		<!-- /Page Wrapper -->
+          const saveImageResponse = await fetchWithTimeout(
+            `${BACKEND_URL}/gallery/update_gallery_details`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            }
+          );
+          const data = await saveImageResponse.json();
+          if (!data?.success) {
+            //handle error
+          }
+          galleryImage = undefined;
+          location.reload();
+        });
+    </script>
 
-		<!-- Add Messase -->
-		<div class="modal fade" id="add_message">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title">New Message</h4>
-						<button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal"
-							aria-label="Close">
-							<i class="ti ti-x"></i>
-						</button>
-					</div>
-					<form action="notice-board.html">
-						<div class="modal-body">
-							<div class="row">
-								<div class="col-md-12">
-									<div class="mb-3">
-										<label class="form-label">Title</label>
-										<input type="text" class="form-control">
-									</div>
-									<div class="mb-3">
-										<label class="form-label">Notice Date</label>
-										<div class="date-pic">
-											<input type="text" class="form-control datetimepicker">
-											<span class="cal-icon"><i class="ti ti-calendar"></i></span>
-										</div>
-									</div>
-									<div class="mb-3">
-										<label class="form-label">Publish On</label>
-										<div class="date-pic">
-											<input type="text" class="form-control datetimepicker">
-											<span class="cal-icon"><i class="ti ti-calendar"></i></span>
-										</div>
-									</div>
-									<div class="mb-3">
-										<div class="bg-light p-3 pb-2 rounded">
-											<div class="mb-3">
-												<label class="form-label">Attachment</label>
-												<p>Upload size of 4MB, Accepted Format PDF</p>
-											</div>
-											<div class="d-flex align-items-center flex-wrap">
-												<div class="btn btn-primary drag-upload-btn mb-2 me-2">
-													<i class="ti ti-file-upload me-1"></i>Upload
-													<input type="file" class="form-control image_sign" multiple="">
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="mb-3">
-										<label class="form-label">Message</label>
-										<textarea class="form-control" rows="4"></textarea>
-									</div>
-									<div class="mb-0">
-										<label class="form-label">Message To</label>
-										<div class="row">
-											<div class="col-md-6">
-												<label class="checkboxs mb-1">
-													<input type="checkbox">
-													<span class="checkmarks"></span>
-													Student
-												</label>
-												<label class="checkboxs mb-1">
-													<input type="checkbox">
-													<span class="checkmarks"></span>
-													Parent
-												</label>
-												<label class="checkboxs mb-1">
-													<input type="checkbox">
-													<span class="checkmarks"></span>
-													Admin
-												</label>
-												<label class="checkboxs mb-1">
-													<input type="checkbox">
-													<span class="checkmarks"></span>
-													Teacher
-												</label>
-											</div>
-											<div class="col-md-6">
-												<label class="checkboxs mb-1">
-													<input type="checkbox">
-													<span class="checkmarks"></span>
-													Accountant
-												</label>
-												<label class="checkboxs mb-1">
-													<input type="checkbox">
-													<span class="checkmarks"></span>
-													Librarian
-												</label>
-												<label class="checkboxs mb-1">
-													<input type="checkbox">
-													<span class="checkmarks"></span>
-													Receptionist
-												</label>
-												<label class="checkboxs mb-1">
-													<input type="checkbox">
-													<span class="checkmarks"></span>
-													Super Admin
-												</label>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<a href="#" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</a>
-							<button type="submit" class="btn btn-primary">Add New Mesaage</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- /Add Messase -->
+    <!-- jQuery -->
+    <script
+      src="assets/js/jquery-3.7.1.min.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
 
-		<!-- Edit Messase -->
-		<div class="modal fade" id="edit_message">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title">Edit Message</h4>
-						<button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal"
-							aria-label="Close">
-							<i class="ti ti-x"></i>
-						</button>
-					</div>
-					<form action="notice-board.html">
-						<div class="modal-body">
-							<div class="row">
-								<div class="col-md-12">
-									<div class="mb-3">
-										<label class="form-label">Title</label>
-										<input type="text" class="form-control" placeholder="Enter Title"
-											value="Fees Reminder">
-									</div>
-									<div class="mb-3">
-										<label class="form-label">Notice Date</label>
-										<div class="date-pic">
-											<input type="text" class="form-control datetimepicker"
-												placeholder="15 May 2024">
-											<span class="cal-icon"><i class="ti ti-calendar"></i></span>
-										</div>
-									</div>
-									<div class="mb-3">
-										<label class="form-label">Publish On</label>
-										<div class="date-pic">
-											<input type="text" class="form-control datetimepicker"
-												placeholder="15 May 2024">
-											<span class="cal-icon"><i class="ti ti-calendar"></i></span>
-										</div>
-									</div>
-									<div class="mb-3">
-										<div class="bg-light p-3 pb-2 rounded">
-											<div class="mb-3">
-												<label class="form-label">Attachment</label>
-												<p>Upload size of 4MB, Accepted Format PDF</p>
-											</div>
-											<div class="d-flex align-items-center flex-wrap">
-												<div class="btn btn-primary drag-upload-btn mb-2 me-2">
-													<i class="ti ti-file-upload me-1"></i>Upload
-													<input type="file" class="form-control image_sign" multiple="">
-												</div>
-												<p class="mb-2">Fees_Structure.pdf</p>
-											</div>
-										</div>
-									</div>
-									<div class="mb-3">
-										<label class="form-label">Message</label>
-										<textarea class="form-control" rows="4"
-											placeholder="Add Comment">Please clear the outstanding dues for the school fees on the urgent basis.</textarea>
-									</div>
-									<div class="mb-0">
-										<label class="form-label">Message To</label>
-										<div class="row">
-											<div class="col-md-6">
-												<div class="form-check form-check-md mb-1">
-													<input class="form-check-input" type="checkbox">
-													<span>Student</span>
-												</div>
-												<div class="form-check form-check-md mb-1">
-													<input class="form-check-input" type="checkbox">
-													<span>Parent</span>
-												</div>
-												<div class="form-check form-check-md mb-1">
-													<input class="form-check-input" type="checkbox">
-													<span>Admin</span>
-												</div>
-												<div class="form-check form-check-md">
-													<input class="form-check-input" type="checkbox">
-													<span>Teacher</span>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-check form-check-md mb-1">
-													<input class="form-check-input" type="checkbox">
-													<span>Accountant</span>
-												</div>
-												<div class="form-check form-check-md mb-1">
-													<input class="form-check-input" type="checkbox">
-													<span>Librarian</span>
-												</div>
-												<div class="form-check form-check-md mb-1">
-													<input class="form-check-input" type="checkbox">
-													<span>Receptionist</span>
-												</div>
-												<div class="form-check form-check-md">
-													<input class="form-check-input" type="checkbox">
-													<span>Super Admin</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<a href="#" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</a>
-							<button type="submit" class="btn btn-primary">Save Changes</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- /Edit Messase -->
+    <!-- Bootstrap Core JS -->
+    <script
+      src="assets/js/bootstrap.bundle.min.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
 
-		<!-- View Details -->
-		<div class="modal fade" id="view_details">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title">Fees Reminder</h4>
-						<button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal"
-							aria-label="Close">
-							<i class="ti ti-x"></i>
-						</button>
-					</div>
-					<div class="modal-body pb-0">
-						<div class="mb-3">
-							<p class="mb-1">Dear parents,</p>
-							<p>Please clear the outstanding dues for the school fees on the urgent
-								basis.</p>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="mb-3">
-									<label class="form-label">Notice Date</label>
-									<p class="d-flex align-items-center"><i class="ti ti-calendar me-1"></i>15 May 2024
-									</p>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="mb-3">
-									<label class="form-label">Publish On</label>
-									<p class="d-flex align-items-center"><i class="ti ti-calendar me-1"></i>21 May 2024
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="mb-3">
-							<div class="bg-light p-3 pb-2 rounded">
-								<div class="mb-0">
-									<label class="form-label">Attachment</label>
-									<p class="text-primary">Fees_Structure.pdf</p>
-								</div>
-							</div>
-						</div>
-						<div class="mb-3">
-							<label class="form-label d-block">Message To</label>
-							<span class="badge badge-soft-primary me-2">Student</span>
-							<span class="badge badge-soft-primary">Parent</span>
-						</div>
-						<div class="border-top pt-3">
-							<div class="d-flex align-items-center flex-wrap">
-								<div class="d-flex align-items-center me-4 mb-3">
-									<span class="avatar avatar-sm bg-light me-1"><i
-											class="ti ti-calendar text-default fs-14"></i></span>Added on: 28 Apr 2024
-								</div>
-								<div class="d-flex align-items-center mb-3">
-									<span class="avatar avatar-sm bg-light me-1"><i
-											class="ti ti-user-edit text-default fs-14"></i></span>Added By
-									: Daniel
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /View Details -->
+    <!-- Daterangepikcer JS -->
+    <script
+      src="assets/js/moment.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
+    <script
+      src="assets/plugins/daterangepicker/daterangepicker.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
+    <script
+      src="assets/js/bootstrap-datetimepicker.min.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
 
-		</div>
-		<!-- /Main Wrapper -->
+    <!-- Feather Icon JS -->
+    <script
+      src="assets/js/feather.min.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
 
-		<!-- Delete Modal -->
-		<div class="modal fade" id="delete-modal">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<form action="notice-board.html">
-						<div class="modal-body text-center">
-							<span class="delete-icon">
-								<i class="ti ti-trash-x"></i>
-							</span>
-							<h4>Confirm Deletion</h4>
-							<p>You want to delete all the marked items, this cant be undone once you
-								delete.</p>
-							<div class="d-flex justify-content-center">
-								<a href="javascript:void(0);" class="btn btn-light me-3"
-									data-bs-dismiss="modal">Cancel</a>
-								<button type="submit" class="btn btn-danger">Yes, Delete</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- /Delete Modal -->
+    <!-- Slimscroll JS -->
+    <script
+      src="assets/js/jquery.slimscroll.min.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
 
-	</div>
+    <!-- Datatable JS -->
+    <script
+      src="assets/js/jquery.dataTables.min.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
+    <script
+      src="assets/js/dataTables.bootstrap5.min.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
 
-	<!-- jQuery -->
-	<script src="assets/js/jquery-3.7.1.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
+    <!-- Select2 JS -->
+    <script
+      src="assets/plugins/select2/js/select2.min.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
 
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
+    <!-- Custom JS -->
+    <script
+      src="assets/js/script.js"
+      type="563627d34f06b593c6cb729a-text/javascript"
+    ></script>
 
-	<!-- Daterangepikcer JS -->
-	<script src="assets/js/moment.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
-	<script src="assets/plugins/daterangepicker/daterangepicker.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
-
-	<!-- Feather Icon JS -->
-	<script src="assets/js/feather.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
-
-	<!-- Slimscroll JS -->
-	<script src="assets/js/jquery.slimscroll.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
-
-	<!-- Datatable JS -->
-	<script src="assets/js/jquery.dataTables.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
-	<script src="assets/js/dataTables.bootstrap5.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
-
-	<!-- Select2 JS -->
-	<script src="assets/plugins/select2/js/select2.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
-
-	<!-- Custom JS -->
-	<script src="assets/js/script.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
-
-
-<script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="563627d34f06b593c6cb729a-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9617610df9d47e91","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"3ca157e612a14eccbb30cf6db6691c29"}' crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+      data-cf-settings="563627d34f06b593c6cb729a-|49"
+      defer
+    ></script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+      data-cf-beacon='{"rayId":"9617610df9d47e91","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"3ca157e612a14eccbb30cf6db6691c29"}'
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
