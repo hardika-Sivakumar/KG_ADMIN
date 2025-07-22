@@ -34,8 +34,7 @@ app.get("/student_lists", async (req, res) => {
     const studentList = await getStudentDetails(headers, {
         get_all: true
     });
-    if (!studentList.success) {
-        //handle 500 server error
+    if (!studentList.success) {    //handle 500 server error
         return
     }
     return res.render('student-list', { studentData: studentList?.students });

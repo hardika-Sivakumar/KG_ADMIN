@@ -46,6 +46,51 @@
 </head>
 
 <body>
+<!-- Modal -->
+<div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-2">
+      <div class="modal-header">
+        <h5 class="modal-title">Student Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex mb-3">
+          <img id="modalPhoto" class="rounded-circle me-3" width="80" height="80" alt="Student Photo">
+          <div>
+            <h5 id="modalName"></h5>
+            <p>ID: <span id="modalId"></span></p>
+            <p>Status: <span id="modalStatus" class="badge"></span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"><strong>Gender:</strong> <span id="modalGender"></span></div>
+          <div class="col-md-6"><strong>DOB:</strong> <span id="modalDob"></span></div>
+          <div class="col-md-6"><strong>Class:</strong> <span id="modalClass"></span></div>
+          <div class="col-md-6"><strong>Section:</strong> <span id="modalSection"></span></div>
+          <div class="col-md-6"><strong>Roll No:</strong> <span id="modalRoll"></span></div>
+          <div class="col-md-6"><strong>Mother Tongue:</strong> <span id="modalMotherTongue"></span></div>
+          <div class="col-md-6"><strong>Religion:</strong> <span id="modalReligion"></span></div>
+          <div class="col-md-6"><strong>Caste:</strong> <span id="modalCaste"></span></div>
+        </div>
+        <hr>
+        <h6>Parent Details</h6>
+        <div class="row">
+          <div class="col-md-6"><strong>Father Name:</strong> <span id="modalFather"></span></div>
+          <div class="col-md-6"><strong>Mother Name:</strong> <span id="modalMother"></span></div>
+          <div class="col-md-6"><strong>Contact No:</strong> <span id="modalParentContact"></span></div>
+          <div class="col-md-6"><strong>Email:</strong> <span id="modalParentEmail"></span></div>
+          <div class="col-md-6"><strong>Guardian Contact:</strong> <span id="modalGuardianContact"></span></div>
+        </div>
+        <hr>
+        <h6>Certificates</h6>
+        <p><a id="modalBirthCertificate" href="#" target="_blank">View Birth Certificate</a></p>
+        <p><strong>Other Notes:</strong> <span id="modalNotes"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Main Wrapper -->
     <div class="main-wrapper">
@@ -293,7 +338,7 @@
      <div class="card-body p-0 py-3" id="list-view">
 
                         <!-- Student List -->
-                        <div class="custom-datatable-filter table-responsive">
+                        <div class="custom-datatable-filter table-responsive" style="height:100vh">
                             <table class="table datatable">
                                 <thead class="thead-light">
                                     <tr>
@@ -355,10 +400,16 @@
 														<i class="ti ti-dots-vertical fs-14"></i>
 													</a>
                                                     <ul class="dropdown-menu dropdown-menu-right p-3">
-                                                        <li>
-                                                            <a class="dropdown-item rounded-1" href="student-details.html"><i
-																	class="ti ti-menu me-2"></i>View Student</a>
-                                                        </li>
+                                                       <li>
+  <a href="#"
+     class="dropdown-item rounded-1 view-student"
+     data-bs-toggle="modal"
+     data-bs-target="#studentModal"
+     data-student='<%- JSON.stringify(student) %>'>
+    <i class="ti ti-menu me-2"></i>View Student
+  </a>
+</li>
+
                                                         <li>
                                                             <a class="dropdown-item rounded-1" href="edit-student.html"><i
 																	class="ti ti-edit-circle me-2"></i>Edit</a>
@@ -395,6 +446,53 @@
         </div>
         <!-- /Page Wrapper -->
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("studentModal");
+
+    modal.addEventListener("show.bs.modal", function (event) {
+      const trigger = event.relatedTarget;
+      const studentRaw = trigger.getAttribute("data-student");
+      const student = JSON.parse(studentRaw);
+
+      // Basic Info
+      document.getElementById("modalPhoto").src = student.student_profile_photo || "";
+      document.getElementById("modalName").textContent = `${student.first_name} ${student.last_name}`;
+      document.getElementById("modalId").textContent = student.student_id;
+      document.getElementById("modalGender").textContent = student.gender || "-";
+      document.getElementById("modalDob").textContent = student.date_of_birth || "-";
+      document.getElementById("modalMotherTongue").textContent = student.mother_tongue || "-";
+      document.getElementById("modalReligion").textContent = student.religion || "-";
+      document.getElementById("modalCaste").textContent = student.caste || "-";
+      document.getElementById("modalNotes").textContent = student.other_notes || "-";
+
+      // Class Info
+      document.getElementById("modalClass").textContent = student.student_class?.class_name || "-";
+      document.getElementById("modalSection").textContent = student.student_class?.section || "-";
+      document.getElementById("modalRoll").textContent = student.student_class?.roll_no || "-";
+
+      // Parent Info
+      document.getElementById("modalFather").textContent = student.student_parent?.father_name || "-";
+      document.getElementById("modalMother").textContent = student.student_parent?.mother_name || "-";
+      document.getElementById("modalParentContact").textContent = student.student_parent?.parent_contact_no || "-";
+      document.getElementById("modalParentEmail").textContent = student.student_parent?.email || "-";
+      document.getElementById("modalGuardianContact").textContent = student.student_parent?.guardian_contact_no || "-";
+
+      // Certificate
+      document.getElementById("modalBirthCertificate").href = student.student_birth_certificate || "#";
+
+      // Status badge
+      const statusBadge = document.getElementById("modalStatus");
+      if (student.student_status) {
+        statusBadge.textContent = "Active";
+        statusBadge.className = "badge bg-success";
+      } else {
+        statusBadge.textContent = "Inactive";
+        statusBadge.className = "badge bg-danger";
+      }
+    });
+  });
+</script>
 
 
         <!-- Delete Modal -->
