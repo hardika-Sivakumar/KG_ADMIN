@@ -98,6 +98,10 @@ app.get("/event_lists", async (req, res) => {
     return res.render('event-list', { eventData: eventList?.events });
 })
 
+app.get("/website_settings",async (req, res) => {
+    return res.render('website-settings');
+})
+
 app.locals.BACKEND_URL = CONFIG?.BACKEND_URL
 
 app.listen(CONFIG.PORT, () => {

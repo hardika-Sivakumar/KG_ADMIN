@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="Preskool - Bootstrap Admin Template">
+    <meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
+    <meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Preskool Admin</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- Theme Script js -->
+    <script src="assets/js/theme-script.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css">
+
+    <!-- Tabler Icon CSS -->
+    <link rel="stylesheet" href="assets/plugins/tabler-icons/tabler-icons.css">
+
+    <!-- Daterangepikcer CSS -->
+    <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="assets/plugins/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/plugins/owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <div id="global-loader">
+        <div class="page-loader"></div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- Header -->
+       <%- include('header') %>
+        <!-- /Header -->
+
+        <!-- Sidebar -->
+   <%- include('sidebar') %>
+        <!-- /Sidebar -->
+
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+            <div class="content bg-white">
+                <div class="d-md-flex d-block align-items-center justify-content-between border-bottom pb-3">
+                    <div class="my-auto mb-2">
+                        <h3 class="page-title mb-1">App Settings</h3>
+                        <nav>
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">Dashboard</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="javascript:void(0);">Settings</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">App Settings</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
+                        <div class="pe-1 mb-2">
+                            <a href="#" class="btn btn-outline-light bg-white btn-icon" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Refresh" data-bs-original-title="Refresh">
+								<i class="ti ti-refresh"></i>
+							</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-2 col-xl-3">
+                        <div class="pt-3 d-flex flex-column list-group mb-4">
+                            <a href="#" class="tab d-block rounded p-2 active" onclick="showSection('invoice_settings', this)">Invoice Settings</a>
+                            <a href="#" class="tab d-block rounded p-2" onclick="showSection('custom_fields', this)">Custom Fields</a>
+                        </div>
+                    </div>
+                    <div class="col-xxl-10 col-xl-9">
+                        <div class="flex-fill border-start ps-3">
+                            <form action="invoice-settings.html" id="invoice_settings">
+                                <div class="d-flex align-items-center justify-content-between flex-wrap border-bottom pt-3 mb-3">
+                                    <div class="mb-3">
+                                        <h5 class="mb-1">Invoice Settings</h5>
+                                        <p>Collection of settings for Invoice</p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button class="btn btn-light me-2" type="button">Cancel</button>
+                                        <button class="btn btn-primary" type="submit">Save</button>
+                                    </div>
+                                </div>
+                                <div class="d-md-flex d-block">
+                                    <div class="row flex-fill">
+                                        <div class="col-xl-10">
+                                            <div class="settings-middle-info invoice-setting-wrap">
+                                                <div class="row align-items-center mb-2">
+                                                    <div class="col-xxl-7 col-lg-6">
+                                                        <div class="invoice-info-title">
+                                                            <h6>Invoice Logo</h6>
+                                                            <p>Upload logo of you company to display in Invoice</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-5 col-lg-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="d-flex justify-content-between mb-3">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <span class="avatar avatar-xl border rounded d-flex align-items-center justify-content-center p-2 me-2"><img
+																				src="assets/img/logo-small.svg"
+																				alt="Img"></span>
+                                                                        <h5>Logo</h5>
+                                                                    </div>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <a href="javascript:void(0);" class="text-primary border rounded fs-16 p-1 badge badge-primary-hover me-2"><i
+																				class="ti ti-edit-circle"></i></a>
+                                                                        <a href="javascript:void(0);" class="text-danger border rounded fs-16 p-1 badge badge-danger-hover"><i
+																				class="ti ti-trash-x"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="profile-uploader profile-uploader-two mb-0">
+                                                                    <span class="d-block text-center lh-1 fs-24 mb-1"><i
+																			class="ti ti-upload"></i></span>
+                                                                    <div class="drag-upload-btn bg-transparent me-0 border-0">
+                                                                        <p class="fs-12 mb-2"><span class="text-primary">Click to
+																				Upload</span> or drag and drop
+                                                                        </p>
+                                                                        <h6>JPG or PNG</h6>
+                                                                        <h6>(Max 450 x 450 px)</h6>
+                                                                    </div>
+                                                                    <input type="file" class="form-control" multiple="" id="image_sign">
+                                                                    <div id="frames"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
+                                                    <div class="row align-items-center flex-fill">
+                                                        <div class="col-xxl-7 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <h6>Invoice Prefix</h6>
+                                                                <p>Add prefix to your Invoice</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-5 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
+                                                    <div class="row align-items-center flex-fill">
+                                                        <div class="col-xxl-7 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <h6>Invoice Due</h6>
+                                                                <p>Select due date to display in Invoice </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-5 col-lg-6">
+                                                            <div class="mb-3 d-flex align-items-center">
+                                                                <div class="w-100">
+                                                                    <select class="select">
+																		<option>5</option>
+																		<option>4</option>
+																		<option>3</option>
+																	</select>
+                                                                </div>
+                                                                <span class="ms-3 d-block">Days</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
+                                                    <div class="row align-items-center flex-fill">
+                                                        <div class="col-xxl-7 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <h6>Invoice Round Off</h6>
+                                                                <p>Value round off in invoice</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-5 col-lg-6">
+                                                            <div class="mb-3 d-flex align-items-center">
+                                                                <div class="w-100">
+                                                                    <select class="select">
+																		<option>Roundoff Up</option>
+																		<option>Roundoff Up</option>
+																	</select>
+                                                                </div>
+                                                                <div class="status-toggle modal-status ms-3">
+                                                                    <input type="checkbox" id="user1" class="check">
+                                                                    <label for="user1" class="checktoggle"> </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
+                                                    <div class="row align-items-center flex-fill">
+                                                        <div class="col-xxl-7 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <h6>Show Company Details</h6>
+                                                                <p>Show/hide company details in invoice</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-5 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <div class="status-toggle modal-status">
+                                                                    <input type="checkbox" id="user2" class="check">
+                                                                    <label for="user2" class="checktoggle"> </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
+                                                    <div class="row align-items-center flex-fill">
+                                                        <div class="col-xxl-7 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <h6>Invoice Header Terms</h6>
+                                                                <p>Header Terms</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-5 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <textarea rows="4" class="form-control" placeholder="Add Comment"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
+                                                    <div class="row align-items-center flex-fill">
+                                                        <div class="col-xxl-7 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <h6>Invoice Footer Terms</h6>
+                                                                <p>Footer Terms</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-5 col-lg-6">
+                                                            <div class="mb-3">
+                                                                <textarea rows="4" class="form-control" placeholder="Add Comment"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                             <form action="custom-fields.html" id="custom_fields" style="display: none;">
+                                <div class="d-flex align-items-center justify-content-between flex-wrap border-bottom pt-3 mb-3">
+                                    <div class="mb-3">
+                                        <h5 class="mb-1">Custom Fields</h5>
+                                        <p>Custom Fields configuration</p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="#" class="btn btn-outline-light bg-white btn-icon me-2" data-bs-toggle="modal" data-bs-target="#add_custom_field"><i class="ti ti-plus"></i></a>
+                                        <button class="btn btn-light me-2" type="button">Cancel</button>
+                                        <button class="btn btn-primary" type="submit">Save</button>
+                                    </div>
+                                </div>
+                                <div class="d-md-flex d-block">
+                                    <div class="flex-fill">
+                                        <div class="card">
+                                            <div class="card-header d-flex align-items-center justify-content-between p-3">
+                                                <h5>Expense</h5>
+                                                <div class="d-flex align-items-center">
+                                                    <a href="#" class="btn btn-outline-light bg-white btn-icon me-2" data-bs-toggle="modal" data-bs-target="#edit_custom_field"><i class="ti ti-edit"></i></a>
+                                                    <a href="#" class="btn btn-outline-light bg-white btn-icon" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="ti ti-trash"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="card-body p-3 pb-0">
+                                                <div class="row">
+                                                    <div class="col-xl-4 pe-xl-0">
+                                                        <div class="mb-3 flex-fill me-xl-3 me-0">
+                                                            <label class="form-label">Label</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 ps-xl-0 pe-xl-0">
+                                                        <div class="mb-3 flex-fill  me-xl-3 me-0">
+                                                            <label class="form-label">Type</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 ps-xl-0">
+                                                        <div class="mb-3 flex-fill">
+                                                            <label class="form-label">Default Value</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xl-4 pe-xl-0">
+                                                        <div class="mb-3 flex-fill me-xl-3 me-0">
+                                                            <label class="form-label">Required Value</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 ps-xl-0">
+                                                        <div class="mb-3 flex-fill">
+                                                            <label class="form-label">Status</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header d-flex align-items-center justify-content-between p-3">
+                                                <h5>Transaction</h5>
+                                                <div class="d-flex align-items-center">
+                                                    <a href="#" class="btn btn-outline-light bg-white btn-icon me-2" data-bs-toggle="modal" data-bs-target="#edit_custom_field"><i class="ti ti-edit"></i></a>
+                                                    <a href="#" class="btn btn-outline-light bg-white btn-icon" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="ti ti-trash"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="card-body p-3 pb-0">
+                                                <div class="row">
+                                                    <div class="col-xl-4 pe-xl-0">
+                                                        <div class="mb-3 flex-fill me-xl-3 me-0">
+                                                            <label class="form-label">Label</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 ps-xl-0 pe-xl-0">
+                                                        <div class="mb-3 flex-fill  me-xl-3 me-0">
+                                                            <label class="form-label">Type</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 ps-xl-0">
+                                                        <div class="mb-3 flex-fill">
+                                                            <label class="form-label">Default Value</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xl-4 pe-xl-0">
+                                                        <div class="mb-3 flex-fill me-xl-3 me-0">
+                                                            <label class="form-label">Required Value</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 ps-xl-0">
+                                                        <div class="mb-3 flex-fill">
+                                                            <label class="form-label">Status</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                
+                </div>
+            </div>
+        </div>
+        <!-- /Page Wrapper -->
+<script>
+  function showSection(id, el) {
+    // Show the correct container
+    document.getElementById('invoice_settings').style.display = 'none';
+    document.getElementById('custom_fields').style.display = 'none';
+    document.getElementById(id).style.display = 'block';
+
+    // Toggle active class on tab
+    document.querySelectorAll('.tab').forEach(a => a.classList.remove('active'));
+    el.classList.add('active');
+  }
+</script>
+
+    </div>
+    <!-- /Main Wrapper -->
+  <script src="js/api.js">
+  </script>
+  <script src="js/uploadFile.js"></script>
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <!-- Daterangepikcer JS -->
+    <script src="assets/js/moment.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/plugins/daterangepicker/daterangepicker.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <!-- Chart JS -->
+    <script src="assets/plugins/apexchart/apexcharts.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/plugins/apexchart/chart-data.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <!-- Owl JS -->
+    <script src="assets/plugins/owlcarousel/owl.carousel.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <!-- Counter JS -->
+    <script src="assets/plugins/countup/jquery.counterup.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/plugins/countup/jquery.waypoints.min.js" type="299570f26b967fcbb12c0f58-text/javascript">
+    </script>
+    <script src="assets/js/jquery.dataTables.min.js" type="a41ddb779e2e984c7d703083-text/javascript"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js" type="a41ddb779e2e984c7d703083-text/javascript"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
+    <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="299570f26b967fcbb12c0f58-|49" defer></script>
+  
+</body>
+
+</html>
