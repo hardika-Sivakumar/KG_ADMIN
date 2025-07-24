@@ -7,6 +7,7 @@ const { getStudentDetails } = require("./services/studentService");
 const { getStaffDetails } = require("./services/staffService");
 const { getEventDetails } = require("./services/eventService");
 const { getGalleryDetails } = require("./services/galleryService");
+const { getSettingDetails } = require("./services/settingService");
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, ''));
 app.use(express.urlencoded({ extended: true }));
@@ -99,7 +100,30 @@ app.get("/event_lists", async (req, res) => {
 })
 
 app.get("/website_settings",async (req, res) => {
-    return res.render('website-settings');
+    const headers = {
+        'content-type': 'application/json'
+    }
+    const settingList = await getSettingDetails(headers);
+    const selectedEvent=settingList?.setting?.filter(setting=>setting.type==="event_info")
+    const selectedStaff=settingList?.setting?.filter(setting=>setting.type==="staff_info")
+
+    const eventList = await getEventDetails(headers,{get_all: true});
+
+    eventList?.events?.map((event)=>{
+        if(selectedEvent?.[0]?.event_ids?.includes(event.event_id)){
+            event.selected=true
+        }
+    })
+    console.log(eventList)
+    const staffList = await getStaffDetails(headers,{get_all: true});
+
+    staffList?.staffs?.map((staff)=>{
+        if(selectedStaff?.[0]?.staff_ids?.includes(staff?.staff_id)){
+            staff.selected=true
+        }
+    })
+    console.log(eventList,staffList,settingList)
+    return res.render('website-settings',{settingDetails:settingList?.setting ?? [],eventDetails:eventList?.events ?? [],staffDetails:staffList?.staffs ?? [],eventSettingId:selectedEvent?.[0]?.setting_id,staffSettingId:selectedStaff?.[0]?.setting_id});
 })
 
 app.locals.BACKEND_URL = CONFIG?.BACKEND_URL
