@@ -54,6 +54,54 @@
     <div id="global-loader">
         <div class="page-loader"></div>
     </div>
+<!-- Add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="addModalLabel">Add New Item</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        <form id="addForm">
+          <!-- Title -->
+          <div class="mb-3">
+            <label for="title" class="form-label fw-bold">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter title" />
+          </div>
+
+          <!-- Description -->
+          <div class="mb-3">
+            <label for="description" class="form-label fw-bold">Description</label>
+            <textarea class="form-control" id="description" rows="3" placeholder="Enter description"></textarea>
+          </div>
+
+          <!-- Image Upload -->
+          <div class="mb-3">
+            <label for="image_upload" class="form-label fw-bold">Upload Image</label>
+            <div class="profile-uploader profile-uploader-two mb-2 text-center">
+              <span class="d-block lh-1 fs-24 mb-1"><i class="ti ti-upload"></i></span>
+              <div class="drag-upload-btn bg-transparent border-0">
+                <p class="fs-12 mb-2"><span class="text-primary">Click to Upload</span> or drag and drop</p>
+                <h6>JPG or PNG (Max 450 x 450 px)</h6>
+              </div>
+              <input type="file" class="form-control" id="image_upload" accept="image/*" />
+            </div>
+            <div id="imagePreview" class="mt-3 text-center"></div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer gap-3">
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
     <!-- Main Wrapper -->
     <div class="main-wrapper">
@@ -101,7 +149,7 @@
                     </div>
                     <div class="col-xxl-10 col-xl-9">
                         <div class="flex-fill border-start ps-3">
-                            <form action="invoice-settings.html" id="invoice_settings">
+                            <div  id="invoice_settings">
                                 <div class="d-flex align-items-center justify-content-between flex-wrap border-bottom pt-3 mb-3">
                                     <div class="mb-3">
                                         <h5 class="mb-1">Invoice Settings</h5>
@@ -117,79 +165,95 @@
                                         <div class="col-xl-10">
                                             <div class="settings-middle-info invoice-setting-wrap">
                                                 <div class="row align-items-center mb-2">
-                                                    <div class="col-xxl-7 col-lg-6">
-                                                        <div class="invoice-info-title">
-                                                            <h6>Invoice Logo</h6>
-                                                            <p>Upload logo of you company to display in Invoice</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xxl-5 col-lg-6">
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div class="d-flex justify-content-between mb-3">
-                                                                    <div class="d-flex align-items-center">
-                                                                        <span class="avatar avatar-xl border rounded d-flex align-items-center justify-content-center p-2 me-2"><img
-																				src="assets/img/logo-small.svg"
-																				alt="Img"></span>
-                                                                        <h5>Logo</h5>
-                                                                    </div>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <a href="javascript:void(0);" class="text-primary border rounded fs-16 p-1 badge badge-primary-hover me-2"><i
-																				class="ti ti-edit-circle"></i></a>
-                                                                        <a href="javascript:void(0);" class="text-danger border rounded fs-16 p-1 badge badge-danger-hover"><i
-																				class="ti ti-trash-x"></i></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="profile-uploader profile-uploader-two mb-0">
-                                                                    <span class="d-block text-center lh-1 fs-24 mb-1"><i
-																			class="ti ti-upload"></i></span>
-                                                                    <div class="drag-upload-btn bg-transparent me-0 border-0">
-                                                                        <p class="fs-12 mb-2"><span class="text-primary">Click to
-																				Upload</span> or drag and drop
-                                                                        </p>
-                                                                        <h6>JPG or PNG</h6>
-                                                                        <h6>(Max 450 x 450 px)</h6>
-                                                                    </div>
-                                                                    <input type="file" class="form-control" multiple="" id="image_sign">
-                                                                    <div id="frames"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                            <div class="card">
+    <div class="card-body d-flex align-items-start" style="gap: 1rem;">
+        <!-- Image (40% width) -->
+        <div style="width: 20%;">
+            <img src="assets/img/bg/sample.jpg" alt="Logo" class="img-fluid rounded w-100">
+        </div>
+
+        <!-- Content (title, description, icons) -->
+        <div style="flex: 1 1 0;">
+            <!-- Action icons at top-right -->
+            <div class="d-flex justify-content-end mb-2">
+                <a href="javascript:void(0);" class="text-primary border rounded fs-16 p-1 badge badge-primary-hover me-2">
+                    <i class="ti ti-edit-circle"></i>
+                </a>
+                <a href="javascript:void(0);" class="text-danger border rounded fs-16 p-1 badge badge-danger-hover">
+                    <i class="ti ti-trash-x"></i>
+                </a>
+            </div>
+
+            <!-- Title & Description -->
+            <h5 class="fw-bold">Sample Title</h5>
+            <p class="text-muted mb-0">This is a sample description to show text beside the image.</p>
+        </div>
+      <div class="position-absolute bottom-0 end-0 m-2">
+  <button class="btn btn-outline-none bg-white text-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+  + Add
+</button>
+
+</div>
+
+    </div>
+</div>
+
+                                            
                                                 </div>
+
                                                 <div class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
                                                     <div class="row align-items-center flex-fill">
                                                         <div class="col-xxl-7 col-lg-6">
                                                             <div class="mb-3">
-                                                                <h6>Invoice Prefix</h6>
-                                                                <p>Add prefix to your Invoice</p>
+                                                                <h6 >Event Selection</h6>
+        <p>Select one or more events to display on your site</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-xxl-5 col-lg-6">
-                                                            <div class="mb-3">
-                                                                <input type="text" class="form-control">
+                                                            <div class="mb-3 d-flex align-items-center gap-3">
+                                                                <div class="w-100">
+                                                                    <select class="select2" multiple>
+																		<option>Annual Sports Day</option>
+  <option>Science Exhibition</option>
+  <option>Parent-Teacher Meeting</option>
+  <option>Independence Day Celebration</option>
+  <option>Cultural Fest</option>
+  <option>Art & Craft Workshop</option>
+  <option>Field Trip</option>
+  <option>Annual Day Function</option>
+
+																	</select>
+                                                                </div>
+                                                                                <button class="btn btn-primary" type="submit">Save</button>
                                                             </div>
+
+                      
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
+
+
+                                                      <div class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
                                                     <div class="row align-items-center flex-fill">
                                                         <div class="col-xxl-7 col-lg-6">
                                                             <div class="mb-3">
-                                                                <h6>Invoice Due</h6>
-                                                                <p>Select due date to display in Invoice </p>
+                                                          <h6 >Teacher Selection</h6>
+        <p>Select teachers to highlight on your site</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-xxl-5 col-lg-6">
                                                             <div class="mb-3 d-flex align-items-center">
                                                                 <div class="w-100">
-                                                                    <select class="select">
-																		<option>5</option>
-																		<option>4</option>
-																		<option>3</option>
-																	</select>
+                                                                        <select class="select2 w-100" multiple>
+          <option>Mr. Arvind Sharma</option>
+          <option>Ms. Priya Verma</option>
+          <option>Mr. Rakesh Mehta</option>
+          <option>Mrs. Anjali Kapoor</option>
+          <option>Dr. Suresh Rao</option>
+          <option>Ms. Neha Malhotra</option>
+        </select>
                                                                 </div>
-                                                                <span class="ms-3 d-block">Days</span>
+                                                                                             <button class="btn btn-primary" type="submit">Save</button>   
                                                             </div>
                                                         </div>
                                                     </div>
@@ -270,8 +334,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                             <form action="custom-fields.html" id="custom_fields" style="display: none;">
+                            </div>
+                             <div  id="custom_fields" style="display: none;">
                                 <div class="d-flex align-items-center justify-content-between flex-wrap border-bottom pt-3 mb-3">
                                     <div class="mb-3">
                                         <h5 class="mb-1">Custom Fields</h5>
@@ -377,7 +441,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
