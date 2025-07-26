@@ -100,6 +100,22 @@
                     <div class="card-body pb-1">
                       <div class="row row-cols-xxl-5 row-cols-md-6">
                         <div class="col-xxl col-xl-3 col-md-6">
+                          <div>
+                            <div class="mb-3">
+                              <label for="image_upload" class="form-label fw-bold">Profile Image</label>
+                              <div class="profile-uploader profile-uploader-two mb-2 text-center">
+                                <span class="d-block lh-1 fs-24 mb-1"><i class="ti ti-upload"></i></span>
+                                <div class="drag-upload-btn bg-transparent border-0">
+                                  <p class="fs-12 mb-2"><span class="text-primary">Click to Upload</span> or drag and
+                                    drop</p>
+                                  <h6>JPG or PNG (Max 450 x 450 px)</h6>
+                                </div>
+                                <input type="file" class="form-control" id="image_upload" name="image_upload" accept="image/*"
+                                 />
+                              </div>
+                              <div id="imagePreview" class="mt-3 text-center"></div>
+                            </div>
+                          </div>
                           <div class="mb-3">
                             <label class="form-label">Teacher ID</label>
                             <input type="text" class="form-control" readonly placeholder="Auto Fetch" />
@@ -405,6 +421,7 @@
     const BACKEND_URL = "<%= BACKEND_URL %>";
     let staff_resume = undefined
     let staff_joining_letter = undefined
+    let staff_profile_photo = undefined
     document.getElementById("add-teacher-btn").addEventListener("click", async function (event) {
       event.preventDefault();
       const formElement = document.getElementById("teacher-form");
@@ -433,6 +450,7 @@
           blood_group: payload?.blood_group || "",
           date_of_birth: payload?.date_of_birth || "",
           marital_status: payload?.marital_status !== "Select" ? payload?.marital_status : "",
+          staff_profile_photo: staff_profile_photo || "",
         },
 
         staff_experience_info: {
@@ -523,6 +541,10 @@
 
     handleFileUpload("joining_letter", "Joining Letter", "/teacher/profile/joining_letter", BACKEND_URL, (url) => {
       staff_joining_letter = url;
+    });
+
+    handleFileUpload("image_upload", "Profile Photo", "/teacher/profile/profile_photo", BACKEND_URL, (url) => {
+      staff_profile_photo = url;
     });
 
   </script>

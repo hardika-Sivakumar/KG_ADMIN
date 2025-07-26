@@ -41,6 +41,8 @@
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="assets/plugins/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/plugins/owlcarousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
 
@@ -151,7 +153,7 @@
                                     <a href="#" class="tab d-block rounded p-2 active"
                                         onclick="showSection('invoice_settings', this)">Invoice Settings</a>
                                     <a href="#" class="tab d-block rounded p-2"
-                                        onclick="showSection('custom_fields', this)">Custom Fields</a>
+                                        onclick="showSection('custom_fields', this)">School Settings</a>
                                 </div>
                             </div>
                             <div class="col-xxl-10 col-xl-9">
@@ -366,8 +368,8 @@
                                         <div
                                             class="d-flex align-items-center justify-content-between flex-wrap border-bottom pt-3 mb-3">
                                             <div class="mb-3">
-                                                <h5 class="mb-1">Custom Fields</h5>
-                                                <p>Custom Fields configuration</p>
+                                                <h5 class="mb-1">School Fields</h5>
+                                                <p>School Fields configuration</p>
                                             </div>
                                             <div class="mb-3">
                                                 <a href="#" class="btn btn-outline-light bg-white btn-icon me-2"
@@ -382,53 +384,21 @@
                                                 <div class="card">
                                                     <div
                                                         class="card-header d-flex align-items-center justify-content-between p-3">
-                                                        <h5>Expense</h5>
-                                                        <div class="d-flex align-items-center">
-                                                            <a href="#"
-                                                                class="btn btn-outline-light bg-white btn-icon me-2"
-                                                                data-bs-toggle="modal"
-                                                                data-bs-target="#edit_custom_field"><i
-                                                                    class="ti ti-edit"></i></a>
-                                                            <a href="#" class="btn btn-outline-light bg-white btn-icon"
-                                                                data-bs-toggle="modal" data-bs-target="#delete-modal"><i
-                                                                    class="ti ti-trash"></i></a>
-                                                        </div>
+                                                        <h5>Class</h5>
                                                     </div>
                                                     <div class="card-body p-3 pb-0">
                                                         <div class="row">
                                                             <div class="col-xl-4 pe-xl-0">
                                                                 <div class="mb-3 flex-fill me-xl-3 me-0">
                                                                     <label class="form-label">Label</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-4 ps-xl-0 pe-xl-0">
-                                                                <div class="mb-3 flex-fill  me-xl-3 me-0">
-                                                                    <label class="form-label">Type</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-4 ps-xl-0">
-                                                                <div class="mb-3 flex-fill">
-                                                                    <label class="form-label">Default Value</label>
-                                                                    <input type="text" class="form-control">
+                                                                    <input class="input-tags form-control" type="text"
+                                                                        data-role="tagsinput" name="language_known"
+                                                                        value="English, Spanish"
+                                                                        placeholder="Eg : English, Spanish" />
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-xl-4 pe-xl-0">
-                                                                <div class="mb-3 flex-fill me-xl-3 me-0">
-                                                                    <label class="form-label">Required Value</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-4 ps-xl-0">
-                                                                <div class="mb-3 flex-fill">
-                                                                    <label class="form-label">Status</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                        </div>
+
                                                     </div>
                                                 </div>
                                                 <div class="card">
@@ -513,6 +483,10 @@
     </script>
     <script src="js/uploadFile.js"></script>
 
+          <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"
+    type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
 
     <!-- jQuery -->
     <script src="assets/js/jquery-3.7.1.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
@@ -556,6 +530,7 @@
     <script
         src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
         data-cf-settings="299570f26b967fcbb12c0f58-|49" defer></script>
+
 
 
     <script>
@@ -626,7 +601,7 @@
                 payload['setting_id'] = eventSettingId
             }
             else if (select_type == "staff") {
-                const selectedValues = Array.from(staffList .selectedOptions).map(option => option.value);
+                const selectedValues = Array.from(staffList.selectedOptions).map(option => option.value);
                 console.log(selectedValues)
                 payload['staff_ids'] = selectedValues
                 payload['type'] = "staff_info"
