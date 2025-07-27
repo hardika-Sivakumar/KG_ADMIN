@@ -108,7 +108,40 @@
             </div>
         </div>
     </div>
-
+ <!-- Delete Modal -->
+      <div class="modal fade" id="delete-modal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <form action="notice-board.html">
+              <div class="modal-body text-center">
+                <span class="delete-icon">
+                  <i class="ti ti-trash-x"></i>
+                </span>
+                <h4>Confirm Deletion</h4>
+                <p>
+                  You want to delete the Carousal Details, this cant be undone once you
+                  delete.
+                </p>
+                <div class="d-flex justify-content-center">
+                  <a
+                    href="javascript:void(0);"
+                    class="btn btn-light me-3"
+                    data-bs-dismiss="modal"
+                    >Cancel</a
+                  >
+                  <button
+                    type="submit"
+                    class="btn btn-danger"
+                  >
+                    Yes, Delete
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /Delete Modal -->
     <!-- Main Wrapper -->
     <div class="main-wrapper">
 
@@ -151,7 +184,7 @@
                             <div class="col-xxl-2 col-xl-3">
                                 <div class="pt-3 d-flex flex-column list-group mb-4">
                                     <a href="#" class="tab d-block rounded p-2 active"
-                                        onclick="showSection('invoice_settings', this)">Invoice Settings</a>
+                                        onclick="showSection('invoice_settings', this)">Website Settings</a>
                                     <a href="#" class="tab d-block rounded p-2"
                                         onclick="showSection('custom_fields', this)">School Settings</a>
                                 </div>
@@ -165,16 +198,14 @@
                                                 <h5 class="mb-1">Website Settings</h5>
                                                 <p>Collection of settings for Website</p>
                                             </div>
-                                            <div class="mb-3">
-                                                <button class="btn btn-light me-2" type="button">Cancel</button>
-                                                <button class="btn btn-primary" type="submit">Save</button>
-                                            </div>
+                    
                                         </div>
                                         <div class="d-md-flex d-block">
                                             <div class="row flex-fill">
                                                 <div class="col-xl-10">
                                                     <div class="settings-middle-info invoice-setting-wrap">
-                                                        <div class="row align-items-center mb-2">
+                                                        <h5 class="mb-1 border-bottom pt-3 mb-3 pb-3">Home Page Carousel Settings</h5>
+                                                        <div class="row align-items-center mb-2 position-relative">
                                                             <% settingDetails.forEach((setting)=> { %>
                                                                 <% if (setting?.type==='home_carousel' ) { %>
                                                                     <div class="card">
@@ -193,14 +224,19 @@
                                                                                 <div
                                                                                     class="d-flex justify-content-end mb-2">
                                                                                     <a href="javascript:void(0);"
-                                                                                        class="text-primary border rounded fs-16 p-1 badge badge-primary-hover me-2">
+                                                                                        class="text-primary border rounded fs-16 p-1 badge badge-primary-hover me-2"
+                                                                                         data-bs-toggle="modal"
+                                                                                    data-bs-target="#addModal">
                                                                                         <i
                                                                                             class="ti ti-edit-circle"></i>
                                                                                     </a>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="text-danger border rounded fs-16 p-1 badge badge-danger-hover">
-                                                                                        <i class="ti ti-trash-x"></i>
-                                                                                    </a>
+                                                                                  <a href="javascript:void(0);"
+   class="text-danger border rounded fs-16 p-1 badge badge-danger-hover"
+   data-bs-toggle="modal"
+   data-bs-target="#delete-modal">
+   <i class="ti ti-trash-x"></i>
+</a>
+
                                                                                 </div>
 
                                                                                 <!-- Title & Description -->
@@ -218,7 +254,7 @@
                                                                         <% }) %>
 
                                                                             <div
-                                                                                class="position-absolute bottom-0 end-0 m-2">
+                                                                                class="position-absolute bottom-0 top-4 end-0 m-2">
                                                                                 <button
                                                                                     class="btn btn-outline-none bg-white text-primary"
                                                                                     data-bs-toggle="modal"
@@ -230,7 +266,7 @@
 
 
                                                         </div>
-
+<h5 class="mb-1 border-bottom pt-3 mb-3 pb-3">Home Page Event Settings</h5>
                                                         <div
                                                             class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
                                                             <div class="row align-items-center flex-fill">
@@ -267,7 +303,7 @@
                                                             </div>
                                                         </div>
 
-
+<h5 class="mb-1 border-bottom pt-3 mb-3 pb-3">Home Page Teachers Settings</h5>
                                                         <div
                                                             class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
                                                             <div class="row align-items-center flex-fill">
@@ -300,8 +336,21 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="mb-1 border-bottom pt-3 mb-3 pb-3">
+                                                            <h5 >Home Page Testimonials Settings</h5>
+                                                             <div>
+                                                                                <button
+                                                                                    class="btn btn-outline-none bg-white text-primary"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#addModal">
+                                                                                    + Add
+                                                                                </button>
+
+                                                                            </div>
+                                                        </div>
 
                                                         <div class="row align-items-center mb-2">
+                                                             
                                                             <% settingDetails.forEach((testimonial)=> { %>
                                                                 <% if (testimonial?.type==='testimonial' ) { %>
                                                                     <div class="card">
@@ -345,16 +394,7 @@
                                                                     <% } %>
                                                                         <% }) %>
 
-                                                                            <div
-                                                                                class="position-absolute bottom-0 end-0 m-2">
-                                                                                <button
-                                                                                    class="btn btn-outline-none bg-white text-primary"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#addModal">
-                                                                                    + Add
-                                                                                </button>
-
-                                                                            </div>
+                                                                          
 
 
                                                         </div>
@@ -543,6 +583,14 @@
         const handleFileUpload = async (event) => {
             const file = event.target.files[0]
             console.log(file)
+              const reader = new FileReader();
+    reader.onload = function (e) {
+        const imagePreview = document.getElementById("imagePreview");
+        imagePreview.innerHTML = `
+            <img src="${e.target.result}" alt="Uploaded Preview" style="max-width: 150px; max-height: 150px;" class="img-thumbnail" />
+        `;
+    };
+    reader.readAsDataURL(file);
             const url = await uploadFile(file, "/settings/website/" + file.name, BACKEND_URL)
             console.log(url)
             if (!url) {
