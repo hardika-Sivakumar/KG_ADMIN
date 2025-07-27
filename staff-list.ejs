@@ -238,10 +238,7 @@
 										</a>
                                         <ul class="dropdown-menu dropdown-menu-right p-3">
                                             <li>
-                                                <a class="dropdown-item rounded-1" href="student-details.html"><i class="ti ti-menu me-2"></i>View Staff</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item rounded-1" href="edit-student.html"><i class="ti ti-edit-circle me-2"></i>Edit</a>
+                                                <a class="dropdown-item rounded-1" href="/add_staff?staffID=<%=staff?.staff_id%>"><i class="ti ti-edit-circle me-2"></i>Edit</a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="ti ti-trash-x me-2"></i>Delete</a>
@@ -356,27 +353,12 @@
 														<i class="ti ti-dots-vertical fs-14"></i>
 													</a>
                                                     <ul class="dropdown-menu dropdown-menu-right p-3">
+                                                       
                                                         <li>
-                                                            <a class="dropdown-item rounded-1" href="student-details.html"><i
-																	class="ti ti-menu me-2"></i>View Student</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item rounded-1" href="edit-student.html"><i
+                                                            <a class="dropdown-item rounded-1" href="/add_staff?staffID=<%=staff?.staff_id%>"><i
 																	class="ti ti-edit-circle me-2"></i>Edit</a>
                                                         </li>
-                                                        <li>
-                                                            <a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#login_detail"><i
-																	class="ti ti-lock me-2"></i>Login Details</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item rounded-1" href="javascript:void(0);"><i
-																	class="ti ti-toggle-right me-2"></i>Disable</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item rounded-1" href="student-promotion.html"><i
-																	class="ti ti-arrow-ramp-right-2 me-2"></i>Promote
-																Student</a>
-                                                        </li>
+
                                                         <li>
                                                             <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal"><i
 																	class="ti ti-trash-x me-2"></i>Delete</a>

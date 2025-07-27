@@ -118,20 +118,20 @@
                           </div>
                           <div class="mb-3">
                             <label class="form-label">Teacher ID</label>
-                            <input type="text" class="form-control" readonly placeholder="Auto Fetch" />
+                            <input type="text" class="form-control" readonly placeholder="Auto Fetch" value="<%= staffDetails?.staff_id %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">First Name</label>
                             <input type="text" class="form-control" placeholder="Eg : John" id="first_name"
-                              name="first_name" />
+                              name="first_name" value="<%= staffDetails?.staff_info?.first_name %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Last Name</label>
-                            <input type="text" class="form-control" placeholder="Eg : Doe" name="last_name" />
+                            <input type="text" class="form-control" placeholder="Eg : Doe" name="last_name" value="<%= staffDetails?.staff_info?.last_name %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
@@ -187,38 +187,38 @@
                           <div class="mb-3">
                             <label class="form-label">Primary Contact Number</label>
                             <input type="text" class="form-control" name="primary_contact_number"
-                              placeholder="Eg : 1234567890" />
+                              placeholder="Eg : 1234567890" value="<%= staffDetails?.staff_info?.primary_contact_number %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Email Address</label>
                             <input type="email" class="form-control" name="email_address"
-                              placeholder="Eg : yDf2T@example.com" />
+                              placeholder="Eg : yDf2T@example.com" value="<%= staffDetails?.staff_info?.email_address %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Blood Group</label>
-                            <input type="text" class="form-control" name="blood_group" placeholder="Eg : O+ve" />
+                            <input type="text" class="form-control" name="blood_group" placeholder="Eg : O+ve" value="<%= staffDetails?.staff_info?.blood_group %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Father’s Name</label>
-                            <input type="text" class="form-control" name="fathers_name" id="fathers_name" />
+                            <input type="text" class="form-control" name="fathers_name" id="fathers_name" value="<%= staffDetails?.staff_parent_info?.fathers_name %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Mother’s Name</label>
-                            <input type="text" class="form-control" name="mothers_name" />
+                            <input type="text" class="form-control" name="mothers_name" value="<%= staffDetails?.staff_parent_info?.mothers_name %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" name="date_of_birth" />
+                            <input type="date" class="form-control" name="date_of_birth" value="<%= staffDetails?.staff_info?.date_of_birth %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
@@ -235,40 +235,40 @@
                           <div class="mb-3">
                             <label class="form-label">Language Known</label>
                             <input class="input-tags form-control" type="text" data-role="tagsinput"
-                              name="language_known" value="English, Spanish" placeholder="Eg : English, Spanish" />
+                              name="language_known" value="<%= (staffDetails?.staff_experience_info?.language_known).join(',') %>" placeholder="Eg : English, Spanish" />
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Qualification</label>
                             <input type="text" class="form-control" name="qualification"
-                              placeholder="Eg : B.Tech, M.Tech" />
+                              placeholder="Eg : B.Tech, M.Tech" value="<%= staffDetails?.staff_experience_info?.qualification %>"/>
                           </div>
                         </div>
                         <div class="col-xxl col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Work Experience</label>
-                            <input type="text" class="form-control" name="work_experience" placeholder="Eg : 5 years" />
+                            <input type="text" class="form-control" name="work_experience" placeholder="Eg : 5 years" value="<%= staffDetails?.staff_experience_info?.work_experience %>"/>
                           </div>
                         </div>
                         <div class="col-xxl-3 col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Address</label>
                             <input type="text" class="form-control" name="address"
-                              placeholder="Eg : 123, Street, City, State, Country" />
+                              placeholder="Eg : 123, Street, City, State, Country" value="<%= staffDetails?.staff_parent_info?.address %>"/>
                           </div>
                         </div>
                         <div class="col-xxl-3 col-xl-3 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Permanent Address</label>
                             <input type="text" class="form-control" name="permanent_address"
-                              placeholder="Eg : 123, Street, City, State, Country" />
+                              placeholder="Eg : 123, Street, City, State, Country" value="<%= staffDetails?.staff_parent_info?.permanent_address %>"/>
                           </div>
                         </div>
                         <div class="col-xxl-3 col-xl-3 col-md-6">
                           <div class="mb-3">
-                            <label class="form-label">PAN Number / ID Number</label>
-                            <input type="text" class="form-control" name="id_number" placeholder="Eg : AAAAA1234A" />
+                            <label class="form-label">ID Number</label>
+                            <input type="text" class="form-control" name="id_number" placeholder="Eg : AAAAA1234A" value="<%= staffDetails?.staff_kyc_info?.id_number %>"/>
                           </div>
                         </div>
                         <div class="col-xxl-3 col-xl-3 col-md-6">
@@ -285,7 +285,7 @@
                           <div class="mb-3">
                             <label class="form-label">Notes</label>
                             <textarea class="form-control" placeholder="Other Information" rows="4"
-                              name="notes"></textarea>
+                              name="notes"><%= staffDetails?.staff_experience_info?.notes %></textarea>
                           </div>
                         </div>
                       </div>
@@ -308,38 +308,38 @@
                         <div class="col-lg-4 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Salary</label>
-                            <input type="text" class="form-control" name="salary" placeholder="Eg : 10000" />
+                            <input type="text" class="form-control" name="salary" placeholder="Eg : 10000" value="<%= staffDetails?.staff_bank_info?.salary %>"/>
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Account Name</label>
-                            <input type="text" class="form-control" name="account_name" placeholder="Eg : John Doe" />
+                            <input type="text" class="form-control" name="account_name" placeholder="Eg : John Doe" value="<%= staffDetails?.staff_bank_info?.account_name %>"/>
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Account Number</label>
                             <input type="text" class="form-control" name="account_number"
-                              placeholder="Eg : 1234567890" />
+                              placeholder="Eg : 1234567890" value="<%= staffDetails?.staff_bank_info?.account_number %>"/>
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Bank Name</label>
-                            <input type="text" class="form-control" name="bank_name" placeholder="Eg : HDFC Bank" />
+                            <input type="text" class="form-control" name="bank_name" placeholder="Eg : HDFC Bank" value="<%= staffDetails?.staff_bank_info?.bank_name %>"/>
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">IFSC Code</label>
-                            <input type="text" class="form-control" name="ifsc_code" placeholder="Eg : HDFC0001234" />
+                            <input type="text" class="form-control" name="ifsc_code" placeholder="Eg : HDFC0001234" value="<%= staffDetails?.staff_bank_info?.ifsc_code %>"/>
                           </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                           <div class="mb-3">
                             <label class="form-label">Branch Name</label>
-                            <input type="text" class="form-control" name="branch_name" placeholder="Eg : Newyork" />
+                            <input type="text" class="form-control" name="branch_name" placeholder="Eg : Newyork" value="<%= staffDetails?.staff_bank_info?.branch_name %>"/>
                           </div>
                         </div>
                       </div>

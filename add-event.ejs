@@ -88,7 +88,7 @@
                           <div class="mb-3">
                             <label class="form-label">Event Title</label>
                             <input type="text" id="event_title" name="event_title" class="form-control"
-                              placeholder="Eg: Annual Food Fest 2025" />
+                              placeholder="Eg: Annual Food Fest 2025" value="<%= eventDetails?.event_title %>"/>
                           </div>
                         </div>
 
@@ -112,7 +112,7 @@
                           <div class="mb-3">
                             <label class="form-label">Organizer</label>
                             <input type="text" name="event_organizer" class="form-control"
-                              placeholder="Eg: Science Club" />
+                              placeholder="Eg: Science Club" value="<%= eventDetails?.event_organizer %>"/>
                           </div>
                         </div>
 
@@ -120,7 +120,7 @@
                         <div class="col">
                           <div class="mb-3">
                             <label class="form-label">Event Date</label>
-                            <input type="date" name="event_date" class="form-control" />
+                            <input type="date" name="event_date" class="form-control" value="<%= eventDetails?.event_date %>"/>
                           </div>
                         </div>
 
@@ -145,7 +145,7 @@
                           <div class="mb-3">
                             <label class="form-label">Event Description</label>
                             <textarea name="event_description" class="form-control" rows="3"
-                              placeholder="Describe the event"></textarea>
+                              placeholder="Describe the event"><%= eventDetails?.event_description %></textarea>
                           </div>
                         </div>
                       </div>
@@ -155,7 +155,7 @@
                         <div class="col">
                           <div class="mb-3">
                             <label class="form-label">Start Time</label>
-                            <input type="time" name="event_start_time" class="form-control" />
+                            <input type="time" name="event_start_time" class="form-control" value="<%= eventDetails?.event_time?.event_start_time %>"/>
                           </div>
                         </div>
 
@@ -163,7 +163,7 @@
                         <div class="col">
                           <div class="mb-3">
                             <label class="form-label">End Time</label>
-                            <input type="time" name="event_end_time" class="form-control" />
+                            <input type="time" name="event_end_time" class="form-control" value="<%= eventDetails?.event_time?.event_end_time %>"/>
                           </div>
                         </div>
 
@@ -171,7 +171,7 @@
                         <div class="col">
                           <div class="mb-3">
                             <label class="form-label">Venue</label>
-                            <input type="text" name="event_venue" class="form-control" placeholder="Eg: Auditorium" />
+                            <input type="text" name="event_venue" class="form-control" placeholder="Eg: Auditorium" value="<%= eventDetails?.event_time?.event_venue %>"/>
                           </div>
                         </div>
 
@@ -180,7 +180,7 @@
                           <div class="mb-3">
                             <label class="form-label">Target Audience</label>
                             <input type="text" name="event_target_audience" class="form-control"
-                              placeholder="Eg: Grade 10–12, Teachers" />
+                              placeholder="Eg: Grade 10–12, Teachers" value="<%= eventDetails?.event_time?.event_target_audience %>"/>
                           </div>
                         </div>
                       </div>
@@ -206,7 +206,7 @@
                         <div class="col">
                           <div class="mb-3">
                             <label class="form-label">Registration Deadline</label>
-                            <input type="date" name="event_registration_deadline" class="form-control" />
+                            <input type="date" name="event_registration_deadline" class="form-control" value="<%= eventDetails?.event_time?.event_registration_deadline %>"/>
                           </div>
                         </div>
 
@@ -215,7 +215,7 @@
                           <div class="mb-3">
                             <label class="form-label">Max Participants</label>
                             <input type="number" name="event_max_participants" class="form-control"
-                              placeholder="Eg: 100" />
+                              placeholder="Eg: 100" value="<%= eventDetails?.event_time?.event_max_participants %>"/>
                           </div>
                         </div>
                       </div>
@@ -254,7 +254,7 @@
                       <div class="mb-3">
                         <label class="form-label">Event Highlights (Post-Event)</label>
                         <textarea name="event_hightlights" class="form-control" rows="3"
-                          placeholder="Eg: 200+ students attended, 5 awards given"></textarea>
+                          placeholder="Eg: 200+ students attended, 5 awards given"><%= eventDetails?.event_hightlights %></textarea>
                       </div>
                     </div>
                   </div>
