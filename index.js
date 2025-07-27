@@ -8,6 +8,7 @@ const { getStaffDetails } = require("./services/staffService");
 const { getEventDetails } = require("./services/eventService");
 const { getGalleryDetails } = require("./services/galleryService");
 const { getSettingDetails } = require("./services/settingService");
+const { getContactDetails } = require("./services/contactService");
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, ''));
 app.use(express.urlencoded({ extended: true }));
@@ -98,6 +99,16 @@ app.get("/event_lists", async (req, res) => {
     }
     return res.render('event-list', { eventData: eventList?.events });
 })
+
+app.get("/contact_list",async (req, res) => {
+    const contactList = await getContactDetails();
+    if(!contactList.success){
+        //handle 500 server error
+        return
+    }
+    return res.render('contact-list', { contactData: contactList?.contact ?? [] });
+})
+
 
 app.get("/website_settings",async (req, res) => {
     const headers = {
