@@ -94,16 +94,10 @@
 
                         <!-- Event Type -->
                         <div class="col">
-                          <div class="mb-3">
-                            <label class="form-label">Event Type</label>
-                            <select name="event_type" class="select form-select">
-                              <option>Select</option>
-                              <option>Food Fest</option>
-                              <option>Science Fair</option>
-                              <option>Cultural Program</option>
-                              <option>Sports Day</option>
-                              <option>Seminar</option>
-                            </select>
+                         <div class="mb-3">
+                            <label class="form-label">Event Title</label>
+                            <input type="text" id="event_type" name="event_title" class="form-control"
+                              placeholder="Eg: Annual Food Fest" value="<%= eventDetails?.event_type %>"/>
                           </div>
                         </div>
 

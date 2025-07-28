@@ -120,25 +120,11 @@
                                         <li class="breadcrumb-item">
                                             Peoples
                                         </li>
-                                        <li class="breadcrumb-item active" aria-current="page">Students Grid</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Students</li>
                                     </ol>
                                 </nav>
                             </div>
                             <div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
-                                <div class="pe-1 mb-2">
-                                    <a href="#" class="btn btn-outline-light bg-white btn-icon me-1"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Refresh"
-                                        data-bs-original-title="Refresh">
-                                        <i class="ti ti-refresh"></i>
-                                    </a>
-                                </div>
-                                <div class="pe-1 mb-2">
-                                    <button type="button" class="btn btn-outline-light bg-white btn-icon me-1"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Print"
-                                        data-bs-original-title="Print">
-                                        <i class="ti ti-printer"></i>
-                                    </button>
-                                </div>
                                 <div class="dropdown me-2 mb-2">
                                     <a href="javascript:void(0);"
                                         class="dropdown-toggle btn btn-light fw-medium d-inline-flex align-items-center"
@@ -157,7 +143,7 @@
                                     </ul>
                                 </div>
                                 <div class="mb-2">
-                                    <a href="add-student.html" class="btn btn-primary d-flex align-items-center"><i
+                                    <a href="/add_student" class="btn btn-primary d-flex align-items-center"><i
                                             class="ti ti-square-rounded-plus me-2"></i>Add Student</a>
                                 </div>
                             </div>
@@ -169,119 +155,13 @@
                             class="bg-white p-3 border rounded-1 d-flex align-items-center justify-content-between flex-wrap mb-4 pb-0">
                             <h4 class="mb-3">Students Grid</h4>
                             <div class="d-flex align-items-center flex-wrap">
-                                <div class="input-icon-start mb-3 me-2 position-relative">
-                                    <span class="icon-addon">
-                                        <i class="ti ti-calendar"></i>
-                                    </span>
-                                    <input type="text" class="form-control date-range bookingrange" placeholder="Select"
-                                        value="Academic Year : 2024 / 2025">
-                                </div>
-                                <div class="dropdown mb-3 me-2">
-                                    <a href="javascript:void(0);" class="btn btn-outline-light bg-white dropdown-toggle"
-                                        data-bs-toggle="dropdown" data-bs-auto-close="outside"><i
-                                            class="ti ti-filter me-2"></i>Filter</a>
-                                    <div class="dropdown-menu drop-width">
-                                        <form action="student-grid.html">
-                                            <div class="d-flex align-items-center border-bottom p-3">
-                                                <h4>Filter</h4>
-                                            </div>
-                                            <div class="p-3 pb-0 border-bottom">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Class</label>
-                                                            <select class="select">
-                                                                <option>Select</option>
-                                                                <option>I</option>
-                                                                <option>II</option>
-                                                                <option>III</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Section</label>
-                                                            <select class="select">
-                                                                <option>Select</option>
-                                                                <option>A</option>
-                                                                <option>B</option>
-                                                                <option>C</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Name</label>
-                                                            <select class="select">
-                                                                <option>Select</option>
-                                                                <option>Janet</option>
-                                                                <option>Joann</option>
-                                                                <option>Kathleen</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Gender</label>
-                                                            <select class="select">
-                                                                <option>Select</option>
-                                                                <option>Male</option>
-                                                                <option>Female</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Status</label>
-                                                            <select class="select">
-                                                                <option>Select</option>
-                                                                <option>Active</option>
-                                                                <option>Inactive</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="p-3 d-flex align-items-center justify-content-end">
-                                                <a href="#" class="btn btn-light me-3">Reset</a>
-                                                <button type="submit" class="btn btn-primary">Apply</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                                 <div class="d-flex align-items-center bg-white border rounded-2 p-1 mb-3 me-2">
                                     <a href="#" id="listViewBtn" class="btn btn-icon btn-sm me-1 "><i
                                             class="ti ti-list-tree"></i></a>
                                     <a href="#" id="gridViewBtn" class="btn btn-icon btn-sm "><i
                                             class="ti ti-grid-dots"></i></a>
                                 </div>
-                                <div class="dropdown mb-3">
-                                    <a href="javascript:void(0);" class="btn btn-outline-light bg-white dropdown-toggle"
-                                        data-bs-toggle="dropdown"><i class="ti ti-sort-ascending-2 me-2"></i>Sort by A-Z
-                                    </a>
-                                    <ul class="dropdown-menu p-3">
-                                        <li>
-                                            <a href="javascript:void(0);" class="dropdown-item rounded-1 active">
-                                                Ascending
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="dropdown-item rounded-1">
-                                                Descending
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="dropdown-item rounded-1">
-                                                Recently Viewed
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="dropdown-item rounded-1">
-                                                Recently Added
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+
                             </div>
                         </div>
                         <!-- /Filter -->
@@ -614,6 +494,37 @@
         }
     </style>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const exportPDFBtn = document.querySelector(".dropdown-item:has(.ti-file-type-pdf)");
+        const exportExcelBtn = document.querySelector(".dropdown-item:has(.ti-file-type-xls)");
+
+        exportPDFBtn?.addEventListener("click", function () {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.autoTable({
+                html: '.datatable',
+                theme: 'grid',
+                headStyles: { fillColor: [41, 128, 185] }, // Blue header
+                styles: { fontSize: 8 }
+            });
+
+            doc.save('students.pdf');
+        });
+
+        exportExcelBtn?.addEventListener("click", function () {
+            const table = document.querySelector(".datatable");
+            const wb = XLSX.utils.book_new();
+            const ws = XLSX.utils.table_to_sheet(table);
+            XLSX.utils.book_append_sheet(wb, ws, "Students");
+            XLSX.writeFile(wb, "students.xlsx");
+        });
+
+    });
+</script>
+
     <!-- /Main Wrapper -->
 
     <!-- jQuery -->
@@ -649,6 +560,15 @@
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"95d0de6d7c7f3971","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"3ca157e612a14eccbb30cf6db6691c29"}'
         crossorigin="anonymous"></script>
+
+        <!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- AutoTable plugin for jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+<!-- SheetJS (xlsx.min.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 </body>
 
 </html>

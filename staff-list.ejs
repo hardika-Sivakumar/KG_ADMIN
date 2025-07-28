@@ -51,393 +51,382 @@
     <div class="main-wrapper">
 
         <!-- Header -->
-       <%- include('header') %>
-        <!-- /Header -->
+        <%- include('header') %>
+            <!-- /Header -->
 
-        <!-- Sidebar -->
-       <%- include('sidebar') %>
-        <!-- /Sidebar -->
+            <!-- Sidebar -->
+            <%- include('sidebar') %>
+                <!-- /Sidebar -->
 
-        <!-- Page Wrapper -->
-        <div class="page-wrapper">
-            <div class="content content-two">
+                <!-- Page Wrapper -->
+                <div class="page-wrapper">
+                    <div class="content content-two">
 
-                <!-- Page Header -->
-                <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
-                    <div class="my-auto mb-2">
-                        <h3 class="page-title mb-1">Staffs</h3>
-                        <nav>
-                            <ol class="breadcrumb mb-0">
-                                <li class="breadcrumb-item">
-                                    <a href="index.html">Dashboard</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    Peoples
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">Staffs Grid</li>
-                            </ol>
-                        </nav>
-                    </div>
-                    <div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
-                        <div class="pe-1 mb-2">
-                            <a href="#" class="btn btn-outline-light bg-white btn-icon me-1" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Refresh" data-bs-original-title="Refresh">
-                         		<i class="ti ti-refresh"></i>
-                        	</a>
-                        </div>
-                        <div class="pe-1 mb-2">
-                            <button type="button" class="btn btn-outline-light bg-white btn-icon me-1" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Print" data-bs-original-title="Print">
-                         		<i class="ti ti-printer"></i>
-                        	</button>
-                        </div>
-                        <div class="dropdown me-2 mb-2">
-                            <a href="javascript:void(0);" class="dropdown-toggle btn btn-light fw-medium d-inline-flex align-items-center" data-bs-toggle="dropdown">
-								<i class="ti ti-file-export me-2"></i>Export
-							</a>
-                            <ul class="dropdown-menu  dropdown-menu-end p-3">
-                                <li>
-                                    <a href="javascript:void(0);" class="dropdown-item rounded-1"><i class="ti ti-file-type-pdf me-2"></i>Export as PDF</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="dropdown-item rounded-1"><i class="ti ti-file-type-xls me-2"></i>Export as Excel </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mb-2">
-                            <a href="add-student.html" class="btn btn-primary d-flex align-items-center"><i class="ti ti-square-rounded-plus me-2"></i>Add Staff</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Page Header -->
-
-                <!-- Filter -->
-                <div class="bg-white p-3 border rounded-1 d-flex align-items-center justify-content-between flex-wrap mb-4 pb-0">
-                    <h4 class="mb-3">Staff Grid</h4>
-                    <div class="d-flex align-items-center flex-wrap">
-                        <div class="input-icon-start mb-3 me-2 position-relative">
-                            <span class="icon-addon">
-								<i class="ti ti-calendar"></i>
-							</span>
-                            <input type="text" class="form-control date-range bookingrange" placeholder="Select" value="Academic Year : 2024 / 2025">
-                        </div>
-                        <div class="dropdown mb-3 me-2">
-                            <a href="javascript:void(0);" class="btn btn-outline-light bg-white dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside"><i class="ti ti-filter me-2"></i>Filter</a>
-                            <div class="dropdown-menu drop-width">
-                                <form action="student-grid.html">
-                                    <div class="d-flex align-items-center border-bottom p-3">
-                                        <h4>Filter</h4>
-                                    </div>
-                                    <div class="p-3 pb-0 border-bottom">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Class</label>
-                                                    <select class="select">
-														<option>Select</option>
-														<option>I</option>
-														<option>II</option>
-														<option>III</option>
-													</select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Section</label>
-                                                    <select class="select">
-														<option>Select</option>
-														<option>A</option>
-														<option>B</option>
-														<option>C</option>
-													</select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Name</label>
-                                                    <select class="select">
-														<option>Select</option>
-														<option>Janet</option>
-														<option>Joann</option>
-														<option>Kathleen</option>
-													</select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Gender</label>
-                                                    <select class="select">
-														<option>Select</option>
-														<option>Male</option>
-														<option>Female</option>
-													</select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Status</label>
-                                                    <select class="select">
-														<option>Select</option>
-														<option>Active</option>
-														<option>Inactive</option>
-													</select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="p-3 d-flex align-items-center justify-content-end">
-                                        <a href="#" class="btn btn-light me-3">Reset</a>
-                                        <button type="submit" class="btn btn-primary">Apply</button>
-                                    </div>
-                                </form>
+                        <!-- Page Header -->
+                        <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
+                            <div class="my-auto mb-2">
+                                <h3 class="page-title mb-1">Staffs</h3>
+                                <nav>
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html">Dashboard</a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            Peoples
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">Staffs</li>
+                                    </ol>
+                                </nav>
                             </div>
-                        </div>
-                        <div class="d-flex align-items-center bg-white border rounded-2 p-1 mb-3 me-2">
-                            <a href="#" id="listViewBtn" class="btn btn-icon btn-sm me-1 "><i class="ti ti-list-tree"></i></a>
-                            <a href="#"id="gridViewBtn" class="btn btn-icon btn-sm "><i class="ti ti-grid-dots"></i></a>
-                        </div>
-                        <div class="dropdown mb-3">
-                            <a href="javascript:void(0);" class="btn btn-outline-light bg-white dropdown-toggle" data-bs-toggle="dropdown"><i class="ti ti-sort-ascending-2 me-2"></i>Sort by A-Z </a>
-                            <ul class="dropdown-menu p-3">
-                                <li>
-                                    <a href="javascript:void(0);" class="dropdown-item rounded-1 active">
-										Ascending
-									</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="dropdown-item rounded-1">
-										Descending
-									</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="dropdown-item rounded-1">
-										Recently Viewed
-									</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="dropdown-item rounded-1">
-										Recently Added
-									</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Filter -->
+                            <div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
 
-                <div class="row" id="grid-view" style="display: none;">
-                    <% staffData?.map((staff) => { %>
-                    <!-- Student Grid -->
-                    <div class="col-xxl-3 col-xl-4 col-md-6 d-flex">
-                        <div class="card flex-fill">
-                            <div class="card-header d-flex align-items-center justify-content-between">
-                                <a href="student-details.html" class="link-primary"><%=staff?.staff_id%></a>
-                                <div class="d-flex align-items-center">
-                                    <span class="badge badge-soft-success d-inline-flex align-items-center me-1"><i class="ti ti-circle-filled fs-5 me-1"></i><%=staff?.staff_info?.status ? 'Active' : 'Inactive'%></span>
-                                    <div class="dropdown">
-                                        <a href="#" class="btn btn-white btn-icon btn-sm d-flex align-items-center justify-content-center rounded-circle p-0" data-bs-toggle="dropdown" aria-expanded="false">
-											<i class="ti ti-dots-vertical fs-14"></i>
-										</a>
-                                        <ul class="dropdown-menu dropdown-menu-right p-3">
-                                            <li>
-                                                <a class="dropdown-item rounded-1" href="/add_staff?staffID=<%=staff?.staff_id%>"><i class="ti ti-edit-circle me-2"></i>Edit</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="ti ti-trash-x me-2"></i>Delete</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+
+                                <div class="dropdown me-2 mb-2">
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-toggle btn btn-light fw-medium d-inline-flex align-items-center"
+                                        data-bs-toggle="dropdown">
+                                        <i class="ti ti-file-export me-2"></i>Export
+                                    </a>
+                                    <ul class="dropdown-menu  dropdown-menu-end p-3">
+                                        <li>
+                                            <a href="javascript:void(0);" class="dropdown-item rounded-1"><i
+                                                    class="ti ti-file-type-pdf me-2"></i>Export as PDF</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="dropdown-item rounded-1"><i
+                                                    class="ti ti-file-type-xls me-2"></i>Export as Excel </a>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="bg-light-300 rounded-2 p-3 mb-3">
-                                    <div class="d-flex align-items-center">
-                                        <a href="student-details.html" class="avatar avatar-lg flex-shrink-0"><img src="<%=staff?.staff_profile_photo%>" alt="img" class="img-fluid rounded-circle" alt="img"></a>
-                                        <div class="ms-2">
-                                            <h5 class="mb-0" class="text-dark text-truncate"><a href="student-details.html"><%=staff?.staff_info?.first_name%> <%=staff?.staff_info?.last_name%></a></h5>
-                                            <p><%=staff?.staff_experience_info?.handling_classes%>, <%=staff?.staff_experience_info?.subject%></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between gx-2">
-                                    <div>
-                                        <p class="mb-0">Work Experience</p>
-                                        <p class="text-dark"><%=staff?.staff_experience_info?.work_experience%></p>
-                                    </div>
-                                    <div>
-                                        <p class="mb-0">Qualifications</p>
-                                        <p class="text-dark"><%=staff?.staff_experience_info?.qualification%></p>
-                                    </div>
-                                    <div>
-                                        <p class="mb-0">Joined On</p>
-                                        <p class="text-dark"><%=staff?.student_created_on%></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <a href="tel:<%=staff?.staff_info?.primary_contact_number%>" class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle  p-0 me-2"><i class="ti ti-phone"></i></a>
-                                    <a href="mailto:<%=staff?.staff_info?.email_address%>" class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle p-0 me-3"><i class="ti ti-mail"></i></a>
+                                <div class="mb-2">
+                                    <a href="/add_staff" class="btn btn-primary d-flex align-items-center"><i
+                                            class="ti ti-square-rounded-plus me-2"></i>Add Teacher</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <% }) %>
-                    <!-- /Student Grid -->
-                   
-                </div>
-     <div class="card-body p-0 py-3" id="list-view">
+                        <!-- /Page Header -->
 
-                        <!-- Student List -->
-                        <div class="custom-datatable-filter table-responsive">
-                            <table class="table datatable">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th class="no-sort">
-                                            <div class="form-check form-check-md">
-                                                <input class="form-check-input" type="checkbox" id="select-all">
-                                            </div>
-                                        </th>
-                                        <th>Admission No</th>
-                                        <th>Roll No</th>
-                                        <th>Name</th>
-                                        <th>Handling Class </th>
-                                        <th>Handling Subject</th>
-                                        <th>Work Experience</th>
-                                        <th>Qualification</th>
-                                        <th>Gender</th>
-                                        <th>Status</th>
-                                        <th>Date of Join</th>
-                                        <th>DOB</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% staffData?.forEach((staff) => { %>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check form-check-md">
-                                                <input class="form-check-input" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td><a href="student-details.html" class="link-primary"><%=staff?.staff_id%></a></td>
-                                        <td>35013</td>
-                                        <td>
+                        <!-- Filter -->
+                        <div
+                            class="bg-white p-3 border rounded-1 d-flex align-items-center justify-content-between flex-wrap mb-4 pb-0">
+                            <h4 class="mb-3">Staffs</h4>
+                            <div class="d-flex align-items-center flex-wrap">
+                                <div class="d-flex align-items-center bg-white border rounded-2 p-1 mb-3 me-2">
+                                    <a href="#" id="listViewBtn" class="btn btn-icon btn-sm me-1 "><i
+                                            class="ti ti-list-tree"></i></a>
+                                    <a href="#" id="gridViewBtn" class="btn btn-icon btn-sm "><i
+                                            class="ti ti-grid-dots"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Filter -->
+
+                        <div class="row" id="grid-view" style="display: none;">
+                            <% staffData?.map((staff)=> { %>
+                                <!-- Student Grid -->
+                                <div class="col-xxl-3 col-xl-4 col-md-6 d-flex">
+                                    <div class="card flex-fill">
+                                        <div class="card-header d-flex align-items-center justify-content-between">
+                                            <a href="student-details.html" class="link-primary">
+                                                <%=staff?.staff_id%>
+                                            </a>
                                             <div class="d-flex align-items-center">
-                                                <a href="student-details.html" class="avatar avatar-md"><img
-														src="<%=staff?.student_profile_photo%>"
-														class="img-fluid rounded-circle" alt="img"></a>
-                                                <div class="ms-2">
-                                                    <p class="text-dark mb-0"><a href="student-details.html"><%=staff?.staff_info?.first_name%> <%=staff?.staff_info?.last_name%></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><%=staff?.staff_experience_info?.handling_classes%></td>
-                                        <td><%=staff?.staff_experience_info?.subject%></td>
-                                        <td><%=staff?.staff_experience_info?.work_experience%></td>
-                                        <td><%=staff?.staff_experience_info?.qualification%></td>
-                                        <td><%=staff?.staff_info?.gender%></td>
-                                        <td>
-                                            <span class="badge badge-soft-success d-inline-flex align-items-center"><i
-													class="ti ti-circle-filled fs-5 me-1"></i><%=staff?.staff_info?.status ? 'Active' : 'Inactive'%></span>
-                                        </td>
-                                        <td><%=staff?.student_created_on%></td>
-                                        <td><%=staff?.date_of_birth%></td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <a href="tel:<%=staff?.staff_info?.primary_contact_number%>" class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle  p-0 me-2"><i
-														class="ti ti-phone"></i></a>
-                                                <a href="mailto:<%=staff?.staff_info?.email_address%>" class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle p-0 me-3"><i
-														class="ti ti-mail"></i></a>
+                                                <span
+                                                    class="badge badge-soft-success d-inline-flex align-items-center me-1"><i
+                                                        class="ti ti-circle-filled fs-5 me-1"></i>
+                                                    <%=staff?.staff_info?.status ? 'Active' : 'Inactive' %>
+                                                </span>
                                                 <div class="dropdown">
-                                                    <a href="#" class="btn btn-white btn-icon btn-sm d-flex align-items-center justify-content-center rounded-circle p-0" data-bs-toggle="dropdown" aria-expanded="false">
-														<i class="ti ti-dots-vertical fs-14"></i>
-													</a>
+                                                    <a href="#"
+                                                        class="btn btn-white btn-icon btn-sm d-flex align-items-center justify-content-center rounded-circle p-0"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ti ti-dots-vertical fs-14"></i>
+                                                    </a>
                                                     <ul class="dropdown-menu dropdown-menu-right p-3">
-                                                       
                                                         <li>
-                                                            <a class="dropdown-item rounded-1" href="/add_staff?staffID=<%=staff?.staff_id%>"><i
-																	class="ti ti-edit-circle me-2"></i>Edit</a>
+                                                            <a class="dropdown-item rounded-1"
+                                                                href="/add_staff?staffID=<%=staff?.staff_id%>"><i
+                                                                    class="ti ti-edit-circle me-2"></i>Edit</a>
                                                         </li>
-
                                                         <li>
-                                                            <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal"><i
-																	class="ti ti-trash-x me-2"></i>Delete</a>
+                                                            <a class="dropdown-item rounded-1" href="#"
+                                                                data-bs-toggle="modal" data-bs-target="#delete-modal"><i
+                                                                    class="ti ti-trash-x me-2"></i>Delete</a>
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <% }) %>
-                                </tbody>
-                            </table>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="bg-light-300 rounded-2 p-3 mb-3">
+                                                <div class="d-flex align-items-center">
+                                                    <a href="student-details.html"
+                                                        class="avatar avatar-lg flex-shrink-0"><img
+                                                            src="<%=staff?.staff_profile_photo%>" alt="img"
+                                                            class="img-fluid rounded-circle" alt="img"></a>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0" class="text-dark text-truncate"><a
+                                                                href="student-details.html">
+                                                                <%=staff?.staff_info?.first_name%>
+                                                                    <%=staff?.staff_info?.last_name%>
+                                                            </a></h5>
+                                                        <p>
+                                                            <%=staff?.staff_experience_info?.handling_classes%>,
+                                                                <%=staff?.staff_experience_info?.subject%>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between gx-2">
+                                                <div>
+                                                    <p class="mb-0">Work Experience</p>
+                                                    <p class="text-dark">
+                                                        <%=staff?.staff_experience_info?.work_experience%>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p class="mb-0">Qualifications</p>
+                                                    <p class="text-dark">
+                                                        <%=staff?.staff_experience_info?.qualification%>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p class="mb-0">Joined On</p>
+                                                    <p class="text-dark">
+                                                        <%=staff?.student_created_on%>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex align-items-center justify-content-between">
+                                            <div class="d-flex align-items-center">
+                                                <a href="tel:<%=staff?.staff_info?.primary_contact_number%>"
+                                                    class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle  p-0 me-2"><i
+                                                        class="ti ti-phone"></i></a>
+                                                <a href="mailto:<%=staff?.staff_info?.email_address%>"
+                                                    class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle p-0 me-3"><i
+                                                        class="ti ti-mail"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                                    <!-- /Student Grid -->
+
                         </div>
-                        <!-- /Student List -->
-                    </div>
-            </div>
-        </div>
-        <!-- /Page Wrapper -->
+                        <div class="card-body p-0 py-3" id="list-view">
 
+                            <!-- Student List -->
+                            <div class="custom-datatable-filter table-responsive">
+                                <table class="table datatable">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th class="no-sort">
+                                                <div class="form-check form-check-md">
+                                                    <input class="form-check-input" type="checkbox" id="select-all">
+                                                </div>
+                                            </th>
+                                            <th>Admission No</th>
+                                            <th>Roll No</th>
+                                            <th>Name</th>
+                                            <th>Handling Class </th>
+                                            <th>Handling Subject</th>
+                                            <th>Work Experience</th>
+                                            <th>Qualification</th>
+                                            <th>Gender</th>
+                                            <th>Status</th>
+                                            <th>Date of Join</th>
+                                            <th>DOB</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% staffData?.forEach((staff)=> { %>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check form-check-md">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td><a href="student-details.html" class="link-primary">
+                                                        <%=staff?.staff_id%>
+                                                    </a></td>
+                                                <td>35013</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <a href="student-details.html" class="avatar avatar-md"><img
+                                                                src="<%=staff?.student_profile_photo%>"
+                                                                class="img-fluid rounded-circle" alt="img"></a>
+                                                        <div class="ms-2">
+                                                            <p class="text-dark mb-0"><a href="student-details.html">
+                                                                    <%=staff?.staff_info?.first_name%>
+                                                                        <%=staff?.staff_info?.last_name%>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <%=staff?.staff_experience_info?.handling_classes%>
+                                                </td>
+                                                <td>
+                                                    <%=staff?.staff_experience_info?.subject%>
+                                                </td>
+                                                <td>
+                                                    <%=staff?.staff_experience_info?.work_experience%>
+                                                </td>
+                                                <td>
+                                                    <%=staff?.staff_experience_info?.qualification%>
+                                                </td>
+                                                <td>
+                                                    <%=staff?.staff_info?.gender%>
+                                                </td>
+                                                <td>
+                                                    <span
+                                                        class="badge badge-soft-success d-inline-flex align-items-center"><i
+                                                            class="ti ti-circle-filled fs-5 me-1"></i>
+                                                        <%=staff?.staff_info?.status ? 'Active' : 'Inactive' %>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <%=staff?.student_created_on%>
+                                                </td>
+                                                <td>
+                                                    <%=staff?.date_of_birth%>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <a href="tel:<%=staff?.staff_info?.primary_contact_number%>"
+                                                            class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle  p-0 me-2"><i
+                                                                class="ti ti-phone"></i></a>
+                                                        <a href="mailto:<%=staff?.staff_info?.email_address%>"
+                                                            class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle p-0 me-3"><i
+                                                                class="ti ti-mail"></i></a>
+                                                        <div class="dropdown">
+                                                            <a href="#"
+                                                                class="btn btn-white btn-icon btn-sm d-flex align-items-center justify-content-center rounded-circle p-0"
+                                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="ti ti-dots-vertical fs-14"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right p-3">
 
+                                                                <li>
+                                                                    <a class="dropdown-item rounded-1"
+                                                                        href="/add_staff?staffID=<%=staff?.staff_id%>"><i
+                                                                            class="ti ti-edit-circle me-2"></i>Edit</a>
+                                                                </li>
 
-        <!-- Delete Modal -->
-        <div class="modal fade" id="delete-modal">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <form action="student-grid.html">
-                        <div class="modal-body text-center">
-                            <span class="delete-icon">
-								<i class="ti ti-trash-x"></i>
-							</span>
-                            <h4>Confirm Deletion</h4>
-                            <p>You want to delete all the marked items, this cant be undone once you delete.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="javascript:void(0);" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</a>
-                                <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                                                <li>
+                                                                    <a class="dropdown-item rounded-1" href="#"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#delete-modal"><i
+                                                                            class="ti ti-trash-x me-2"></i>Delete</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <% }) %>
+                                    </tbody>
+                                </table>
                             </div>
+                            <!-- /Student List -->
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- /Delete Modal -->
+                <!-- /Page Wrapper -->
+
+
+
+                <!-- Delete Modal -->
+                <div class="modal fade" id="delete-modal">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <form action="student-grid.html">
+                                <div class="modal-body text-center">
+                                    <span class="delete-icon">
+                                        <i class="ti ti-trash-x"></i>
+                                    </span>
+                                    <h4>Confirm Deletion</h4>
+                                    <p>You want to delete all the marked items, this cant be undone once you delete.</p>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="javascript:void(0);" class="btn btn-light me-3"
+                                            data-bs-dismiss="modal">Cancel</a>
+                                        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Delete Modal -->
 
     </div>
     <script>
-  const listBtn = document.getElementById('listViewBtn');
-  const gridBtn = document.getElementById('gridViewBtn');
-  const listView = document.getElementById('list-view');
-  const gridView = document.getElementById('grid-view');
+        const listBtn = document.getElementById('listViewBtn');
+        const gridBtn = document.getElementById('gridViewBtn');
+        const listView = document.getElementById('list-view');
+        const gridView = document.getElementById('grid-view');
 
-  listBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    listView.style.display = 'block';
-    gridView.style.display = 'none';
+        listBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            listView.style.display = 'block';
+            gridView.style.display = 'none';
 
-    listBtn.classList.add('active');
-    listBtn.classList.add('primary-hover');
-    gridBtn.classList.remove('active');
-    gridBtn.classList.remove('primary-hover');
-  });
+            listBtn.classList.add('active');
+            listBtn.classList.add('primary-hover');
+            gridBtn.classList.remove('active');
+            gridBtn.classList.remove('primary-hover');
+        });
 
-  gridBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    listView.style.display = 'none';
-    gridView.style.display = 'flex';
+        gridBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            listView.style.display = 'none';
+            gridView.style.display = 'flex';
 
-    listBtn.classList.remove('active');
-    listBtn.classList.remove('primary-hover');
-    gridBtn.classList.add('active');
-    gridBtn.classList.add('primary-hover');
-  });
-</script>
-<style>
-    .primary-hover{
+            listBtn.classList.remove('active');
+            listBtn.classList.remove('primary-hover');
+            gridBtn.classList.add('active');
+            gridBtn.classList.add('primary-hover');
+        });
+    </script>
+    <style>
+        .primary-hover {
             background: #3D5EE1 !important;
-    color: #FFF;
-    }
-</style>
+            color: #FFF;
+        }
+    </style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
 
+        const exportPDFBtn = document.querySelector(".dropdown-item:has(.ti-file-type-pdf)");
+        const exportExcelBtn = document.querySelector(".dropdown-item:has(.ti-file-type-xls)");
+
+        exportPDFBtn?.addEventListener("click", function () {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.autoTable({
+                html: '.datatable',
+                theme: 'grid',
+                headStyles: { fillColor: [41, 128, 185] }, // Blue header
+                styles: { fontSize: 8 }
+            });
+
+            doc.save('students.pdf');
+        });
+
+        exportExcelBtn?.addEventListener("click", function () {
+            const table = document.querySelector(".datatable");
+            const wb = XLSX.utils.book_new();
+            const ws = XLSX.utils.table_to_sheet(table);
+            XLSX.utils.book_append_sheet(wb, ws, "Students");
+            XLSX.writeFile(wb, "students.xlsx");
+        });
+
+    });
+</script>
     <!-- /Main Wrapper -->
 
     <!-- jQuery -->
@@ -448,7 +437,8 @@
 
     <!-- Daterangepikcer JS -->
     <script src="assets/js/moment.js" type="168959eb17cf6078c6a34461-text/javascript"></script>
-    <script src="assets/plugins/daterangepicker/daterangepicker.js" type="168959eb17cf6078c6a34461-text/javascript"></script>
+    <script src="assets/plugins/daterangepicker/daterangepicker.js"
+        type="168959eb17cf6078c6a34461-text/javascript"></script>
 
     <!-- Feather Icon JS -->
     <script src="assets/js/feather.min.js" type="168959eb17cf6078c6a34461-text/javascript"></script>
@@ -464,9 +454,21 @@
     <!-- Custom JS -->
     <script src="assets/js/script.js" type="168959eb17cf6078c6a34461-text/javascript"></script>
 
-    <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="168959eb17cf6078c6a34461-|49" defer></script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"95d0de6d7c7f3971","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"3ca157e612a14eccbb30cf6db6691c29"}'
+    <script
+        src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="168959eb17cf6078c6a34461-|49" defer></script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+        integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+        data-cf-beacon='{"rayId":"95d0de6d7c7f3971","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"3ca157e612a14eccbb30cf6db6691c29"}'
         crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- AutoTable plugin for jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- SheetJS (xlsx.min.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </body>
 
 </html>
