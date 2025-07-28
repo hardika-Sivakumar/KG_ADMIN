@@ -1,592 +1,930 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <meta name="description" content="Preskool - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, html5, responsive, Projects"
+    />
+    <meta
+      name="author"
+      content="Dreams technologies - Bootstrap Admin Template"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Preskool Admin</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
-  <meta name="description" content="Preskool - Bootstrap Admin Template" />
-  <meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects" />
-  <meta name="author" content="Dreams technologies - Bootstrap Admin Template" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>Preskool Admin</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicon.png"
+    />
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+    <!-- Theme Script -->
+    <script
+      src="assets/js/theme-script.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-  <!-- Theme Script -->
-  <script src="assets/js/theme-script.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css" />
 
-  <!-- Feather CSS -->
-  <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css" />
+    <!-- Tabler Icon CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/tabler-icons/tabler-icons.css"
+    />
 
-  <!-- Tabler Icon CSS -->
-  <link rel="stylesheet" href="assets/plugins/tabler-icons/tabler-icons.css" />
+    <!-- Daterangepikcer CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/daterangepicker/daterangepicker.css"
+    />
 
-  <!-- Daterangepikcer CSS -->
-  <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
+    <!-- Fontawesome CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/fontawesome/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-  <!-- Fontawesome CSS -->
-  <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-  <!-- Select2 CSS -->
-  <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-  <!-- Datetimepicker CSS -->
-  <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+    <!-- Bootstrap Tagsinput CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
 
-  <!-- Bootstrap Tagsinput CSS -->
-  <link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-
-<body>
-  <!-- Main Wrapper -->
-  <div class="main-wrapper">
-    <!-- Header -->
-    <%- include('header') %>
+  <body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <%- include('header') %>
       <!-- /Header -->
 
       <!-- Sidebar -->
       <%- include('sidebar') %>
-        <!-- /Sidebar -->
+      <!-- /Sidebar -->
 
-        <!-- Page Wrapper -->
-        <div class="page-wrapper">
-          <div class="content content-two">
-            <!-- Page Header -->
-            <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
-              <div class="my-auto mb-2">
-                <h3 class="mb-1">Add Teacher</h3>
-                <nav>
-                  <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item">
-                      <a href="index.html">Dashboard</a>
-                    </li>
-                    <li class="breadcrumb-item">
-                      <a href="teachers.html">Teachers</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Add Teacher
-                    </li>
-                  </ol>
-                </nav>
-              </div>
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content content-two">
+          <!-- Page Header -->
+          <div
+            class="d-md-flex d-block align-items-center justify-content-between mb-3"
+          >
+            <div class="my-auto mb-2">
+              <h3 class="mb-1">Add Teacher</h3>
+              <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html">Dashboard</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="teachers.html">Teachers</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Add Teacher
+                  </li>
+                </ol>
+              </nav>
             </div>
-            <!-- /Page Header -->
+          </div>
+          <!-- /Page Header -->
 
-            <div class="row">
-              <div class="col-md-12">
-                <form onsubmit="return false" id="teacher-form">
-                  <!-- Personal Information -->
-                  <div class="card">
-                    <div class="card-header bg-light">
-                      <div class="d-flex align-items-center">
-                        <span class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0">
-                          <i class="ti ti-info-square-rounded fs-16"></i>
-                        </span>
-                        <h4 class="text-dark">Personal Information</h4>
-                      </div>
+          <div class="row">
+            <div class="col-md-12">
+              <form onsubmit="return false" id="teacher-form">
+                <!-- Personal Information -->
+                <div class="card">
+                  <div class="card-header bg-light">
+                    <div class="d-flex align-items-center">
+                      <span
+                        class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0"
+                      >
+                        <i class="ti ti-info-square-rounded fs-16"></i>
+                      </span>
+                      <h4 class="text-dark">Personal Information</h4>
                     </div>
-                    <div class="card-body pb-1">
-                      <div class="row row-cols-xxl-5 row-cols-md-6">
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div>
-                            <div class="mb-3">
-                              <label for="image_upload" class="form-label fw-bold">Profile Image</label>
-                              <div class="profile-uploader profile-uploader-two mb-2 text-center">
-                                <span class="d-block lh-1 fs-24 mb-1"><i class="ti ti-upload"></i></span>
-                                <div class="drag-upload-btn bg-transparent border-0">
-                                  <p class="fs-12 mb-2"><span class="text-primary">Click to Upload</span> or drag and
-                                    drop</p>
-                                  <h6>JPG or PNG (Max 450 x 450 px)</h6>
-                                </div>
-                                <input type="file" class="form-control" id="image_upload" name="image_upload" accept="image/*"
-                                 />
+                  </div>
+                  <div class="card-body pb-1">
+                    <div class="row row-cols-xxl-5 row-cols-md-6">
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div>
+                          <div class="mb-3">
+                            <label for="image_upload" class="form-label fw-bold"
+                              >Profile Image</label
+                            >
+                            <div
+                              class="profile-uploader profile-uploader-two mb-2 text-center"
+                            >
+                              <span class="d-block lh-1 fs-24 mb-1"
+                                ><i class="ti ti-upload"></i
+                              ></span>
+                              <div
+                                class="drag-upload-btn bg-transparent border-0"
+                              >
+                                <p class="fs-12 mb-2">
+                                  <span class="text-primary"
+                                    >Click to Upload</span
+                                  >
+                                  or drag and drop
+                                </p>
+                                <h6>JPG or PNG (Max 450 x 450 px)</h6>
                               </div>
-                              <div id="imagePreview" class="mt-3 text-center"></div>
+                              <input
+                                type="file"
+                                class="form-control"
+                                id="image_upload"
+                                name="image_upload"
+                                accept="image/*"
+                              />
                             </div>
-                          </div>
-                          <div class="mb-3">
-                            <label class="form-label">Teacher ID</label>
-                            <input type="text" class="form-control" readonly placeholder="Auto Fetch" value="<%= staffDetails?.staff_id %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">First Name</label>
-                            <input type="text" class="form-control" placeholder="Eg : John" id="first_name"
-                              name="first_name" value="<%= staffDetails?.staff_info?.first_name %>"/>
+                            <div
+                              id="imagePreview"
+                              class="mt-3 text-center"
+                            ></div>
                           </div>
                         </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Last Name</label>
-                            <input type="text" class="form-control" placeholder="Eg : Doe" name="last_name" value="<%= staffDetails?.staff_info?.last_name %>"/>
-                          </div>
+                        <div class="mb-3">
+                          <label class="form-label">Teacher ID</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            readonly
+                            placeholder="Auto Fetch"
+                            value="<%= staffDetails?.staff_id %>"
+                          />
                         </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Handling Classes</label>
-                            <select class="select2" name="handling_classes" multiple="multiple">
-                              <option value="pre-kg">Pre-KG</option>
-                              <option value="lkg">LKG (Lower Kindergarten)</option>
-                              <option value="ukg">UKG (Upper Kindergarten)</option>
-                              <option value="kg-1">KG-1</option>
-                              <option value="kg-2">KG-2</option>
-                              <option value="nursery">Nursery</option>
-                              <option value="montessori-1">Montessori-1</option>
-                              <option value="montessori-2">Montessori-2</option>
-                              <option value="early-years">Early Years Program</option>
-                            </select>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">First Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Eg : John"
+                            id="first_name"
+                            name="first_name"
+                            value="<%= staffDetails?.staff_info?.first_name %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Last Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Eg : Doe"
+                            name="last_name"
+                            value="<%= staffDetails?.staff_info?.last_name %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Handling Classes</label>
+                          <select
+                            class="select2"
+                            name="handling_classes"
+                            multiple="multiple"
+                          >
+                            <option value="pre-kg">Pre-KG</option>
+                            <option value="lkg">
+                              LKG (Lower Kindergarten)
+                            </option>
+                            <option value="ukg">
+                              UKG (Upper Kindergarten)
+                            </option>
+                            <option value="kg-1">KG-1</option>
+                            <option value="kg-2">KG-2</option>
+                            <option value="nursery">Nursery</option>
+                            <option value="montessori-1">Montessori-1</option>
+                            <option value="montessori-2">Montessori-2</option>
+                            <option value="early-years">
+                              Early Years Program
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Subject</label>
+                          <select
+                            class="select2"
+                            name="subject"
+                            multiple="multiple"
+                          >
+                            <option>English</option>
+                            <option>Mathematics</option>
+                            <option>Environmental Studies</option>
+                            <option>Science</option>
+                            <option>Social Science</option>
+                            <option>Computer</option>
+                            <option>General Knowledge</option>
+                            <option>Hindi</option>
+                            <option>Spanish</option>
+                            <option>French</option>
+                            <option>Drawing</option>
+                            <option>Music</option>
+                            <option>Physical Education</option>
+                            <option>Value Education</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Gender</label>
+                          <select class="select form-select" name="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label"
+                            >Primary Contact Number</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="primary_contact_number"
+                            placeholder="Eg : 1234567890"
+                            value="<%= staffDetails?.staff_info?.primary_contact_number %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Email Address</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            name="email_address"
+                            placeholder="Eg : yDf2T@example.com"
+                            value="<%= staffDetails?.staff_info?.email_address %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Blood Group</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="blood_group"
+                            placeholder="Eg : O+ve"
+                            value="<%= staffDetails?.staff_info?.blood_group %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Father’s Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="fathers_name"
+                            id="fathers_name"
+                            value="<%= staffDetails?.staff_parent_info?.fathers_name %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Mother’s Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="mothers_name"
+                            value="<%= staffDetails?.staff_parent_info?.mothers_name %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Date of Birth</label>
+                          <input
+                            type="date"
+                            class="form-control"
+                            name="date_of_birth"
+                            value="<%= staffDetails?.staff_info?.date_of_birth %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Marital Status</label>
+                          <select
+                            class="select form-select"
+                            name="marital_status"
+                          >
+                            <option>Select</option>
+                            <option>Single</option>
+                            <option>Married</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Language Known</label>
+                          <input
+                            class="input-tags form-control"
+                            type="text"
+                            data-role="tagsinput"
+                            name="language_known"
+                            value="<%= (staffDetails?.staff_experience_info?.language_known)?.join(',') %>"
+                            placeholder="Eg : English, Spanish"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Qualification</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="qualification"
+                            placeholder="Eg : B.Tech, M.Tech"
+                            value="<%= staffDetails?.staff_experience_info?.qualification %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Work Experience</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="work_experience"
+                            placeholder="Eg : 5 years"
+                            value="<%= staffDetails?.staff_experience_info?.work_experience %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl-3 col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Address</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="address"
+                            placeholder="Eg : 123, Street, City, State, Country"
+                            value="<%= staffDetails?.staff_parent_info?.address %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl-3 col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Permanent Address</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="permanent_address"
+                            placeholder="Eg : 123, Street, City, State, Country"
+                            value="<%= staffDetails?.staff_parent_info?.permanent_address %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl-3 col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">ID Number</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="id_number"
+                            placeholder="Eg : AAAAA1234A"
+                            value="<%= staffDetails?.staff_kyc_info?.id_number %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xxl-3 col-xl-3 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Status</label>
+                          <select
+                            class="select form-select"
+                            name="status"
+                            id="status"
+                          >
+                            <option>Select</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-xxl-12 col-xl-12">
+                        <div class="mb-3">
+                          <label class="form-label">Notes</label>
+                          <textarea
+                            class="form-control"
+                            placeholder="Other Information"
+                            rows="4"
+                            name="notes"
+                          >
+<%= staffDetails?.staff_experience_info?.notes %></textarea
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /Personal Information -->
 
-                          </div>
+                <!-- Bank Details -->
+                <div class="card">
+                  <div class="card-header bg-light">
+                    <div class="d-flex align-items-center">
+                      <span
+                        class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0"
+                      >
+                        <i class="ti ti-map fs-16"></i>
+                      </span>
+                      <h4 class="text-dark">Bank Account Detail</h4>
+                    </div>
+                  </div>
+                  <div class="card-body pb-1">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Salary</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="salary"
+                            placeholder="Eg : 10000"
+                            value="<%= staffDetails?.staff_bank_info?.salary %>"
+                          />
                         </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Subject</label>
-                            <select class="select2" name="subject" multiple="multiple">
-                              <option>English</option>
-                              <option>Mathematics</option>
-                              <option>Environmental Studies</option>
-                              <option>Science</option>
-                              <option>Social Science</option>
-                              <option>Computer</option>
-                              <option>General Knowledge</option>
-                              <option>Hindi</option>
-                              <option>Spanish</option>
-                              <option>French</option>
-                              <option>Drawing</option>
-                              <option>Music</option>
-                              <option>Physical Education</option>
-                              <option>Value Education</option>
-                            </select>
+                      </div>
+                      <div class="col-lg-4 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Account Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="account_name"
+                            placeholder="Eg : John Doe"
+                            value="<%= staffDetails?.staff_bank_info?.account_name %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Account Number</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="account_number"
+                            placeholder="Eg : 1234567890"
+                            value="<%= staffDetails?.staff_bank_info?.account_number %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Bank Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="bank_name"
+                            placeholder="Eg : HDFC Bank"
+                            value="<%= staffDetails?.staff_bank_info?.bank_name %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">IFSC Code</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="ifsc_code"
+                            placeholder="Eg : HDFC0001234"
+                            value="<%= staffDetails?.staff_bank_info?.ifsc_code %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Branch Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="branch_name"
+                            placeholder="Eg : Newyork"
+                            value="<%= staffDetails?.staff_bank_info?.branch_name %>"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header bg-light">
+                    <div class="d-flex align-items-center">
+                      <span
+                        class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0"
+                      >
+                        <i class="ti ti-map fs-16"></i>
+                      </span>
+                      <h4 class="text-dark">Auth Details</h4>
+                    </div>
+                  </div>
+                  <div class="card-body pb-1">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Email</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="staff_email"
+                            placeholder="Eg : example@gmail.com"
+                            value="<%= staffDetails?.staff_auth?.email %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Password</label>
+                          <input
+                            type="password"
+                            class="form-control"
+                            name="staff_password"
+                            placeholder="Eg : 1243"
+                            value="<%= staffDetails?.staff_auth?.password %>"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /Bank Details -->
 
+                <!-- Documents -->
+                <div class="card">
+                  <div class="card-header bg-light">
+                    <div class="d-flex align-items-center">
+                      <span
+                        class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0"
+                      >
+                        <i class="ti ti-file fs-16"></i>
+                      </span>
+                      <h4 class="text-dark">Documents</h4>
+                    </div>
+                  </div>
+                  <div class="card-body pb-1">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="mb-2">
+                          <div class="mb-3">
+                            <label class="form-label">Upload Resume</label>
+                            <p>Upload image size of 4MB, Accepted Format PDF</p>
+                          </div>
+                          <div class="d-flex align-items-center flex-wrap">
+                            <div
+                              class="btn btn-primary drag-upload-btn mb-2 me-2"
+                            >
+                              <i class="ti ti-file-upload me-1"></i>Change
+                              <input
+                                type="file"
+                                class="form-control image_sign"
+                                multiple=""
+                                id="resume"
+                                name="resume_file"
+                              />
+                            </div>
+                            <p class="mb-2">Resume.pdf</p>
                           </div>
                         </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="mb-2">
                           <div class="mb-3">
-                            <label class="form-label">Gender</label>
-                            <select class="select form-select" name="gender">
-                              <option value="male">Male</option>
-                              <option value="female">Female</option>
-                              <option value="other">Other</option>
-                            </select>
+                            <label class="form-label"
+                              >Upload Joining Letter</label
+                            >
+                            <p>Upload image size of 4MB, Accepted Format PDF</p>
                           </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Primary Contact Number</label>
-                            <input type="text" class="form-control" name="primary_contact_number"
-                              placeholder="Eg : 1234567890" value="<%= staffDetails?.staff_info?.primary_contact_number %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" class="form-control" name="email_address"
-                              placeholder="Eg : yDf2T@example.com" value="<%= staffDetails?.staff_info?.email_address %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Blood Group</label>
-                            <input type="text" class="form-control" name="blood_group" placeholder="Eg : O+ve" value="<%= staffDetails?.staff_info?.blood_group %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Father’s Name</label>
-                            <input type="text" class="form-control" name="fathers_name" id="fathers_name" value="<%= staffDetails?.staff_parent_info?.fathers_name %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Mother’s Name</label>
-                            <input type="text" class="form-control" name="mothers_name" value="<%= staffDetails?.staff_parent_info?.mothers_name %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" name="date_of_birth" value="<%= staffDetails?.staff_info?.date_of_birth %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Marital Status</label>
-                            <select class="select form-select" name="marital_status">
-                              <option>Select</option>
-                              <option>Single</option>
-                              <option>Married</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Language Known</label>
-                            <input class="input-tags form-control" type="text" data-role="tagsinput"
-                              name="language_known" value="<%= (staffDetails?.staff_experience_info?.language_known).join(',') %>" placeholder="Eg : English, Spanish" />
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Qualification</label>
-                            <input type="text" class="form-control" name="qualification"
-                              placeholder="Eg : B.Tech, M.Tech" value="<%= staffDetails?.staff_experience_info?.qualification %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Work Experience</label>
-                            <input type="text" class="form-control" name="work_experience" placeholder="Eg : 5 years" value="<%= staffDetails?.staff_experience_info?.work_experience %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address"
-                              placeholder="Eg : 123, Street, City, State, Country" value="<%= staffDetails?.staff_parent_info?.address %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Permanent Address</label>
-                            <input type="text" class="form-control" name="permanent_address"
-                              placeholder="Eg : 123, Street, City, State, Country" value="<%= staffDetails?.staff_parent_info?.permanent_address %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">ID Number</label>
-                            <input type="text" class="form-control" name="id_number" placeholder="Eg : AAAAA1234A" value="<%= staffDetails?.staff_kyc_info?.id_number %>"/>
-                          </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-3 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Status</label>
-                            <select class="select form-select" name="status" id="status">
-                              <option>Select</option>
-                              <option>Active</option>
-                              <option>Inactive</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-xxl-12 col-xl-12">
-                          <div class="mb-3">
-                            <label class="form-label">Notes</label>
-                            <textarea class="form-control" placeholder="Other Information" rows="4"
-                              name="notes"><%= staffDetails?.staff_experience_info?.notes %></textarea>
+                          <div class="d-flex align-items-center flex-wrap">
+                            <div
+                              class="btn btn-primary drag-upload-btn mb-2 me-2"
+                            >
+                              <i class="ti ti-file-upload me-1"></i>Upload
+                              Document
+                              <input
+                                type="file"
+                                class="form-control image_sign"
+                                multiple=""
+                                id="joining_letter"
+                                name="joining_letter"
+                              />
+                            </div>
+                            <p class="mb-2">Resume.pdf</p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- /Personal Information -->
+                </div>
+                <!-- /Documents -->
 
-                  <!-- Bank Details -->
-                  <div class="card">
-                    <div class="card-header bg-light">
-                      <div class="d-flex align-items-center">
-                        <span class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0">
-                          <i class="ti ti-map fs-16"></i>
-                        </span>
-                        <h4 class="text-dark">Bank Account Detail</h4>
-                      </div>
-                    </div>
-                    <div class="card-body pb-1">
-                      <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Salary</label>
-                            <input type="text" class="form-control" name="salary" placeholder="Eg : 10000" value="<%= staffDetails?.staff_bank_info?.salary %>"/>
-                          </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Account Name</label>
-                            <input type="text" class="form-control" name="account_name" placeholder="Eg : John Doe" value="<%= staffDetails?.staff_bank_info?.account_name %>"/>
-                          </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Account Number</label>
-                            <input type="text" class="form-control" name="account_number"
-                              placeholder="Eg : 1234567890" value="<%= staffDetails?.staff_bank_info?.account_number %>"/>
-                          </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Bank Name</label>
-                            <input type="text" class="form-control" name="bank_name" placeholder="Eg : HDFC Bank" value="<%= staffDetails?.staff_bank_info?.bank_name %>"/>
-                          </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">IFSC Code</label>
-                            <input type="text" class="form-control" name="ifsc_code" placeholder="Eg : HDFC0001234" value="<%= staffDetails?.staff_bank_info?.ifsc_code %>"/>
-                          </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Branch Name</label>
-                            <input type="text" class="form-control" name="branch_name" placeholder="Eg : Newyork" value="<%= staffDetails?.staff_bank_info?.branch_name %>"/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /Bank Details -->
-
-                  <!-- Documents -->
-                  <div class="card">
-                    <div class="card-header bg-light">
-                      <div class="d-flex align-items-center">
-                        <span class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0">
-                          <i class="ti ti-file fs-16"></i>
-                        </span>
-                        <h4 class="text-dark">Documents</h4>
-                      </div>
-                    </div>
-                    <div class="card-body pb-1">
-                      <div class="row">
-                        <div class="col-lg-6">
-                          <div class="mb-2">
-                            <div class="mb-3">
-                              <label class="form-label">Upload Resume</label>
-                              <p>Upload image size of 4MB, Accepted Format PDF</p>
-                            </div>
-                            <div class="d-flex align-items-center flex-wrap">
-                              <div class="btn btn-primary drag-upload-btn mb-2 me-2">
-                                <i class="ti ti-file-upload me-1"></i>Change
-                                <input type="file" class="form-control image_sign" multiple="" id="resume"
-                                  name="resume_file" />
-                              </div>
-                              <p class="mb-2">Resume.pdf</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="mb-2">
-                            <div class="mb-3">
-                              <label class="form-label">Upload Joining Letter</label>
-                              <p>Upload image size of 4MB, Accepted Format PDF</p>
-                            </div>
-                            <div class="d-flex align-items-center flex-wrap">
-                              <div class="btn btn-primary drag-upload-btn mb-2 me-2">
-                                <i class="ti ti-file-upload me-1"></i>Upload
-                                Document
-                                <input type="file" class="form-control image_sign" multiple="" id="joining_letter"
-                                  name="joining_letter" />
-                              </div>
-                              <p class="mb-2">Resume.pdf</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /Documents -->
-
-                  <div class="text-end">
-                    <button type="button" class="btn btn-light me-3">
-                      Cancel
-                    </button>
-                    <button type="submit" id="add-teacher-btn" class="btn btn-primary">
-                      Add Teacher
-                    </button>
-                  </div>
-                </form>
-              </div>
+                <div class="text-end">
+                  <button type="button" class="btn btn-light me-3">
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    id="add-teacher-btn"
+                    class="btn btn-primary"
+                  >
+                    Add Teacher
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-        <!-- /Page Wrapper -->
-  </div>
+      </div>
+      <!-- /Page Wrapper -->
+    </div>
 
-  <script src="js/api.js"></script>
-  <script src="js/uploadFile.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/uploadFile.js"></script>
 
+    <script>
+      const BACKEND_URL = "<%= BACKEND_URL %>";
+      let staff_resume = undefined;
+      let staff_joining_letter = undefined;
+      let staff_profile_photo = undefined;
+      document
+        .getElementById("add-teacher-btn")
+        .addEventListener("click", async function (event) {
+          event.preventDefault();
+          const formElement = document.getElementById("teacher-form");
+          const formData = new FormData(formElement);
+          const listItemsKey = [
+            "handling_classes",
+            "subject",
+            "language_known",
+          ];
 
-  <script>
-    const BACKEND_URL = "<%= BACKEND_URL %>";
-    let staff_resume = undefined
-    let staff_joining_letter = undefined
-    let staff_profile_photo = undefined
-    document.getElementById("add-teacher-btn").addEventListener("click", async function (event) {
-      event.preventDefault();
-      const formElement = document.getElementById("teacher-form");
-      const formData = new FormData(formElement);
-      const listItemsKey = ["handling_classes", "subject", "language_known"]
+          // Step 1: Build flat payload
+          let payload = {};
+          for (const [key, value] of formData.entries()) {
+            if (listItemsKey.includes(key)) {
+              payload[key] = formData.getAll(key);
+              console.log(formData.getAll(key));
+              continue;
+            }
+            payload[key] = value instanceof File ? value.name : value;
+          }
 
-      // Step 1: Build flat payload
-      let payload = {};
-      for (const [key, value] of formData.entries()) {
-        if (listItemsKey.includes(key)) {
-          payload[key] = formData.getAll(key)
-          console.log(formData.getAll(key))
-          continue
-        }
-        payload[key] = value instanceof File ? value.name : value;
+          // Step 2: Transform to nested structure
+          const finalPayload = {
+            staff_info: {
+              first_name: payload?.first_name || "",
+              last_name: payload?.last_name || "",
+              gender: payload?.gender || "male",
+              primary_contact_number: payload?.primary_contact_number || "",
+              email_address: payload?.email_address || "",
+              blood_group: payload?.blood_group || "",
+              date_of_birth: payload?.date_of_birth || "",
+              marital_status:
+                payload?.marital_status !== "Select"
+                  ? payload?.marital_status
+                  : "",
+              staff_profile_photo: staff_profile_photo || "",
+            },
+
+            staff_experience_info: {
+              handling_classes: payload?.handling_classes || "",
+              subject: payload?.subject || "",
+              date_of_joining: payload?.date_of_joining || "",
+              qualification: payload?.qualification || "",
+              language_known: payload?.language_known || "",
+              work_experience: payload?.work_experience || "",
+              notes: payload?.notes || "",
+            },
+
+            staff_parent_info: {
+              fathers_name: payload?.fathers_name || "",
+              mothers_name: payload?.mothers_name || "",
+              parent_contact_no: payload?.parent_contact_no || "",
+              address: payload?.address || "",
+              permanent_address: payload?.permanent_address || "",
+            },
+
+            staff_bank_info: {
+              account_name: payload?.account_name || "",
+              account_number: payload?.account_number || "",
+              bank_name: payload?.bank_name || "",
+              ifsc_code: payload?.ifsc_code || "",
+              branch_name: payload?.branch_name || "",
+              salary: payload?.salary || "",
+            },
+            staff_auth: {
+              email: payload?.staff_email || "",
+              password: payload?.staff_password || "",
+            },
+
+            staff_kyc_info: {
+              resume_file: staff_resume || "",
+              joining_letter: staff_joining_letter || "",
+              id_number: payload?.id_number || "",
+            },
+          };
+
+          console.log("Final Payload:", finalPayload);
+
+          const saveTeacherRequest = await fetchWithTimeout(
+            `${BACKEND_URL}/staff/update_new_staff_details`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(finalPayload),
+            }
+          );
+
+          if (!saveTeacherRequest.success) {
+            // showToast("error", "Failed to add teacher.");
+            return;
+          }
+          // showToast("success", "Teacher added successfully.");
+
+          // Step 3: Send to backend (optional)
+        });
+
+      function handleFileUpload(
+        inputId,
+        fileTypeLabel,
+        pathPrefix,
+        backendUrl,
+        callback
+      ) {
+        document
+          .getElementById(inputId)
+          .addEventListener("change", async function (event) {
+            const file = event.target.files[0];
+
+            if (!file) return;
+
+            const maxSize = 4 * 1024 * 1024; // 4MB
+            if (file.size > maxSize) {
+              alert("File size exceeds 4MB.");
+              return;
+            }
+
+            const first_name =
+              document.getElementById("first_name").value || "Unknown";
+            const father_name =
+              document.getElementById("fathers_name").value || "Unknown";
+            const uploadPath = `${pathPrefix}_${first_name}_${father_name}`;
+
+            try {
+              const uploadedUrl = await uploadFile(
+                file,
+                uploadPath,
+                backendUrl
+              );
+              callback(uploadedUrl); // set variable or update UI
+            } catch (error) {
+              console.error(`Error uploading ${fileTypeLabel}:`, error);
+              alert(`Failed to upload ${fileTypeLabel}`);
+            }
+          });
       }
 
-      // Step 2: Transform to nested structure
-      const finalPayload = {
-        staff_info: {
-          first_name: payload?.first_name || "",
-          last_name: payload?.last_name || "",
-          gender: payload?.gender || "male",
-          primary_contact_number: payload?.primary_contact_number || "",
-          email_address: payload?.email_address || "",
-          blood_group: payload?.blood_group || "",
-          date_of_birth: payload?.date_of_birth || "",
-          marital_status: payload?.marital_status !== "Select" ? payload?.marital_status : "",
-          staff_profile_photo: staff_profile_photo || "",
-        },
-
-        staff_experience_info: {
-          handling_classes: payload?.handling_classes || "",
-          subject: payload?.subject || "",
-          date_of_joining: payload?.date_of_joining || "",
-          qualification: payload?.qualification || "",
-          language_known: payload?.language_known || "",
-          work_experience: payload?.work_experience || "",
-          notes: payload?.notes || "",
-        },
-
-        staff_parent_info: {
-          fathers_name: payload?.fathers_name || "",
-          mothers_name: payload?.mothers_name || "",
-          parent_contact_no: payload?.parent_contact_no || "",
-          address: payload?.address || "",
-          permanent_address: payload?.permanent_address || "",
-        },
-
-        staff_bank_info: {
-          account_name: payload?.account_name || "",
-          account_number: payload?.account_number || "",
-          bank_name: payload?.bank_name || "",
-          ifsc_code: payload?.ifsc_code || "",
-          branch_name: payload?.branch_name || "",
-          salary: payload?.salary || "",
-        },
-
-        staff_kyc_info: {
-          resume_file: staff_resume || "",
-          joining_letter: staff_joining_letter || "",
-          id_number: payload?.id_number || "",
+      handleFileUpload(
+        "resume",
+        "Resume",
+        "/teacher/profile/resume",
+        BACKEND_URL,
+        (url) => {
+          staff_resume = url;
         }
-      };
+      );
 
-      console.log("Final Payload:", finalPayload);
-
-      const saveTeacherRequest = await fetchWithTimeout(
-        `${BACKEND_URL}/staff/update_new_staff_details`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(finalPayload),
+      handleFileUpload(
+        "joining_letter",
+        "Joining Letter",
+        "/teacher/profile/joining_letter",
+        BACKEND_URL,
+        (url) => {
+          staff_joining_letter = url;
         }
-      )
+      );
 
-      if (!saveTeacherRequest.success) {
-        // showToast("error", "Failed to add teacher.");
-        return;
-      }
-      // showToast("success", "Teacher added successfully.");
-
-      // Step 3: Send to backend (optional)
-    });
-
-    function handleFileUpload(inputId, fileTypeLabel, pathPrefix, backendUrl, callback) {
-      document.getElementById(inputId).addEventListener("change", async function (event) {
-        const file = event.target.files[0];
-
-        if (!file) return;
-
-        const maxSize = 4 * 1024 * 1024; // 4MB
-        if (file.size > maxSize) {
-          alert("File size exceeds 4MB.");
-          return;
+      handleFileUpload(
+        "image_upload",
+        "Profile Photo",
+        "/teacher/profile/profile_photo",
+        BACKEND_URL,
+        (url) => {
+          staff_profile_photo = url;
         }
+      );
+    </script>
+    <!-- /Main Wrapper -->
 
-        const first_name = document.getElementById("first_name").value || "Unknown";
-        const father_name = document.getElementById("fathers_name").value || "Unknown";
-        const uploadPath = `${pathPrefix}_${first_name}_${father_name}`;
+    <!-- jQuery -->
+    <script
+      src="assets/js/jquery-3.7.1.min.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-        try {
-          const uploadedUrl = await uploadFile(file, uploadPath, backendUrl);
-          callback(uploadedUrl); // set variable or update UI
-        } catch (error) {
-          console.error(`Error uploading ${fileTypeLabel}:`, error);
-          alert(`Failed to upload ${fileTypeLabel}`);
-        }
-      });
-    }
+    <!-- Bootstrap Core JS -->
+    <script
+      src="assets/js/bootstrap.bundle.min.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-    handleFileUpload("resume", "Resume", "/teacher/profile/resume", BACKEND_URL, (url) => {
-      staff_resume = url;
-    });
+    <!-- Daterangepikcer JS -->
+    <script
+      src="assets/js/moment.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
+    <script
+      src="assets/plugins/daterangepicker/daterangepicker.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-    handleFileUpload("joining_letter", "Joining Letter", "/teacher/profile/joining_letter", BACKEND_URL, (url) => {
-      staff_joining_letter = url;
-    });
+    <!-- Feather Icon JS -->
+    <script
+      src="assets/js/feather.min.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-    handleFileUpload("image_upload", "Profile Photo", "/teacher/profile/profile_photo", BACKEND_URL, (url) => {
-      staff_profile_photo = url;
-    });
+    <!-- Slimscroll JS -->
+    <script
+      src="assets/js/jquery.slimscroll.min.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-  </script>
-  <!-- /Main Wrapper -->
+    <!-- Select2 JS -->
+    <script
+      src="assets/plugins/select2/js/select2.min.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-  <!-- jQuery -->
-  <script src="assets/js/jquery-3.7.1.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+    <!-- Datetimepicker JS -->
+    <script
+      src="assets/js/moment.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
+    <script
+      src="assets/js/bootstrap-datetimepicker.min.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-  <!-- Bootstrap Core JS -->
-  <script src="assets/js/bootstrap.bundle.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+    <!-- Bootstrap Tagsinput JS -->
+    <script
+      src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-  <!-- Daterangepikcer JS -->
-  <script src="assets/js/moment.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
-  <script src="assets/plugins/daterangepicker/daterangepicker.js"
-    type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+    <!-- Custom JS -->
+    <script
+      src="assets/js/script.js"
+      type="6dc0a9d0ac43462e72fa7502-text/javascript"
+    ></script>
 
-  <!-- Feather Icon JS -->
-  <script src="assets/js/feather.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+    <script
+      src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+      data-cf-settings="6dc0a9d0ac43462e72fa7502-|49"
+      defer
+    ></script>
 
-  <!-- Slimscroll JS -->
-  <script src="assets/js/jquery.slimscroll.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
-
-  <!-- Select2 JS -->
-  <script src="assets/plugins/select2/js/select2.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
-
-  <!-- Datetimepicker JS -->
-  <script src="assets/js/moment.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
-  <script src="assets/js/bootstrap-datetimepicker.min.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
-
-  <!-- Bootstrap Tagsinput JS -->
-  <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"
-    type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
-
-  <!-- Custom JS -->
-  <script src="assets/js/script.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
-
-  <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
-    data-cf-settings="6dc0a9d0ac43462e72fa7502-|49" defer></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
-
-
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+  </body>
 </html>
