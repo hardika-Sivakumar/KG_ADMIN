@@ -129,7 +129,7 @@
                                                 <a class="dropdown-item rounded-1"  data-bs-toggle="modal" data-bs-target="#contactModal" data-contact='<%- JSON.stringify(contact) %>'><i class="ti ti-menu me-2"></i>View Details</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="ti ti-trash-x me-2"></i>Delete</a>
+                                                <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal" data-contact_id="<%=contact?.contact_id%>"><i class="ti ti-trash-x me-2"></i>Delete</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -233,7 +233,7 @@
 																	class="ti ti-menu me-2"></i>View Details</a>
                                                         </li>
                                                         <li>
-                                                            <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal"><i
+                                                            <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal"  data-contact_id="<%=contact?.contact_id%>" data-bs-target="#delete-modal"><i
 																	class="ti ti-trash-x me-2"></i>Delete</a>
                                                         </li>
                                                     </ul>
@@ -257,7 +257,6 @@
         <div class="modal fade" id="delete-modal">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <form action="student-grid.html">
                         <div class="modal-body text-center">
                             <span class="delete-icon">
 								<i class="ti ti-trash-x"></i>
@@ -266,16 +265,59 @@
                             <p>You want to delete all the marked items, this cant be undone once you delete.</p>
                             <div class="d-flex justify-content-center">
                                 <a href="javascript:void(0);" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</a>
-                                <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                <button type="submit" class="btn btn-danger" id="delete_btn" onclick="handleDeleteContact()">Yes, Delete</button>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
         <!-- /Delete Modal -->
 
     </div>
+             <script src="js/api.js"></script>
+
+    <script>
+        const BACKEND_URL="<%= BACKEND_URL %>"
+
+        let deleteContactId = undefined
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("delete-modal");
+
+            modal.addEventListener("show.bs.modal", function (event) {
+                const trigger = event.relatedTarget;
+                deleteContactId = trigger.getAttribute("data-contact_id");
+                console.log(deleteContactId)
+
+            });
+        });
+
+        const handleDeleteContact = async() => {
+            console.log(deleteContactId)
+            
+            if(deleteContactId){
+                try{
+                    document.getElementById("delete_btn").disabled = true
+
+                    const deleteContact=await fetchWithTimeout(`${BACKEND_URL}/contact/delete_contact_request_details?contact_id=${deleteContactId}`,{
+                        method:"DELETE",
+                    })
+                    document.getElementById("delete_btn").disabled = false
+                    if(!deleteContact?.success){
+                        //handle success popup
+                        location.reload();
+                    }
+                    else{
+                        //handle error
+                    }
+                }
+                catch(err){
+                    
+                }
+            }
+        }
+
+    </script>
     <script>
   document.addEventListener("DOMContentLoaded", function () {
     const contactModal = document.getElementById("contactModal");
@@ -334,6 +376,8 @@
     color: #FFF;
     }
 </style>
+
+
 
     <!-- /Main Wrapper -->
 

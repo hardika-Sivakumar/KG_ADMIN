@@ -172,7 +172,8 @@
                                 <div class="col-xxl-3 col-xl-4 col-md-6 d-flex">
                                     <div class="card flex-fill">
                                         <div class="card-header d-flex align-items-center justify-content-between">
-                                            <a href="/student_details?studentID=<%=student?.student_id%>" class="link-primary">
+                                            <a href="/student_details?studentID=<%=student?.student_id%>"
+                                                class="link-primary">
                                                 <%=student?.student_id%>
                                             </a>
                                             <div class="d-flex align-items-center">
@@ -296,17 +297,20 @@
                                                         <input class="form-check-input" type="checkbox">
                                                     </div>
                                                 </td>
-                                                <td><a href="/student_details?studentID=<%=student?.student_id%>" class="link-primary">
+                                                <td><a href="/student_details?studentID=<%=student?.student_id%>"
+                                                        class="link-primary">
                                                         <%=student?.student_id%>
                                                     </a></td>
                                                 <td>35013</td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <a href="/student_details?studentID=<%=student?.student_id%>" class="avatar avatar-md"><img
+                                                        <a href="/student_details?studentID=<%=student?.student_id%>"
+                                                            class="avatar avatar-md"><img
                                                                 src="<%=student?.student_profile_photo%>"
                                                                 class="img-fluid rounded-circle" alt="img"></a>
                                                         <div class="ms-2">
-                                                            <p class="text-dark mb-0"><a href="/student_details?studentID=<%=student?.student_id%>">
+                                                            <p class="text-dark mb-0"><a
+                                                                    href="/student_details?studentID=<%=student?.student_id%>">
                                                                     <%=student?.first_name%>
                                                                         <%=student?.last_name%>
                                                                 </a>
@@ -353,8 +357,7 @@
                                                             <ul class="dropdown-menu dropdown-menu-right p-3">
                                                                 <li>
                                                                     <a href="/student_details?studentID=<%=student?.student_id%>"
-                                                                        class="dropdown-item rounded-1 view-student"
-                                                                        >
+                                                                        class="dropdown-item rounded-1 view-student">
                                                                         <i class="ti ti-menu me-2"></i>View Student
                                                                     </a>
                                                                 </li>
@@ -364,10 +367,11 @@
                                                                         href="/add_student?studentID=<%=student?.student_id%>"><i
                                                                             class="ti ti-edit-circle me-2"></i>Edit</a>
                                                                 </li>
-                                                            
+
                                                                 <li>
                                                                     <a class="dropdown-item rounded-1" href="#"
                                                                         data-bs-toggle="modal"
+                                                                        data-student_id="<%=student?.student_id%>"
                                                                         data-bs-target="#delete-modal"><i
                                                                             class="ti ti-trash-x me-2"></i>Delete</a>
                                                                 </li>
@@ -434,12 +438,10 @@
                     });
                 </script>
 
-
                 <!-- Delete Modal -->
                 <div class="modal fade" id="delete-modal">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <form action="student-grid.html">
                                 <div class="modal-body text-center">
                                     <span class="delete-icon">
                                         <i class="ti ti-trash-x"></i>
@@ -449,10 +451,9 @@
                                     <div class="d-flex justify-content-center">
                                         <a href="javascript:void(0);" class="btn btn-light me-3"
                                             data-bs-dismiss="modal">Cancel</a>
-                                        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                        <button type="submit" id="delete_btn"  onclick="handleDeleteStudent()" class="btn btn-danger">Yes, Delete</button>
                                     </div>
                                 </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -487,6 +488,48 @@
             gridBtn.classList.add('primary-hover');
         });
     </script>
+
+        <script src="js/api.js"></script>
+
+    <script>
+        const BACKEND_URL="<%= BACKEND_URL %>"
+
+        let deleteStudentId = undefined
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("delete-modal");
+
+            modal.addEventListener("show.bs.modal", function (event) {
+                const trigger = event.relatedTarget;
+                deleteStudentId = trigger.getAttribute("data-student_id");
+
+            });
+        });
+
+        const handleDeleteStudent = async() => {
+            
+            if(deleteStudentId){
+                try{
+                    document.getElementById("delete_btn").disabled = true
+                    const deleteStudent=await fetchWithTimeout(`${BACKEND_URL}/students/delete_student_details?student_id=${deleteStudentId}`,{
+                        method:"DELETE",
+                    })
+                    document.getElementById("delete_btn").disabled = false
+                    if(!deleteStudent?.success){
+                        //handle success popup
+                        location.reload();
+                    }
+                    else{
+                        //handle error
+                    }
+                }
+                catch(err){
+                    
+                }
+            }
+        }
+
+    </script>
     <style>
         .primary-hover {
             background: #3D5EE1 !important;
@@ -494,36 +537,36 @@
         }
     </style>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
-        const exportPDFBtn = document.querySelector(".dropdown-item:has(.ti-file-type-pdf)");
-        const exportExcelBtn = document.querySelector(".dropdown-item:has(.ti-file-type-xls)");
+            const exportPDFBtn = document.querySelector(".dropdown-item:has(.ti-file-type-pdf)");
+            const exportExcelBtn = document.querySelector(".dropdown-item:has(.ti-file-type-xls)");
 
-        exportPDFBtn?.addEventListener("click", function () {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
+            exportPDFBtn?.addEventListener("click", function () {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
 
-            doc.autoTable({
-                html: '.datatable',
-                theme: 'grid',
-                headStyles: { fillColor: [41, 128, 185] }, // Blue header
-                styles: { fontSize: 8 }
+                doc.autoTable({
+                    html: '.datatable',
+                    theme: 'grid',
+                    headStyles: { fillColor: [41, 128, 185] }, // Blue header
+                    styles: { fontSize: 8 }
+                });
+
+                doc.save('students.pdf');
             });
 
-            doc.save('students.pdf');
-        });
+            exportExcelBtn?.addEventListener("click", function () {
+                const table = document.querySelector(".datatable");
+                const wb = XLSX.utils.book_new();
+                const ws = XLSX.utils.table_to_sheet(table);
+                XLSX.utils.book_append_sheet(wb, ws, "Students");
+                XLSX.writeFile(wb, "students.xlsx");
+            });
 
-        exportExcelBtn?.addEventListener("click", function () {
-            const table = document.querySelector(".datatable");
-            const wb = XLSX.utils.book_new();
-            const ws = XLSX.utils.table_to_sheet(table);
-            XLSX.utils.book_append_sheet(wb, ws, "Students");
-            XLSX.writeFile(wb, "students.xlsx");
         });
-
-    });
-</script>
+    </script>
 
     <!-- /Main Wrapper -->
 
@@ -561,13 +604,13 @@
         data-cf-beacon='{"rayId":"95d0de6d7c7f3971","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"3ca157e612a14eccbb30cf6db6691c29"}'
         crossorigin="anonymous"></script>
 
-        <!-- jsPDF -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<!-- AutoTable plugin for jsPDF -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- AutoTable plugin for jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 
-<!-- SheetJS (xlsx.min.js) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- SheetJS (xlsx.min.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 </body>
 

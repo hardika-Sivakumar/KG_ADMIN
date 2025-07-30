@@ -130,7 +130,7 @@
                                                 <a class="dropdown-item rounded-1" href="/add_event?eventID=<%=event?.event_id%>"><i class="ti ti-edit-circle me-2"></i>Edit</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="ti ti-trash-x me-2"></i>Delete</a>
+                                                <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-event_id="<%=event?.event_id%>" data-bs-target="#delete-modal"><i class="ti ti-trash-x me-2"></i>Delete</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -243,7 +243,7 @@
                                                         </li>
                                                        
                                                         <li>
-                                                            <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal"><i
+                                                            <a class="dropdown-item rounded-1" href="#" data-bs-toggle="modal" data-event_id="<%=event?.event_id%>" data-bs-target="#delete-modal"><i
 																	class="ti ti-trash-x me-2"></i>Delete</a>
                                                         </li>
                                                     </ul>
@@ -267,7 +267,6 @@
         <div class="modal fade" id="delete-modal">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <form action="student-grid.html">
                         <div class="modal-body text-center">
                             <span class="delete-icon">
 								<i class="ti ti-trash-x"></i>
@@ -276,10 +275,9 @@
                             <p>You want to delete all the marked items, this cant be undone once you delete.</p>
                             <div class="d-flex justify-content-center">
                                 <a href="javascript:void(0);" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</a>
-                                <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="handleDeleteEvent()" id="delete_btn">Yes, Delete</button>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -314,6 +312,49 @@
     gridBtn.classList.add('primary-hover');
   });
 </script>
+
+         <script src="js/api.js"></script>
+
+    <script>
+        const BACKEND_URL="<%= BACKEND_URL %>"
+
+        let deleteEventId = undefined
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("delete-modal");
+
+            modal.addEventListener("show.bs.modal", function (event) {
+                const trigger = event.relatedTarget;
+                deleteEventId = trigger.getAttribute("data-event_id");
+
+            });
+        });
+
+        const handleDeleteEvent = async() => {
+            
+            if(deleteEventId){
+                try{
+                    document.getElementById("delete_btn").disabled = true
+
+                    const deleteEvent=await fetchWithTimeout(`${BACKEND_URL}/event/delete_event_details?event_id=${deleteEventId}`,{
+                        method:"DELETE",
+                    })
+                    document.getElementById("delete_btn").disabled = false
+                    if(!deleteEvent?.success){
+                        //handle success popup
+                        location.reload();
+                    }
+                    else{
+                        //handle error
+                    }
+                }
+                catch(err){
+                    
+                }
+            }
+        }
+
+    </script>
 <style>
     .primary-hover{
             background: #3D5EE1 !important;
