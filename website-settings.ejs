@@ -14,7 +14,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- Theme Script js -->
-    <script src="assets/js/theme-script.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/js/theme-script.js" ></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -41,8 +41,6 @@
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="assets/plugins/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/plugins/owlcarousel/owl.theme.default.min.css">
-  <link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
 
@@ -204,7 +202,19 @@
                                             <div class="row flex-fill">
                                                 <div class="col-xl-10">
                                                     <div class="settings-middle-info invoice-setting-wrap">
-                                                        <h5 class="mb-1 border-bottom pt-3 mb-3 pb-3">Home Page Carousel Settings</h5>
+                                                        <div class="d-md-flex justify-content-between align-items-center mb-1 border-bottom pt-3 mb-3 pb-3">
+                                                             <h5 >Home Page Carousel Settings</h5>
+                                                                         
+                                                                                <button
+                                                                                    class="btn btn-outline-none bg-white text-primary"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#addModal">
+                                                                                    + Add
+                                                                                </button>
+
+                                                                    
+                                                        </div>
+                                                       
                                                         <div class="row align-items-center mb-2 position-relative">
                                                             <% settingDetails.forEach((setting)=> { %>
                                                                 <% if (setting?.type==='home_carousel' ) { %>
@@ -253,16 +263,6 @@
                                                                     <% } %>
                                                                         <% }) %>
 
-                                                                            <div
-                                                                                class="position-absolute bottom-0 top-4 end-0 m-2">
-                                                                                <button
-                                                                                    class="btn btn-outline-none bg-white text-primary"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#addModal">
-                                                                                    + Add
-                                                                                </button>
-
-                                                                            </div>
 
 
                                                         </div>
@@ -336,9 +336,9 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="mb-1 border-bottom pt-3 mb-3 pb-3">
+                                                        <div class="d-md-flex justify-content-between align-items-center mb-1 border-bottom pt-3 mb-3 pb-3">
                                                             <h5 >Home Page Testimonials Settings</h5>
-                                                             <div>
+                                                          
                                                                                 <button
                                                                                     class="btn btn-outline-none bg-white text-primary"
                                                                                     data-bs-toggle="modal"
@@ -346,7 +346,7 @@
                                                                                     + Add
                                                                                 </button>
 
-                                                                            </div>
+                                                                        
                                                         </div>
 
                                                         <div class="row align-items-center mb-2">
@@ -428,71 +428,43 @@
                                                     </div>
                                                     <div class="card-body p-3 pb-0">
                                                         <div class="row">
+                                                            
                                                             <div class="col-xl-4 pe-xl-0">
-                                                                <div class="mb-3 flex-fill me-xl-3 me-0">
-                                                                    <label class="form-label">Label</label>
-                                                                    <input class="input-tags form-control" type="text"
-                                                                        data-role="tagsinput" name="language_known"
-                                                                        value="English, Spanish"
-                                                                        placeholder="Eg : English, Spanish" />
+                                                             <div class="mb-3">
+										        <label class="form-label">Label</label>
+												<input class="input-tags form-control" 
+                                                type="text"
+                                                 data-role="tagsinput"
+												name="class"
+                                                    value="English, Spanish">
+											</div>
                                                                 </div>
                                                             </div>
                                                         </div>
-
-                                                    </div>
-                                                </div>
-                                                <div class="card">
+     <div class="card">
                                                     <div
                                                         class="card-header d-flex align-items-center justify-content-between p-3">
-                                                        <h5>Transaction</h5>
-                                                        <div class="d-flex align-items-center">
-                                                            <a href="#"
-                                                                class="btn btn-outline-light bg-white btn-icon me-2"
-                                                                data-bs-toggle="modal"
-                                                                data-bs-target="#edit_custom_field"><i
-                                                                    class="ti ti-edit"></i></a>
-                                                            <a href="#" class="btn btn-outline-light bg-white btn-icon"
-                                                                data-bs-toggle="modal" data-bs-target="#delete-modal"><i
-                                                                    class="ti ti-trash"></i></a>
-                                                        </div>
+                                                        <h5>Section</h5>
                                                     </div>
                                                     <div class="card-body p-3 pb-0">
                                                         <div class="row">
+                                                            
                                                             <div class="col-xl-4 pe-xl-0">
-                                                                <div class="mb-3 flex-fill me-xl-3 me-0">
-                                                                    <label class="form-label">Label</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-4 ps-xl-0 pe-xl-0">
-                                                                <div class="mb-3 flex-fill  me-xl-3 me-0">
-                                                                    <label class="form-label">Type</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-4 ps-xl-0">
-                                                                <div class="mb-3 flex-fill">
-                                                                    <label class="form-label">Default Value</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-xl-4 pe-xl-0">
-                                                                <div class="mb-3 flex-fill me-xl-3 me-0">
-                                                                    <label class="form-label">Required Value</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-4 ps-xl-0">
-                                                                <div class="mb-3 flex-fill">
-                                                                    <label class="form-label">Status</label>
-                                                                    <input type="text" class="form-control">
+                                                                <div class="mb-3">
+								<label class="form-label">Label</label>
+												<input 
+                                                class="input-tags form-control" 
+                                                type="text" 
+                                                data-role="tagsinput"
+											    name="section" 
+                                                value="English, Spanish">
+											</div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -522,50 +494,53 @@
     <script src="js/api.js">
     </script>
     <script src="js/uploadFile.js"></script>
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
 
-          <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"
-    type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
+<script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" />
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" />
 
-    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+
 
     <!-- jQuery -->
-    <script src="assets/js/jquery-3.7.1.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+
 
     <!-- Bootstrap Core JS -->
-    <script src="assets/js/bootstrap.bundle.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/js/bootstrap.bundle.min.js" ></script>
 
     <!-- Daterangepikcer JS -->
-    <script src="assets/js/moment.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/js/moment.js" ></script>
     <script src="assets/plugins/daterangepicker/daterangepicker.js"
-        type="299570f26b967fcbb12c0f58-text/javascript"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+        ></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js" ></script>
 
     <!-- Feather Icon JS -->
-    <script src="assets/js/feather.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/js/feather.min.js" ></script>
 
     <!-- Slimscroll JS -->
-    <script src="assets/js/jquery.slimscroll.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/js/jquery.slimscroll.min.js" ></script>
 
     <!-- Chart JS -->
-    <script src="assets/plugins/apexchart/apexcharts.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
-    <script src="assets/plugins/apexchart/chart-data.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/plugins/apexchart/apexcharts.min.js" ></script>
+    <script src="assets/plugins/apexchart/chart-data.js" ></script>
 
     <!-- Owl JS -->
     <script src="assets/plugins/owlcarousel/owl.carousel.min.js"
-        type="299570f26b967fcbb12c0f58-text/javascript"></script>
+        ></script>
 
     <!-- Select2 JS -->
-    <script src="assets/plugins/select2/js/select2.min.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
 
     <!-- Counter JS -->
     <script src="assets/plugins/countup/jquery.counterup.min.js"
-        type="299570f26b967fcbb12c0f58-text/javascript"></script>
-    <script src="assets/plugins/countup/jquery.waypoints.min.js" type="299570f26b967fcbb12c0f58-text/javascript">
+        ></script>
+    <script src="assets/plugins/countup/jquery.waypoints.min.js">
     </script>
-    <script src="assets/js/jquery.dataTables.min.js" type="a41ddb779e2e984c7d703083-text/javascript"></script>
-    <script src="assets/js/dataTables.bootstrap5.min.js" type="a41ddb779e2e984c7d703083-text/javascript"></script>
+    <script src="assets/js/jquery.dataTables.min.js" ></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js" ></script>
     <!-- Custom JS -->
-    <script src="assets/js/script.js" type="299570f26b967fcbb12c0f58-text/javascript"></script>
+    <script src="assets/js/script.js"></script> 
 
     <script
         src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
