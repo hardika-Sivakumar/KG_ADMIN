@@ -14,7 +14,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- Theme Script js -->
-    <script src="assets/js/theme-script.js" ></script>
+    <script src="assets/js/theme-script.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -99,47 +99,39 @@
 
                 <div class="modal-footer gap-3">
                     <button type="submit" class="btn btn-success" id="saveSetting"
-                        onclick="saveSetting('carousel')">Save</button>
+                        onclick="saveSetting()">Save</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 </div>
 
             </div>
         </div>
     </div>
- <!-- Delete Modal -->
-      <div class="modal fade" id="delete-modal">
+    <!-- Delete Modal -->
+    <div class="modal fade" id="delete-modal">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <form action="notice-board.html">
-              <div class="modal-body text-center">
-                <span class="delete-icon">
-                  <i class="ti ti-trash-x"></i>
-                </span>
-                <h4>Confirm Deletion</h4>
-                <p>
-                  You want to delete the Carousal Details, this cant be undone once you
-                  delete.
-                </p>
-                <div class="d-flex justify-content-center">
-                  <a
-                    href="javascript:void(0);"
-                    class="btn btn-light me-3"
-                    data-bs-dismiss="modal"
-                    >Cancel</a
-                  >
-                  <button
-                    type="submit"
-                    class="btn btn-danger"
-                  >
-                    Yes, Delete
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
+            <div class="modal-content">
+                <form action="notice-board.html">
+                    <div class="modal-body text-center">
+                        <span class="delete-icon">
+                            <i class="ti ti-trash-x"></i>
+                        </span>
+                        <h4>Confirm Deletion</h4>
+                        <p>
+                            You want to delete the Carousal Details, this cant be undone once you
+                            delete.
+                        </p>
+                        <div class="d-flex justify-content-center">
+                            <a href="javascript:void(0);" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</a>
+                            <button type="submit" class="btn btn-danger">
+                                Yes, Delete
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-      <!-- /Delete Modal -->
+    </div>
+    <!-- /Delete Modal -->
     <!-- Main Wrapper -->
     <div class="main-wrapper">
 
@@ -183,8 +175,8 @@
                                 <div class="pt-3 d-flex flex-column list-group mb-4">
                                     <a href="#" class="tab d-block rounded p-2 active"
                                         onclick="showSection('invoice_settings', this)">Website Settings</a>
-                                    <a href="#" class="tab d-block rounded p-2"
-                                        onclick="showSection('custom_fields', this)">School Settings</a>
+                                    <!-- <a href="#" class="tab d-block rounded p-2"
+                                        onclick="showSection('custom_fields', this)">School Settings</a> -->
                                 </div>
                             </div>
                             <div class="col-xxl-10 col-xl-9">
@@ -196,25 +188,24 @@
                                                 <h5 class="mb-1">Website Settings</h5>
                                                 <p>Collection of settings for Website</p>
                                             </div>
-                    
+
                                         </div>
                                         <div class="d-md-flex d-block">
                                             <div class="row flex-fill">
                                                 <div class="col-xl-10">
                                                     <div class="settings-middle-info invoice-setting-wrap">
-                                                        <div class="d-md-flex justify-content-between align-items-center mb-1 border-bottom pt-3 mb-3 pb-3">
-                                                             <h5 >Home Page Carousel Settings</h5>
-                                                                         
-                                                                                <button
-                                                                                    class="btn btn-outline-none bg-white text-primary"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#addModal">
-                                                                                    + Add
-                                                                                </button>
+                                                        <div
+                                                            class="d-md-flex justify-content-between align-items-center mb-1 border-bottom pt-3 mb-3 pb-3">
+                                                            <h5>Home Page Carousel Settings</h5>
 
-                                                                    
+                                                            <button class="btn btn-outline-none bg-white text-primary"
+                                                                data-bs-toggle="modal" data-modal_type="carousel" data-bs-target="#addModal">
+                                                                + Add
+                                                            </button>
+
+
                                                         </div>
-                                                       
+
                                                         <div class="row align-items-center mb-2 position-relative">
                                                             <% settingDetails.forEach((setting)=> { %>
                                                                 <% if (setting?.type==='home_carousel' ) { %>
@@ -235,17 +226,17 @@
                                                                                     class="d-flex justify-content-end mb-2">
                                                                                     <a href="javascript:void(0);"
                                                                                         class="text-primary border rounded fs-16 p-1 badge badge-primary-hover me-2"
-                                                                                         data-bs-toggle="modal"
-                                                                                    data-bs-target="#addModal">
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#addModal">
                                                                                         <i
                                                                                             class="ti ti-edit-circle"></i>
                                                                                     </a>
-                                                                                  <a href="javascript:void(0);"
-   class="text-danger border rounded fs-16 p-1 badge badge-danger-hover"
-   data-bs-toggle="modal"
-   data-bs-target="#delete-modal">
-   <i class="ti ti-trash-x"></i>
-</a>
+                                                                                    <a href="javascript:void(0);"
+                                                                                        class="text-danger border rounded fs-16 p-1 badge badge-danger-hover"
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#delete-modal">
+                                                                                        <i class="ti ti-trash-x"></i>
+                                                                                    </a>
 
                                                                                 </div>
 
@@ -266,7 +257,8 @@
 
 
                                                         </div>
-<h5 class="mb-1 border-bottom pt-3 mb-3 pb-3">Home Page Event Settings</h5>
+                                                        <h5 class="mb-1 border-bottom pt-3 mb-3 pb-3">Home Page Event
+                                                            Settings</h5>
                                                         <div
                                                             class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
                                                             <div class="row align-items-center flex-fill">
@@ -303,7 +295,8 @@
                                                             </div>
                                                         </div>
 
-<h5 class="mb-1 border-bottom pt-3 mb-3 pb-3">Home Page Teachers Settings</h5>
+                                                        <h5 class="mb-1 border-bottom pt-3 mb-3 pb-3">Home Page Teachers
+                                                            Settings</h5>
                                                         <div
                                                             class="d-flex align-items-center justify-content-between flex-wrap border mb-3 p-3 pb-0 rounded">
                                                             <div class="row align-items-center flex-fill">
@@ -320,7 +313,9 @@
                                                                                 id="staffList">
                                                                                 <% staffDetails?.forEach((staff)=> { %>
                                                                                     <option
-                                                                                        value="<%= staff?.staff_id %>">
+                                                                                        value="<%= staff?.staff_id %>"
+                                                                                        <%=staff?.selected ? 'selected'
+                                                                                        : '' %>>
                                                                                         <%= staff?.staff_info?.first_name
                                                                                             %>
                                                                                             <%= staff?.staff_info?.last_name
@@ -336,21 +331,21 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="d-md-flex justify-content-between align-items-center mb-1 border-bottom pt-3 mb-3 pb-3">
-                                                            <h5 >Home Page Testimonials Settings</h5>
-                                                          
-                                                                                <button
-                                                                                    class="btn btn-outline-none bg-white text-primary"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#addModal">
-                                                                                    + Add
-                                                                                </button>
+                                                        <div
+                                                            class="d-md-flex justify-content-between align-items-center mb-1 border-bottom pt-3 mb-3 pb-3">
+                                                            <h5>Home Page Testimonials Settings</h5>
 
-                                                                        
+                                                            <button class="btn btn-outline-none bg-white text-primary"
+                                                                data-bs-toggle="modal" data-modal_type="testimonial"
+                                                                data-bs-target="#addModal">
+                                                                + Add
+                                                            </button>
+
+
                                                         </div>
 
                                                         <div class="row align-items-center mb-2">
-                                                             
+
                                                             <% settingDetails.forEach((testimonial)=> { %>
                                                                 <% if (testimonial?.type==='testimonial' ) { %>
                                                                     <div class="card">
@@ -394,7 +389,7 @@
                                                                     <% } %>
                                                                         <% }) %>
 
-                                                                          
+
 
 
                                                         </div>
@@ -404,7 +399,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="custom_fields" style="display: none;">
+                                    <!-- <div id="custom_fields" style="display: none;">
                                         <div
                                             class="d-flex align-items-center justify-content-between flex-wrap border-bottom pt-3 mb-3">
                                             <div class="mb-3">
@@ -428,46 +423,41 @@
                                                     </div>
                                                     <div class="card-body p-3 pb-0">
                                                         <div class="row">
-                                                            
+
                                                             <div class="col-xl-4 pe-xl-0">
-                                                             <div class="mb-3">
-										        <label class="form-label">Label</label>
-												<input class="input-tags form-control" 
-                                                type="text"
-                                                 data-role="tagsinput"
-												name="class"
-                                                    value="English, Spanish">
-											</div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Label</label>
+                                                                    <input class="input-tags form-control" type="text"
+                                                                        data-role="tagsinput" name="class"
+                                                                        value="English, Spanish">
                                                                 </div>
                                                             </div>
                                                         </div>
-     <div class="card">
-                                                    <div
-                                                        class="card-header d-flex align-items-center justify-content-between p-3">
-                                                        <h5>Section</h5>
                                                     </div>
-                                                    <div class="card-body p-3 pb-0">
-                                                        <div class="row">
-                                                            
-                                                            <div class="col-xl-4 pe-xl-0">
-                                                                <div class="mb-3">
-								<label class="form-label">Label</label>
-												<input 
-                                                class="input-tags form-control" 
-                                                type="text" 
-                                                data-role="tagsinput"
-											    name="section" 
-                                                value="English, Spanish">
-											</div>
+                                                    <div class="card">
+                                                        <div
+                                                            class="card-header d-flex align-items-center justify-content-between p-3">
+                                                            <h5>Section</h5>
+                                                        </div>
+                                                        <div class="card-body p-3 pb-0">
+                                                            <div class="row">
+
+                                                                <div class="col-xl-4 pe-xl-0">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Label</label>
+                                                                        <input class="input-tags form-control"
+                                                                            type="text" data-role="tagsinput"
+                                                                            name="section" value="English, Spanish">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
@@ -494,12 +484,12 @@
     <script src="js/api.js">
     </script>
     <script src="js/uploadFile.js"></script>
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
 
-<script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
-<link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" />
-<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" />
+    <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" />
 
 
 
@@ -507,43 +497,40 @@
 
 
     <!-- Bootstrap Core JS -->
-    <script src="assets/js/bootstrap.bundle.min.js" ></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
     <!-- Daterangepikcer JS -->
-    <script src="assets/js/moment.js" ></script>
-    <script src="assets/plugins/daterangepicker/daterangepicker.js"
-        ></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js" ></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
     <!-- Feather Icon JS -->
-    <script src="assets/js/feather.min.js" ></script>
+    <script src="assets/js/feather.min.js"></script>
 
     <!-- Slimscroll JS -->
-    <script src="assets/js/jquery.slimscroll.min.js" ></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
 
     <!-- Chart JS -->
-    <script src="assets/plugins/apexchart/apexcharts.min.js" ></script>
-    <script src="assets/plugins/apexchart/chart-data.js" ></script>
+    <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="assets/plugins/apexchart/chart-data.js"></script>
 
     <!-- Owl JS -->
-    <script src="assets/plugins/owlcarousel/owl.carousel.min.js"
-        ></script>
+    <script src="assets/plugins/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Select2 JS -->
     <script src="assets/plugins/select2/js/select2.min.js"></script>
 
     <!-- Counter JS -->
-    <script src="assets/plugins/countup/jquery.counterup.min.js"
-        ></script>
+    <script src="assets/plugins/countup/jquery.counterup.min.js"></script>
     <script src="assets/plugins/countup/jquery.waypoints.min.js">
     </script>
-    <script src="assets/js/jquery.dataTables.min.js" ></script>
-    <script src="assets/js/dataTables.bootstrap5.min.js" ></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
     <!-- Custom JS -->
-    <script src="assets/js/script.js"></script> 
+    <script src="assets/js/script.js"></script>
 
     <script
-        src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+        src="assets/js/rocket-loader.min.js"
         data-cf-settings="299570f26b967fcbb12c0f58-|49" defer></script>
 
 
@@ -552,20 +539,25 @@
         const BACKEND_URL = "<%= BACKEND_URL %>";
         const eventSettingId = "<%= eventSettingId %>";
         const staffSettingId = "<%= staffSettingId %>";
-        console.log(eventSettingId)
-
+        let modal_type=undefined
         let image_uri = undefined
+
+        document.querySelectorAll('[data-modal_type]').forEach(button => {
+            button.addEventListener('click', function () {
+                modal_type = this.dataset.modal_type;
+            });
+        });
         const handleFileUpload = async (event) => {
             const file = event.target.files[0]
             console.log(file)
-              const reader = new FileReader();
-    reader.onload = function (e) {
-        const imagePreview = document.getElementById("imagePreview");
-        imagePreview.innerHTML = `
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const imagePreview = document.getElementById("imagePreview");
+                imagePreview.innerHTML = `
             <img src="${e.target.result}" alt="Uploaded Preview" style="max-width: 150px; max-height: 150px;" class="img-thumbnail" />
         `;
-    };
-    reader.readAsDataURL(file);
+            };
+            reader.readAsDataURL(file);
             const url = await uploadFile(file, "/settings/website/" + file.name, BACKEND_URL)
             console.log(url)
             if (!url) {
@@ -574,7 +566,9 @@
             }
             image_uri = url
         }
-        async function saveSetting(settingType) {
+
+        async function saveSetting() {
+            if(!modal_type) return
             const form = document.getElementById("addForm")
             const formData = new FormData(form)
             let payload = {}
@@ -586,12 +580,19 @@
             if (!image_uri) return
             console.log("calling2")
 
-            if (settingType == "carousel") {
+            if (modal_type == "carousel") {
                 renamedPayload['home_carousel_title'] = payload?.title
                 renamedPayload['home_carousel_description'] = payload?.description
                 renamedPayload['home_carousel_image_uri'] = image_uri
                 renamedPayload['home_carousel_created_on'] = new Date()
                 renamedPayload["type"] = "home_carousel"
+            }
+            else if (modal_type == "testimonial") {
+                renamedPayload["testimonial_person_name"] = payload?.title
+                renamedPayload["testimonial_description"] = payload?.description
+                renamedPayload["testimonial_image_uri"] = image_uri
+                renamedPayload["testimonial_created_on"] = new Date()
+                renamedPayload["type"] = "testimonial"
             }
 
 

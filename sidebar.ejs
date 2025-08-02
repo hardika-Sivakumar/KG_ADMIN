@@ -6,59 +6,47 @@
           <h6 class="submenu-hdr"><span>Pages</span></h6>
           <ul>
             <li>
-              <a href="/"
-                ><i class="ti ti-layout-dashboard"></i><span>Dashboard</span></a
-              >
+              <a href="/"><i class="ti ti-layout-dashboard"></i><span>Dashboard</span></a>
             </li>
             <li>
-              <a href="/add_student"
-                ><i class="ti ti-user-plus"></i><span>Add Student</span></a
-              >
+              <a href="/add_student"><i class="ti ti-user-plus"></i><span>Add Student</span></a>
             </li>
             <li>
-              <a href="/student_lists"
-                ><i class="ti ti-users"></i><span>Student List</span></a
-              >
+              <a href="/student_lists"><i class="ti ti-users"></i><span>Student List</span></a>
+            </li>
+
+            <% if (role !== 'teacher') { %>
+              <li>
+                <a href="/add_staff"><i class="ti ti-user-check"></i><span>Add Teacher</span></a>
+              </li>
+              <li>
+                <a href="/staff_lists"><i class="ti ti-users-group"></i><span>Teacher List</span></a>
+              </li>
+            <% } %>
+
+            <li>
+              <a href="/add_event"><i class="ti ti-calendar-plus"></i><span>Add Event</span></a>
             </li>
             <li>
-              <a href="/add_staff"
-                ><i class="ti ti-user-check"></i><span>Add Teacher</span></a
-              >
+              <a href="/event_lists"><i class="ti ti-calendar-event"></i><span>Event Lists</span></a>
             </li>
+
+            <% if (role !== 'teacher') { %>
+              <li>
+                <a href="/gallery"><i class="ti ti-photo"></i><span>Gallery</span></a>
+              </li>
+              <li>
+                <a href="/website_settings"><i class="ti ti-settings"></i><span>Website Settings</span></a>
+              </li>
+            <% } %>
+
+            <% if (role !== 'teacher') { %>
             <li>
-              <a href="/staff_lists"
-                ><i class="ti ti-users-group"></i><span>Teacher List</span></a
-              >
+              <a href="/contact_list"><i class="ti ti-address-book"></i><span>Contacts</span></a>
             </li>
-            <li>
-              <a href="/add_event"
-                ><i class="ti ti-calendar-plus"></i><span>Add Event</span></a
-              >
-            </li>
-            <li>
-              <a href="/event_lists"
-                ><i class="ti ti-calendar-event"></i><span>Event Lists</span></a
-              >
-            </li>
-            <li>
-              <a href="/gallery"
-                ><i class="ti ti-photo"></i><span>Gallery</span></a
-              >
-            </li>
-            <li>
-              <a href="/contact_list"
-                ><i class="ti ti-address-book"></i><span>Contacts</span></a
-              >
-            </li>
-            <li>
-              <a href="/website_settings"
-                ><i class="ti ti-settings"></i><span>Website Settings</span></a
-              >
-            </li>
-            <li>
-              <a href="/logout"
-                ><i class="ti ti-logout"></i><span>Logout</span></a
-              >
+            <% } %>
+            <li> 
+              <a href="/logout"><i class="ti ti-logout"></i><span>Logout</span></a>
             </li>
           </ul>
         </li>
@@ -66,6 +54,7 @@
     </div>
   </div>
 </div>
+
 
 <script
   src="assets/js/jquery.slimscroll.min.js"

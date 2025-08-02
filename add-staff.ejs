@@ -82,6 +82,9 @@
 
   <body>
     <!-- Main Wrapper -->
+         <div id="global-loader">
+        <div class="page-loader"></div>
+    </div>
     <div class="main-wrapper">
       <!-- Header -->
       <%- include('header') %>
@@ -210,52 +213,28 @@
                       <div class="col-xxl col-xl-3 col-md-6">
                         <div class="mb-3">
                           <label class="form-label">Handling Classes</label>
-                          <select
-                            class="select2"
+
+                           <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Eg : Pre-Kg"
                             name="handling_classes"
-                            multiple="multiple"
-                          >
-                            <option value="pre-kg">Pre-KG</option>
-                            <option value="lkg">
-                              LKG (Lower Kindergarten)
-                            </option>
-                            <option value="ukg">
-                              UKG (Upper Kindergarten)
-                            </option>
-                            <option value="kg-1">KG-1</option>
-                            <option value="kg-2">KG-2</option>
-                            <option value="nursery">Nursery</option>
-                            <option value="montessori-1">Montessori-1</option>
-                            <option value="montessori-2">Montessori-2</option>
-                            <option value="early-years">
-                              Early Years Program
-                            </option>
-                          </select>
+                            value="<%= staffDetails?.staff_experience_info?.handling_classes %>"
+                          />
+
                         </div>
                       </div>
                       <div class="col-xxl col-xl-3 col-md-6">
                         <div class="mb-3">
                           <label class="form-label">Subject</label>
-                          <select
-                            class="select2"
+
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Eg : Maths"
                             name="subject"
-                            multiple="multiple"
-                          >
-                            <option>English</option>
-                            <option>Mathematics</option>
-                            <option>Environmental Studies</option>
-                            <option>Science</option>
-                            <option>Social Science</option>
-                            <option>Computer</option>
-                            <option>General Knowledge</option>
-                            <option>Hindi</option>
-                            <option>Spanish</option>
-                            <option>French</option>
-                            <option>Drawing</option>
-                            <option>Music</option>
-                            <option>Physical Education</option>
-                            <option>Value Education</option>
-                          </select>
+                            value="<%= staffDetails?.staff_experience_info?.subject %>"
+                          />
                         </div>
                       </div>
                       <div class="col-xxl col-xl-3 col-md-6">
@@ -681,13 +660,30 @@
     <script src="js/uploadFile.js"></script>
 
     <script>
+  document.getElementById('teacher-form').addEventListener('keydown', function (e) {
+    // Prevent Enter key unless it's inside a textarea
+    if (e.key === 'Enter') {
+      e.preventDefault();
+    }
+  });
+</script>
+
+
+
+    <script type="module">
+      import { showToast } from '/js/toast.js';
       const BACKEND_URL = "<%= BACKEND_URL %>";
+      const STAFF_ID = "<%= staffDetails?.staff_id %>";
       let staff_resume = undefined;
       let staff_joining_letter = undefined;
       let staff_profile_photo = undefined;
       document
         .getElementById("add-teacher-btn")
         .addEventListener("click", async function (event) {
+          if(event.key=="enter"){
+            event.preventDefault();
+            return;
+          }
           event.preventDefault();
           const formElement = document.getElementById("teacher-form");
           const formData = new FormData(formElement);
@@ -710,6 +706,7 @@
 
           // Step 2: Transform to nested structure
           const finalPayload = {
+            staff_id:STAFF_ID || "",
             staff_info: {
               first_name: payload?.first_name || "",
               last_name: payload?.last_name || "",
@@ -775,14 +772,15 @@
               body: JSON.stringify(finalPayload),
             }
           );
+          const saveTeacherRequestJson = await saveTeacherRequest.json();
 
-          if (!saveTeacherRequest.success) {
-            // showToast("error", "Failed to add teacher.");
+          if (!saveTeacherRequestJson.success) {
+            showToast("danger", saveTeacherRequestJson?.message || "Failed to add teacher.");
             return;
           }
-          // showToast("success", "Teacher added successfully.");
+          showToast("secondary", "Teacher added successfully.");
 
-          // Step 3: Send to backend (optional)
+          location.reload()
         });
 
       function handleFileUpload(
@@ -818,7 +816,9 @@
                 backendUrl
               );
               callback(uploadedUrl); // set variable or update UI
+              showToast("success", `${fileTypeLabel} uploaded successfully.`);
             } catch (error) {
+              showToast("error", "Failed to upload file.");
               console.error(`Error uploading ${fileTypeLabel}:`, error);
               alert(`Failed to upload ${fileTypeLabel}`);
             }
@@ -920,7 +920,7 @@
     ></script>
 
     <script
-      src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+      src="assets/js/rocket-loader.min.js"
       data-cf-settings="6dc0a9d0ac43462e72fa7502-|49"
       defer
     ></script>

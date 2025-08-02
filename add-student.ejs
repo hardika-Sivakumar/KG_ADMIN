@@ -48,6 +48,9 @@
 </head>
 
 <body>
+      <div id="global-loader">
+        <div class="page-loader"></div>
+    </div>
   <!-- Main Wrapper -->
   <div class="main-wrapper">
     <!-- Header -->
@@ -186,24 +189,16 @@
                         <div class="col-md-4">
                           <div class="mb-3">
                             <label class="form-label">Class</label>
-                            <select name="class_name" id="class_name" class="select form-select">
-                              <option>Select</option>
-                              <option>Nursery</option>
-                              <option>Grade 1</option>
-                              <option>Grade 2</option>
-                              <option>Grade 10</option>
-                            </select>
+                            <input type="text" name="class_name" id="class_name" class="form-control"
+                              placeholder="Eg: Pre-kg" value="<%= studentDetails?.student_class?.class_name %>"/>
+
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="mb-3">
                             <label class="form-label">Section</label>
-                            <select name="section" id="section" class="select form-select">
-                              <option>Select</option>
-                              <option>A</option>
-                              <option>B</option>
-                              <option>C</option>
-                            </select>
+                             <input type="text" name="section" id="section" class="form-control"
+                              placeholder="Eg: A" value="<%= studentDetails?.student_class?.section %>"/>
                           </div>
                         </div>
                         <div class="col-md-4">
@@ -335,17 +330,25 @@
   <!-- Custom JS -->
   <script src="assets/js/script.js" type="6dc0a9d0ac43462e72fa7502-text/javascript"></script>
 
-  <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+  <script src="assets/js/rocket-loader.min.js"
     data-cf-settings="6dc0a9d0ac43462e72fa7502-|49" defer></script>
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-    data-cf-beacon='{"rayId":"95d12b338917a908","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"3ca157e612a14eccbb30cf6db6691c29"}'
-    crossorigin="anonymous"></script>
 
-  <script>
+
+        <script>
+  document.getElementById('studentForm').addEventListener('keydown', function (e) {
+    // Prevent Enter key unless it's inside a textarea
+    if (e.key === 'Enter') {
+      e.preventDefault();
+    }
+  });
+</script>
+
+  <script type="module">
+    import { showToast } from '/js/toast.js';
     const BACKEND_URL = "<%= BACKEND_URL %>";
     let student_image_uri = undefined
     let birth_certificate = undefined
+    const STUDENTID="<%= studentId %>"
 
 
     document
@@ -363,7 +366,7 @@
         }
 
         // Validate uploads
-        if (!student_image_uri || !birth_certificate) {
+        if ((!student_image_uri || !birth_certificate) && !STUDENTID) {
           alert("Please upload student image and birth certificate");
           return;
         }
@@ -374,7 +377,7 @@
 
         // Now transform to nested structure
         const nestedObject = {
-          student_id: jsonObject.student_id || "",
+          student_id: STUDENTID || "",
           first_name: jsonObject.first_name || "",
           last_name: jsonObject.last_name || "",
           address: jsonObject.address || "",
@@ -403,6 +406,7 @@
         };
 
         try {
+          document.getElementById("add-student-btn").disabled = true
           const response = await fetchWithTimeout(
             `${BACKEND_URL}/students/update_new_student`,
             {
@@ -416,18 +420,21 @@
 
           const data = await response.json();
 
+          document.getElementById("add-student-btn").disabled = false
+
           if (data?.success) {
             showToast(
-              "success",
+              "secondary",
               data?.message || "Student added successfully."
             );
           } else {
-            showToast("error", data?.message || "Failed to add student.");
+            showToast("danger", data?.message || "Failed to add student.");
           }
         } catch (error) {
+           document.getElementById("add-student-btn").disabled = false
           console.error("Error:", error);
           showToast(
-            "error",
+            "danger",
             "Something went wrong while adding the student."
           );
         }
@@ -455,8 +462,18 @@
           <span>${file.name}</span>
         </div>
       `;
+        const first_name = document.getElementById("first_name").value;
+        const father_name = document.getElementById("father_name").value;
+        document.getElementById("add-student-btn").disabled = true
 
-        birth_certificate = await uploadFile(file, "/student/profile/birth_certificate")
+        birth_certificate = await uploadFile(file, "/student/profile/birth_certificate" + first_name + father_name, BACKEND_URL)
+         document.getElementById("add-student-btn").disabled = false
+        if(!birth_certificate){
+          showToast("danger", "Failed to upload birth certificate.")
+          return
+        }
+        showToast("success", "Birth certificate uploaded successfully.")
+
       }
     });
     document.getElementById("student_profile_photo").addEventListener("change", async function (event) {
@@ -487,7 +504,16 @@
         const first_name = document.getElementById("first_name").value;
         const father_name = document.getElementById("father_name").value;
 
+         document.getElementById("add-student-btn").disabled = true
+
         student_image_uri = await uploadFile(file, "/student/profile/photo" + first_name + father_name, BACKEND_URL)
+
+         document.getElementById("add-student-btn").disabled = false
+        if(!student_image_uri){
+          showToast("danger", "Failed to upload student image.")
+          return
+        }
+        showToast("success", "Student image uploaded successfully.")
 
 
       }
