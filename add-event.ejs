@@ -226,13 +226,13 @@
                         <div class="col-md-6">
                           <label class="form-label">Event Cover Image</label>
                           <input type="file" name="cover_image" class="form-control" id="event_cover_image" />
-                          <small class="text-muted">Max size 4MB. JPG/PNG only.</small>
+                          <small class="text-muted">Max size 4MB. JPG/PNG/JPEG only.</small>
                         </div>
 
                         <div class="col-md-6">
                           <label class="form-label">Poster / Banner</label>
                           <input type="file" name="poster_banner" id="poster_banner" class="form-control" />
-                          <small class="text-muted">Max size 4MB. JPG/PDF only.</small>
+                          <small class="text-muted">Max size 4MB. JPG/PNG/JPEG only.</small>
                         </div>
 
                         <div class="col-md-6 mt-3">
@@ -311,7 +311,8 @@
     data-cf-beacon='{"rayId":"95d12b338917a908","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"3ca157e612a14eccbb30cf6db6691c29"}'
     crossorigin="anonymous"></script>
 
-  <script>
+  <script type="module">
+    import { showToast } from '/js/toast.js';
     const BACKEND_URL = "<%= BACKEND_URL %>";
     const EVENT_ID = "<%= eventId %>";
     let event_cover_image = undefined
@@ -368,9 +369,11 @@
           },
         )
         if(!saveEventRequest.success){
+          showToast("danger", "Failed to update event details.");
           // showToast("error", "Failed to update event details.")
           return
         }
+        showToast("success", "Event added successfully.");
         // showToast("success", "Event added successfully.")
 
 
@@ -400,9 +403,10 @@
         try {
           const uploadedUrl = await uploadFile(file, uploadPath, backendUrl);
           callback(uploadedUrl); // set variable or update UI
+          showToast("secondary", "File uploaded successfully.");
         } catch (error) {
           console.error(`Error uploading ${fileTypeLabel}:`, error);
-          alert(`Failed to upload ${fileTypeLabel}`);
+          showToast("danger", `Failed to upload ${fileTypeLabel}.`);
         }
       });
     }

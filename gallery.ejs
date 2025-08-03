@@ -1,388 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=0"
-    />
-    <meta name="description" content="Preskool - Bootstrap Admin Template" />
-    <meta
-      name="keywords"
-      content="admin, estimates, bootstrap, business, html5, responsive, Projects"
-    />
-    <meta
-      name="author"
-      content="Dreams technologies - Bootstrap Admin Template"
-    />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Preskool Admin</title>
 
-    <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/img/favicon.png"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <meta name="description" content="Preskool - Bootstrap Admin Template" />
+  <meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects" />
+  <meta name="author" content="Dreams technologies - Bootstrap Admin Template" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Preskool Admin</title>
 
-    <!-- Theme Script js -->
-    <script
-      src="assets/js/theme-script.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <!-- Theme Script js -->
+  <script src="assets/js/theme-script.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
 
-    <!-- Feather CSS -->
-    <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-    <!-- Tabler Icon CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/tabler-icons/tabler-icons.css"
-    />
+  <!-- Feather CSS -->
+  <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css" />
 
-    <!-- Daterangepikcer CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/daterangepicker/daterangepicker.css"
-    />
+  <!-- Tabler Icon CSS -->
+  <link rel="stylesheet" href="assets/plugins/tabler-icons/tabler-icons.css" />
 
-    <!-- Fontawesome CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/fontawesome/css/fontawesome.min.css"
-    />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+  <!-- Daterangepikcer CSS -->
+  <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
 
-    <!-- Datatable CSS -->
-    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-    <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+  <!-- Datatable CSS -->
+  <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-    <!-- Select2 CSS -->
-    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+  <!-- Datetimepicker CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
-    />
-  </head>
+  <!-- Select2 CSS -->
+  <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-  <body>
-        <div id="global-loader">
-        <div class="page-loader"></div>
-    </div>
-    <!-- Main Wrapper -->
-    <div class="main-wrapper">
-      <%- include('header') %>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+
+<body>
+  <div id="global-loader">
+    <div class="page-loader"></div>
+  </div>
+  <!-- Main Wrapper -->
+  <div class="main-wrapper">
+    <%- include('header') %>
       <!-- /Header -->
 
       <!-- Sidebar -->
       <%- include('sidebar') %>
 
-      <!-- Page Wrapper -->
-      <div class="page-wrapper">
-        <div class="content content-two">
-          <!-- Page Header -->
-          <div
-            class="d-md-flex d-block align-items-center justify-content-between mb-3"
-          >
-            <div class="my-auto mb-2">
-              <h3 class="page-title mb-1">Gallery</h3>
-              <nav>
-                <ol class="breadcrumb mb-0">
-                  <li class="breadcrumb-item">
-                    <a href="index.html">Dashboard</a>
-                  </li>
-                  <li class="breadcrumb-item">Announcement</li>
-                  <li class="breadcrumb-item active" aria-current="page">
-                    Gallery
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              class="d-flex my-xl-auto right-content align-items-center flex-wrap"
-            >
-              <div class="mb-2">
-                <a
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#add_message"
-                  class="btn btn-primary d-flex align-items-center"
-                  ><i class="ti ti-square-rounded-plus me-2"></i>Add Gallery</a
-                >
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+          <div class="content content-two">
+            <!-- Page Header -->
+            <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
+              <div class="my-auto mb-2">
+                <h3 class="page-title mb-1">Gallery</h3>
+                <nav>
+                  <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                      <a href="index.html">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item">Announcement</li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Gallery
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+              <div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
+                <div class="mb-2">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#add_message"
+                    class="btn btn-primary d-flex align-items-center"><i class="ti ti-square-rounded-plus me-2"></i>Add
+                    Gallery</a>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- /Page Header -->
+            <!-- /Page Header -->
 
-          <!-- Notice Board List -->
-          <% galleryData?.map((gallery)=>{ %>
-          <div class="card board-hover mb-3">
-            <div
-              class="card-body d-md-flex align-items-center justify-content-between pb-1"
-            >
-              <div class="d-flex align-items-center mb-3">
-                <div class="form-check form-check-md me-2">
-                  <input class="form-check-input" type="checkbox" />
-                </div>
-                <span
-                  class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0"
-                >
-                  <img src="<%= gallery?.gallery_image_uri%>" alt="img" />
-                </span>
-                <div>
-                  <h6 class="mb-1 fw-semibold">
-                    <a
-                      href="#"
-                      data-bs-toggle="modal"
-                      data-bs-target="#view_details"
+            <!-- Notice Board List -->
+            <% galleryData?.map((gallery)=>{ %>
+              <div class="card board-hover mb-3">
+                <div class="card-body d-md-flex align-items-center justify-content-between pb-1">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="form-check form-check-md me-2">
+                      <input class="form-check-input" type="checkbox" />
+                    </div>
+                    <span class="bg-soft-primary text-primary avatar avatar-md me-2 br-5 flex-shrink-0">
+                      <img src="<%= gallery?.gallery_image_uri%>" alt="img" />
+                    </span>
+                    <div>
+                      <h6 class="mb-1 fw-semibold">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#view_details"
+                          data-galleryData="<%= JSON.stringify(gallery) %>">
+                          <%= gallery?.gallery_title%>
+                        </a>
+                      </h6>
+                      <p>
+                        <i class="ti ti-calendar me-1"></i>Added on :
+                        <%=gallery?.gallery_created_on%>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center board-action mb-3">
+                    <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_message"
                       data-galleryData="<%= JSON.stringify(gallery) %>"
-                      ><%= gallery?.gallery_title%></a
-                    >
-                  </h6>
-                  <p>
-                    <i class="ti ti-calendar me-1"></i>Added on :
-                    <%=gallery?.gallery_created_on%>
-                  </p>
+                      class="text-primary border rounded p-1 badge me-1 primary-btn-hover">
+                      <i class="ti ti-edit-circle fs-16"></i>
+                    </a>
+                    <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete-modal"
+                      data-id="<%= gallery?.gallery_id%>" class="text-danger border rounded p-1 badge danger-btn-hover">
+                      <i class="ti ti-trash-x fs-16"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div class="d-flex align-items-center board-action mb-3">
-                <a
-                  href="javascript:void(0);"
-                  data-bs-toggle="modal"
-                  data-bs-target="#edit_message"
-                  data-galleryData="<%= JSON.stringify(gallery) %>"
-                  class="text-primary border rounded p-1 badge me-1 primary-btn-hover"
-                >
-                  <i class="ti ti-edit-circle fs-16"></i>
-                </a>
-                <a
-                  href="javascript:void(0);"
-                  data-bs-toggle="modal"
-                  data-bs-target="#delete-modal"
-                  data-id="<%= gallery?.gallery_id%>"
-                  class="text-danger border rounded p-1 badge danger-btn-hover"
-                >
-                  <i class="ti ti-trash-x fs-16"></i>
-                </a>
-              </div>
-            </div>
+              <% }) %>
           </div>
-          <% }) %>
         </div>
-      </div>
-      <!-- /Page Wrapper -->
+        <!-- /Page Wrapper -->
 
-      <!-- Add Messase -->
-      <div class="modal fade" id="add_message">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">New Gallery</h4>
-              <button
-                type="button"
-                class="btn-close custom-btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
-                <i class="ti ti-x"></i>
-              </button>
-            </div>
-            <form onsubmit="return false" id="galleryForm">
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="mb-3">
-                      <label class="form-label">Gallery General Title</label>
-                      <input
-                        type="text"
-                        name="gallery_title"
-                        class="form-control"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <div class="bg-light p-3 pb-2 rounded">
-                        <div class="mb-3">
-                          <label class="form-label">Attachment</label>
-                          <p>
-                            Upload size of 4MB, Accepted Format PNG,JPEG,JPG
-                          </p>
-                        </div>
-                        <div class="d-flex align-items-center flex-wrap">
-                          <div
-                            class="btn btn-primary drag-upload-btn mb-2 me-2"
-                          >
-                            <i class="ti ti-file-upload me-1"></i>Upload
-                            <input
-                              type="file"
-                              class="form-control image_sign"
-                              multiple="false"
-                              name="gallery_image_uri"
-                              onchange="handleUploadImage(event)"
-                            />
+        <!-- Add Messase -->
+        <div class="modal fade" id="add_message">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">New Gallery</h4>
+                <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  <i class="ti ti-x"></i>
+                </button>
+              </div>
+              <form onsubmit="return false" id="galleryForm">
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <label class="form-label">Gallery General Title</label>
+                        <input type="text" name="gallery_title" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <div class="bg-light p-3 pb-2 rounded">
+                          <div class="mb-3">
+                            <label class="form-label">Attachment</label>
+                            <p>
+                              Upload size of 4MB, Accepted Format PNG,JPEG,JPG
+                            </p>
+                          </div>
+                          <div class="d-flex align-items-center flex-wrap">
+                            <div class="btn btn-primary drag-upload-btn mb-2 me-2">
+                              <i class="ti ti-file-upload me-1"></i>Upload
+                              <input type="file" class="form-control image_sign" multiple="false"
+                                name="gallery_image_uri"  />
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Description</label>
-                      <textarea
-                        class="form-control"
-                        rows="4"
-                        name="gallery_description"
-                      ></textarea>
+                      <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" rows="4" name="gallery_description"></textarea>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="modal-footer">
-                <a href="#" class="btn btn-light me-2" data-bs-dismiss="modal"
-                  >Cancel</a
-                >
-                <button type="submit" class="btn btn-primary" id="add_gallery">
-                  Add New Mesaage
-                </button>
-              </div>
-            </form>
+                <div class="modal-footer">
+                  <a href="#" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</a>
+                  <button type="submit" class="btn btn-primary" id="add_gallery">
+                    Add New Mesaage
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- /Add Messase -->
+        <!-- /Add Messase -->
 
-      <!-- Edit Messase -->
-      <div class="modal fade" id="edit_message">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Edit Gallery</h4>
-              <button
-                type="button"
-                class="btn-close custom-btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
-                <i class="ti ti-x"></i>
-              </button>
-            </div>
-            <form onsubmit="return false" id="galleryForm">
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="mb-3">
-                      <label class="form-label">Gallery General Title</label>
-                      <input
-                        type="text"
-                        name="gallery_title"
-                        class="form-control"
-                        id="gallery_title"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <div class="bg-light p-3 pb-2 rounded">
-                        <div class="mb-3">
-                          <label class="form-label">Attachment</label>
-                          <p>
-                            Upload size of 4MB, Accepted Format PNG,JPEG,JPG
-                          </p>
-                        </div>
-                        <div class="d-flex align-items-center flex-wrap">
-                          <div
-                            class="btn btn-primary drag-upload-btn mb-2 me-2"
-                          >
-                            <i class="ti ti-file-upload me-1"></i>Upload
-                            <input
-                              type="file"
-                              class="form-control image_sign"
-                              multiple="false"
-                              name="gallery_image_uri"
-                              onchange="handleUploadImage(event)"
-                            />
+        <!-- Edit Messase -->
+        <div class="modal fade" id="edit_message">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Edit Gallery</h4>
+                <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  <i class="ti ti-x"></i>
+                </button>
+              </div>
+              <form onsubmit="return false" id="galleryForm">
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <label class="form-label">Gallery General Title</label>
+                        <input type="text" name="gallery_title" class="form-control" id="gallery_title" />
+                      </div>
+                      <div class="mb-3">
+                        <div class="bg-light p-3 pb-2 rounded">
+                          <div class="mb-3">
+                            <label class="form-label">Attachment</label>
+                            <p>
+                              Upload size of 4MB, Accepted Format PNG,JPEG,JPG
+                            </p>
+                          </div>
+                          <div class="d-flex align-items-center flex-wrap">
+                            <div class="btn btn-primary drag-upload-btn mb-2 me-2">
+                              <i class="ti ti-file-upload me-1"></i>Upload
+                              <input type="file" class="form-control image_sign" multiple="false"
+                                name="gallery_image_uri" />
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Description</label>
-                      <textarea
-                        class="form-control"
-                        rows="4"
-                        name="gallery_description"
-                        id="gallery_description"
-                      ></textarea>
+                      <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" rows="4" name="gallery_description"
+                          id="gallery_description"></textarea>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="modal-footer">
-                <a href="#" class="btn btn-light me-2" data-bs-dismiss="modal"
-                  >Cancel</a
-                >
-                <button type="submit" class="btn btn-primary" id="add_gallery">
-                  Add New Mesaage
+                <div class="modal-footer">
+                  <a href="#" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</a>
+                  <button type="submit" class="btn btn-primary" id="add_gallery">
+                    Add New Mesaage
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- /Edit Messase -->
+
+        <!-- View Details -->
+        <div class="modal fade" id="view_details">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Gallery Info</h4>
+                <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  <i class="ti ti-x"></i>
                 </button>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- /Edit Messase -->
-
-      <!-- View Details -->
-      <div class="modal fade" id="view_details">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Gallery Info</h4>
-              <button
-                type="button"
-                class="btn-close custom-btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
-                <i class="ti ti-x"></i>
-              </button>
-            </div>
-            <div class="modal-body pb-0">
-              <div class="mb-3">
-                <p id="gallery_title"></p>
-                <p id="gallery_description"></p>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label">Created Date</label>
-                    <p
-                      class="d-flex align-items-center"
-                      id="gallery_created_on"
-                    ></p>
+              <div class="modal-body pb-0">
+                <div class="mb-3">
+                  <p id="gallery_title"></p>
+                  <p id="gallery_description"></p>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label class="form-label">Created Date</label>
+                      <p class="d-flex align-items-center" id="gallery_created_on"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="mb-3">
-                <div class="p-3 pb-2 rounded">
-                  <div class="mb-0">
-                    <img src="" id="gallery_image_uri" />
+                <div class="mb-3">
+                  <div class="p-3 pb-2 rounded">
+                    <div class="mb-0">
+                      <img src="" id="gallery_image_uri" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <!-- /View Details -->
         </div>
-        <!-- /View Details -->
-      </div>
-      <!-- /Main Wrapper -->
+        <!-- /Main Wrapper -->
 
-      <!-- Delete Modal -->
-      <div class="modal fade" id="delete-modal">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
+        <!-- Delete Modal -->
+        <div class="modal fade" id="delete-modal">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
               <div class="modal-body text-center">
                 <span class="delete-icon">
                   <i class="ti ti-trash-x"></i>
@@ -393,94 +289,118 @@
                   delete.
                 </p>
                 <div class="d-flex justify-content-center">
-                  <a
-                    href="javascript:void(0);"
-                    class="btn btn-light me-3"
-                    data-bs-dismiss="modal"
-                    >Cancel</a
-                  >
-                  <button
-                    type="submit"
-                    class="btn btn-danger"
-                    onclick="deleteGallery()"
-                  >
+                  <a href="javascript:void(0);" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</a>
+                  <button type="submit" class="btn btn-danger" onclick="deleteGallery()">
                     Yes, Delete
                   </button>
                 </div>
               </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- /Delete Modal -->
-    </div>
+        <!-- /Delete Modal -->
+  </div>
 
-    <script src="js/api.js"></script>
-    <script src="js/uploadFile.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/uploadFile.js"></script>
 
-    <script>
-      let galleryImage = undefined;
-      let currGalleryId = undefined;
-      const BACKEND_URL = "<%= BACKEND_URL %>";
 
-      const deleteModal = document.getElementById("delete-modal");
-      const view_details = document.getElementById("view_details");
-      const edit_message = document.getElementById("edit_message");
 
-      edit_message.addEventListener("show.bs.modal", function (event) {
-        const trigger = event.relatedTarget;
-        let galleryData = trigger.getAttribute("data-galleryData");
-        galleryData = JSON.parse(galleryData);
-        document.getElementById("gallery_title").value =
-          galleryData?.gallery_title;
-        document.getElementById("gallery_description").value =
-          galleryData?.gallery_description;
-      });
-      view_details.addEventListener("show.bs.modal", function (event) {
-        const trigger = event.relatedTarget;
-        let galleryData = trigger.getAttribute("data-galleryData");
-        galleryData = JSON.parse(galleryData);
-        document.getElementById("gallery_title").innerHTML =
-          galleryData?.gallery_title;
+  <!-- jQuery -->
+  <script src="assets/js/jquery-3.7.1.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
 
-        document.getElementById("gallery_description").innerHTML =
-          galleryData?.gallery_description;
+  <!-- Bootstrap Core JS -->
+  <script src="assets/js/bootstrap.bundle.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
 
-        document.getElementById("gallery_image_uri").src =
-          galleryData?.gallery_image_uri;
+  <!-- Daterangepikcer JS -->
+  <script src="assets/js/moment.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
+  <script src="assets/plugins/daterangepicker/daterangepicker.js"
+    type="563627d34f06b593c6cb729a-text/javascript"></script>
+  <script src="assets/js/bootstrap-datetimepicker.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
 
-        document.getElementById("gallery_created_on").innerHTML =
-          '<i class="ti ti-calendar me-1"></i>' +
-          galleryData?.gallery_created_on;
-      });
-      deleteModal.addEventListener("show.bs.modal", function (event) {
-        const trigger = event.relatedTarget;
+  <!-- Feather Icon JS -->
+  <script src="assets/js/feather.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
 
-        const id = trigger.getAttribute("data-id");
+  <!-- Slimscroll JS -->
+  <script src="assets/js/jquery.slimscroll.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
 
-        currGalleryId = id;
-      });
+  <!-- Datatable JS -->
+  <script src="assets/js/jquery.dataTables.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
+  <script src="assets/js/dataTables.bootstrap5.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
 
-      const deleteGallery = async () => {
-        if (!currGalleryId) {
-          return;
+  <!-- Select2 JS -->
+  <script src="assets/plugins/select2/js/select2.min.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
+
+  <!-- Custom JS -->
+  <script src="assets/js/script.js" type="563627d34f06b593c6cb729a-text/javascript"></script>
+
+  <script type="module">
+    import { showToast } from '/js/toast.js';
+    let galleryImage = undefined;
+    let currGalleryId = undefined;
+    const BACKEND_URL = "<%= BACKEND_URL %>";
+
+    const deleteModal = document.getElementById("delete-modal");
+    const view_details = document.getElementById("view_details");
+    const edit_message = document.getElementById("edit_message");
+
+    edit_message.addEventListener("show.bs.modal", function (event) {
+      const trigger = event.relatedTarget;
+      let galleryData = trigger.getAttribute("data-galleryData");
+      galleryData = JSON.parse(galleryData);
+      document.getElementById("gallery_title").value =
+        galleryData?.gallery_title;
+      document.getElementById("gallery_description").value =
+        galleryData?.gallery_description;
+    });
+    view_details.addEventListener("show.bs.modal", function (event) {
+      const trigger = event.relatedTarget;
+      let galleryData = trigger.getAttribute("data-galleryData");
+      galleryData = JSON.parse(galleryData);
+      document.getElementById("gallery_title").innerHTML =
+        galleryData?.gallery_title;
+
+      document.getElementById("gallery_description").innerHTML =
+        galleryData?.gallery_description;
+
+      document.getElementById("gallery_image_uri").src =
+        galleryData?.gallery_image_uri;
+
+      document.getElementById("gallery_created_on").innerHTML =
+        '<i class="ti ti-calendar me-1"></i>' +
+        galleryData?.gallery_created_on;
+    });
+    deleteModal.addEventListener("show.bs.modal", function (event) {
+      const trigger = event.relatedTarget;
+
+      const id = trigger.getAttribute("data-id");
+
+      currGalleryId = id;
+    });
+
+    const deleteGallery = async () => {
+      if (!currGalleryId) {
+        return;
+      }
+      const deleteGalleryResponse = await fetchWithTimeout(
+        `${BACKEND_URL}/gallery/delete_gallery_details?gallery_id=${currGalleryId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-        const deleteGalleryResponse = await fetchWithTimeout(
-          `${BACKEND_URL}/gallery/delete_gallery_details?gallery_id=${currGalleryId}`,
-          {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        const deleteResponseData = await deleteGalleryResponse.json();
+      );
+      const deleteResponseData = await deleteGalleryResponse.json();
 
-        if (deleteResponseData?.success) {
-          location.reload();
-        }
-      };
+      if (deleteResponseData?.success) {
+        location.reload();
+      }
+    };
 
-      const handleUploadImage = async (event) => {
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.querySelector('input[type="file"]');
+      input.addEventListener("change", async (event) => {
         const file = event.target.files[0];
         if (file) {
           const maxSize = 4 * 1024 * 1024; // 4MB
@@ -490,110 +410,51 @@
           }
         }
         galleryImage = await uploadFile(file, "/gallery/image", BACKEND_URL);
-      };
+        if (galleryImage) {
+          showToast("secondary", "Image uploaded successfully.");
+          return
+        }
+        showToast("danger", "Failed to upload image.");
 
-      document
-        .getElementById("add_gallery")
-        .addEventListener("click", async (event) => {
-          event.preventDefault();
-          const galleryForm = document.getElementById("galleryForm");
-          const formData = new FormData(galleryForm);
-          let payload = {};
-          for (const [key, value] of formData.entries()) {
-            payload[key] = value instanceof File ? value.name : value;
+      });
+    })
+
+
+
+    document
+      .getElementById("add_gallery")
+      .addEventListener("click", async (event) => {
+        event.preventDefault();
+        const galleryForm = document.getElementById("galleryForm");
+        const formData = new FormData(galleryForm);
+        let payload = {};
+        for (const [key, value] of formData.entries()) {
+          payload[key] = value instanceof File ? value.name : value;
+        }
+        payload["gallery_image_uri"] = galleryImage;
+
+        const saveImageResponse = await fetchWithTimeout(
+          `${BACKEND_URL}/gallery/update_gallery_details`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
           }
-          payload["gallery_image_uri"] = galleryImage;
+        );
+        const data = await saveImageResponse.json();
+        if (!data?.success) {
+          //handle error
+        }
+        showToast("secondary", "Gallery added successfully.");
+        galleryImage = undefined;
+        location.reload();
+      });
+  </script>
 
-          const saveImageResponse = await fetchWithTimeout(
-            `${BACKEND_URL}/gallery/update_gallery_details`,
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(payload),
-            }
-          );
-          const data = await saveImageResponse.json();
-          if (!data?.success) {
-            //handle error
-          }
-          galleryImage = undefined;
-          location.reload();
-        });
-    </script>
+  <script src="assets/js/rocket-loader.min.js" data-cf-settings="563627d34f06b593c6cb729a-|49" defer></script>
 
-    <!-- jQuery -->
-    <script
-      src="assets/js/jquery-3.7.1.min.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
+</body>
 
-    <!-- Bootstrap Core JS -->
-    <script
-      src="assets/js/bootstrap.bundle.min.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-
-    <!-- Daterangepikcer JS -->
-    <script
-      src="assets/js/moment.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-    <script
-      src="assets/plugins/daterangepicker/daterangepicker.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-    <script
-      src="assets/js/bootstrap-datetimepicker.min.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-
-    <!-- Feather Icon JS -->
-    <script
-      src="assets/js/feather.min.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-
-    <!-- Slimscroll JS -->
-    <script
-      src="assets/js/jquery.slimscroll.min.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-
-    <!-- Datatable JS -->
-    <script
-      src="assets/js/jquery.dataTables.min.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-    <script
-      src="assets/js/dataTables.bootstrap5.min.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-
-    <!-- Select2 JS -->
-    <script
-      src="assets/plugins/select2/js/select2.min.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-
-    <!-- Custom JS -->
-    <script
-      src="assets/js/script.js"
-      type="563627d34f06b593c6cb729a-text/javascript"
-    ></script>
-
-    <script
-      src="assets/js/rocket-loader.min.js"
-      data-cf-settings="563627d34f06b593c6cb729a-|49"
-      defer
-    ></script>
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-      data-cf-beacon='{"rayId":"9617610df9d47e91","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"3ca157e612a14eccbb30cf6db6691c29"}'
-      crossorigin="anonymous"
-    ></script>
-  </body>
 </html>
