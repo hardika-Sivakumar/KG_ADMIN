@@ -15532,7 +15532,12 @@ Form help
 .input-group-flat:focus-within .input-group-text {
     border-color: #E9EDF4 !important;
 }
-
+a[href="https://1.envato.market/52Ndo"] {
+    display: none;
+}
+#resetbutton{
+    display: none;
+}
 .input-group-flat .form-control:focus {
     box-shadow: none;
 }
