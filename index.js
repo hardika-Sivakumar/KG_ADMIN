@@ -11,6 +11,7 @@ const { getGalleryDetails } = require("./services/galleryService");
 const { getSettingDetails } = require("./services/settingService");
 const { getContactDetails } = require("./services/contactService");
 const {validateCreds}=require('./services/authService')
+const serverless = require("serverless-http");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname);
@@ -300,3 +301,4 @@ app.use((req, res) => {
 //   console.log(`Server is running at http://localhost:${CONFIG.PORT}`);
 // });
 module.exports = app;
+module.exports.handler = serverless(app);
