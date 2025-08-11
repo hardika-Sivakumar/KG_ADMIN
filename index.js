@@ -1,8 +1,13 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const sessionMiddleware = require('./middlewares/session');
-const {  requireTeacher, requireAdmin,requireAdminOrTeacher } = require('./middlewares/auth');
+const issueToken = require("./middlewares/session");
+const {
+  requireTeacher,
+  requireAdmin,
+  requireAdminOrTeacher,
+} = require("./middlewares/auth");
+const jwt = require('jsonwebtoken');
 const { CONFIG } = require("./config");
 const { getStudentDetails } = require("./services/studentService");
 const { getStaffDetails } = require("./services/staffService");
@@ -10,82 +15,92 @@ const { getEventDetails } = require("./services/eventService");
 const { getGalleryDetails } = require("./services/galleryService");
 const { getSettingDetails } = require("./services/settingService");
 const { getContactDetails } = require("./services/contactService");
-const {validateCreds}=require('./services/authService')
-const serverless = require("serverless-http");
-
+const { validateCreds } = require("./services/authService");
+const cookieParser = require('cookie-parser');
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src"));
 app.use("/assets", express.static(path.join(__dirname, "src", "assets")));
-app.use('/locales', express.static(path.join(__dirname, "src",'locales')));
-
+app.use("/locales", express.static(path.join(__dirname, "src", "locales")));
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(sessionMiddleware);
 app.use(express.json());
-
-
+const JWT_SECRET = process.env.JWT_SECRET || 'KG_SECRET_KEY';
 app.use((req, res, next) => {
-  res.locals.role = req.session?.role ;
+  res.locals.role = req.session?.role;
   next();
 });
 
 app.get("/", async (req, res) => {
   const headers = {
     "content-type": "application/json",
-  }
+  };
   const settingDetails = await getSettingDetails(headers);
 
   const galleryDetails = await getGalleryDetails(headers);
 
   if (!galleryDetails?.success) {
     //handle error
-    return
+    return;
   }
 
   if (!settingDetails?.success) {
     //handle error
-    return
+    return;
   }
-  const carouselData = settingDetails?.setting?.filter((item) => item.type === "home_carousel")
-  const eventData = settingDetails?.setting?.filter((item) => item.type === "event_info")
-  const staffData = settingDetails?.setting?.filter((item) => item.type === "staff_info")
-  const testimonialData = settingDetails?.setting?.filter((item) => item.type === "testimonial")
-  let eventDetails = []
-  let staffDetails = []
+  const carouselData = settingDetails?.setting?.filter(
+    (item) => item.type === "home_carousel"
+  );
+  const eventData = settingDetails?.setting?.filter(
+    (item) => item.type === "event_info"
+  );
+  const staffData = settingDetails?.setting?.filter(
+    (item) => item.type === "staff_info"
+  );
+  const testimonialData = settingDetails?.setting?.filter(
+    (item) => item.type === "testimonial"
+  );
+  let eventDetails = [];
+  let staffDetails = [];
   if (eventData?.length > 0) {
     const payload = {
       filters: {
-        event_id: eventData[0].event_ids
+        event_id: eventData[0].event_ids,
       },
-      get_all: true
-    }
+      get_all: true,
+    };
     const events = await getEventDetails(headers, payload);
     if (!events?.success) {
       //handle error
-      return
+      return;
     }
-    eventDetails = events?.events
+    eventDetails = events?.events;
   }
 
   if (staffData?.length > 0) {
     const payload = {
       filters: {
-        staff_id: staffData[0].staff_ids
+        staff_id: staffData[0].staff_ids,
       },
-      get_all: true
-    }
+      get_all: true,
+    };
     const staff = await getStaffDetails(headers, payload);
     if (!staff?.success) {
       //handle error
-      return
+      return;
     }
-    staffDetails = staff?.staffs
+    staffDetails = staff?.staffs;
   }
 
-  return res.render("home", { carouselData: carouselData || [], eventDetails: eventDetails || [], staffDetails: staffDetails || [], galleryDetails: galleryDetails?.gallery || [] ,testimonialData: testimonialData || [] });
+  return res.render("home", {
+    carouselData: carouselData || [],
+    eventDetails: eventDetails || [],
+    staffDetails: staffDetails || [],
+    galleryDetails: galleryDetails?.gallery || [],
+    testimonialData: testimonialData || [],
+  });
 });
 
-
-app.get("/admin",requireAdminOrTeacher, async (req, res) => {
+app.get("/admin", requireAdminOrTeacher, async (req, res) => {
   return res.render("index");
 });
 app.get("/add_student", requireAdminOrTeacher, async (req, res) => {
@@ -107,9 +122,12 @@ app.get("/add_student", requireAdminOrTeacher, async (req, res) => {
     studentDetails = studentData?.students?.[0];
   }
 
-  return res.render("add-student", { studentDetails: studentDetails ?? {},studentId:studentId ?? "" });
+  return res.render("add-student", {
+    studentDetails: studentDetails ?? {},
+    studentId: studentId ?? "",
+  });
 });
-app.get("/add_staff", requireAdmin,async (req, res) => {
+app.get("/add_staff", requireAdmin, async (req, res) => {
   const staffId = req.query.staffID;
   let staffDetails = {};
   if (staffId) {
@@ -129,9 +147,9 @@ app.get("/add_staff", requireAdmin,async (req, res) => {
   }
   return res.render("add-staff", { staffDetails: staffDetails ?? {} });
 });
-app.get("/add_event",requireAdminOrTeacher, async (req, res) => {
+app.get("/add_event", requireAdminOrTeacher, async (req, res) => {
   const eventId = req.query.eventID;
-  let eventDetails={}
+  let eventDetails = {};
   if (eventId) {
     const headers = {
       "content-type": "application/json",
@@ -147,32 +165,53 @@ app.get("/add_event",requireAdminOrTeacher, async (req, res) => {
     }
     eventDetails = eventData?.events?.[0];
   }
-  return res.render("add-event",{eventDetails:eventDetails ?? {},eventId:eventId ?? ""});
+  return res.render("add-event", {
+    eventDetails: eventDetails ?? {},
+    eventId: eventId ?? "",
+  });
 });
 app.post("/login", async (req, res) => {
   const { email, password, login_type } = req.body;
-  const headers = {
-    "content-type": "application/json",
-  };
-  const loginData = await validateCreds({ email, password, login_type }, headers);
+  const headers = { "content-type": "application/json" };
+
+  const loginData = await validateCreds(
+    { email, password, login_type },
+    headers
+  );
   if (!loginData.success) {
-    //handle 500 server error
     return res.redirect("/login");
   }
-  req.session.user = email;
-  req.session.role = loginData?.login_type;
+
+  // Sign JWT
+  const token = jwt.sign({ email, role: loginData?.login_type }, JWT_SECRET, {
+    expiresIn: "1h",
+  });
+
+  // Store token in HTTP-only cookie
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    maxAge: 60 * 60 * 60 * 1000,
+  });
+
   return res.redirect("/admin");
 });
 
-app.get("/login", async (req, res) => {
-  if(req.session.user){
-    return res.redirect("/admin");
-  } 
-
+app.get("/login", (req, res) => {
+  const token = req.cookies?.token;
+  if (token) {
+    try {
+      jwt.verify(token, JWT_SECRET);
+      return res.redirect("/admin");
+    } catch {
+      // Token invalid or expired
+    }
+  }
   return res.render("login");
 });
 
-app.get("/student_lists",requireAdminOrTeacher, async (req, res) => {
+app.get("/student_lists", requireAdminOrTeacher, async (req, res) => {
   const headers = {
     "content-type": "application/json",
   };
@@ -186,7 +225,7 @@ app.get("/student_lists",requireAdminOrTeacher, async (req, res) => {
   return res.render("student-list", { studentData: studentList?.students });
 });
 
-app.get("/student_details",requireAdminOrTeacher, async (req, res) => {
+app.get("/student_details", requireAdminOrTeacher, async (req, res) => {
   const studentId = req.query.studentID;
   const headers = {
     "content-type": "application/json",
@@ -205,7 +244,7 @@ app.get("/student_details",requireAdminOrTeacher, async (req, res) => {
   });
 });
 
-app.get("/staff_lists",requireAdmin, async (req, res) => {
+app.get("/staff_lists", requireAdmin, async (req, res) => {
   const headers = {
     "content-type": "application/json",
   };
@@ -219,7 +258,7 @@ app.get("/staff_lists",requireAdmin, async (req, res) => {
   return res.render("staff-list", { staffData: staffList?.staffs });
 });
 
-app.get("/gallery",requireAdmin, async (req, res) => {
+app.get("/gallery", requireAdmin, async (req, res) => {
   const galleryData = await getGalleryDetails();
   if (!galleryData.success) {
     //handle 500 server error
@@ -228,7 +267,7 @@ app.get("/gallery",requireAdmin, async (req, res) => {
   return res.render("gallery", { galleryData: galleryData?.gallery });
 });
 
-app.get("/event_lists",requireAdminOrTeacher, async (req, res) => {
+app.get("/event_lists", requireAdminOrTeacher, async (req, res) => {
   const headers = {
     "content-type": "application/json",
   };
@@ -242,7 +281,7 @@ app.get("/event_lists",requireAdminOrTeacher, async (req, res) => {
   return res.render("event-list", { eventData: eventList?.events });
 });
 
-app.get("/contact_list",requireAdmin, async (req, res) => {
+app.get("/contact_list", requireAdmin, async (req, res) => {
   const contactList = await getContactDetails();
   if (!contactList.success) {
     //handle 500 server error
@@ -253,7 +292,7 @@ app.get("/contact_list",requireAdmin, async (req, res) => {
   });
 });
 
-app.get("/website_settings",requireAdmin, async (req, res) => {
+app.get("/website_settings", requireAdmin, async (req, res) => {
   const headers = {
     "content-type": "application/json",
   };
@@ -288,18 +327,17 @@ app.get("/website_settings",requireAdmin, async (req, res) => {
   });
 });
 
-
-app.get("/logout",async(req,res)=>{
-  req.session.destroy();
-  res.redirect("/login")
-})
+app.get("/logout", (req, res) => {
+  res.clearCookie("token");
+  res.redirect("/login");
+});
 
 app.locals.BACKEND_URL = CONFIG?.BACKEND_URL;
 app.use((req, res) => {
-  res.status(404).render('404', { url: req.originalUrl });
+  res.status(404).render("404", { url: req.originalUrl });
 });
-// app.listen(CONFIG.PORT, () => {
-//   console.log(`Server is running at http://localhost:${CONFIG.PORT}`);
-// });
-module.exports = app;
+app.listen(CONFIG.PORT, () => {
+  console.log(`Server is running at http://localhost:${CONFIG.PORT}`);
+});
+// module.exports = app;
 // module.exports.handler = serverless(app);

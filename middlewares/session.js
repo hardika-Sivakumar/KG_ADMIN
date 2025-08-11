@@ -1,14 +1,9 @@
-// middlewares/session.js
-const session = require('express-session');
+const jwt = require('jsonwebtoken');
+const JWT_SECRET = process.env.JWT_SECRET || 'KG_SECRET_KEY';
 
-const sessionMiddleware = session({
-    secret: 'KG_SCECRET_KEY', 
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        maxAge: 1000 * 60 * 60, 
-        secure: false, 
-    }
-});
+function issueToken(user) {
+    // user = { email, role }
+    return jwt.sign(user, JWT_SECRET, { expiresIn: '1h' });
+}
 
-module.exports = sessionMiddleware;
+module.exports = issueToken;
