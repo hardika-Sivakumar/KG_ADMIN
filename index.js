@@ -164,12 +164,12 @@ app.post("/login", async (req, res) => {
   }
   req.session.user = email;
   req.session.role = loginData?.login_type;
-  return res.redirect("/");
+  return res.redirect("/admin");
 });
 
 app.get("/login", async (req, res) => {
   if(req.session.user){
-    return res.redirect("/");
+    return res.redirect("/admin");
   } 
 
   return res.render("login");
