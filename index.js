@@ -14,9 +14,10 @@ const {validateCreds}=require('./services/authService')
 const serverless = require("serverless-http");
 
 app.set("view engine", "ejs");
-app.set("views", __dirname);
-app.use('/assets', express.static(path.join(__dirname, "assets")));
-app.use('/locales', express.static(path.join(__dirname, "locales"))); 
+app.set("views", path.join(__dirname, "src"));
+app.use("/assets", express.static(path.join(__dirname, "src", "assets")));
+app.use('/locales', express.static(path.join(__dirname, "src",'locales')));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(sessionMiddleware);
 app.use(express.json());
@@ -297,8 +298,8 @@ app.locals.BACKEND_URL = CONFIG?.BACKEND_URL;
 app.use((req, res) => {
   res.status(404).render('404', { url: req.originalUrl });
 });
-// app.listen(CONFIG.PORT, () => {
-//   console.log(`Server is running at http://localhost:${CONFIG.PORT}`);
-// });
-module.exports = app;
-module.exports.handler = serverless(app);
+app.listen(CONFIG.PORT, () => {
+  console.log(`Server is running at http://localhost:${CONFIG.PORT}`);
+});
+// module.exports = app;
+// module.exports.handler = serverless(app);

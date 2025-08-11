@@ -264,7 +264,7 @@
         const BACKEND_URL="<%= BACKEND_URL %>"
       const fetchData = async (endpoint, body = null) => {
     try {
-        const response = await fetchWithTimeout(`${BACKEND_URL}${endpoint}`, {
+        const response = await fetch(`${BACKEND_URL}${endpoint}`, {
             method: body ? "POST" : "GET",
             headers: {
                 'content-type': 'application/json'
