@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>School Be</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="assets/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <div class=" bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+            <a href="index.html" class="navbar-brand">
+                <img src="assets/img/kider-logo.png" alt="logo" style="width:10rem; height: auto;">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto">
+                    <a data-i18n="nav.facilities" href="#facilities" class="nav-item nav-link">Installations</a>
+                    <a data-i18n="nav.about" href="#about" class="nav-item nav-link">À propos de nous</a>
+                    <a data-i18n="nav.events" href="#events" class="nav-item nav-link">Événements</a>
+                    <a data-i18n="nav.contact" href="#contact" class="nav-item nav-link">Contactez-nous</a>
+                    <a data-i18n="nav.teachers" href="#teachers" class="nav-item nav-link">Enseignants</a>
+                    <a data-i18n="nav.gallery" href="#gallery" class="nav-item nav-link">Galerie</a>
+                    <a data-i18n="nav.testimonials" href="#testimonials" class="nav-item nav-link">Témoignages</a>
+                </div>
+
+                <!-- <a style="color: blue;"><h7 id="title1">Select Language</h7></a> -->
+                </br>
+                <select id="languageSwitcher">
+                    <option value="en" selected>English</option>
+                    <option value="de">Dutch</option>
+                    <option value="fr">French</option>
+                </select>
+
+
+
+                <a href="#contact" class="btn btn-primary rounded-pill px-3 d-none d-lg-block" data-i18n="join">Join
+                    Us<i class="fa fa-arrow-right ms-3"></i></a>
+            </div>
+    </div>
+    </nav>
+
+
+
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            <% carouselData?.forEach((item)=> { %>
+                <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid" src="<%= item.home_carousel_image_uri %>" alt="">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+                        style="background: rgba(0, 0, 0, .2);">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-10 col-lg-8">
+                                    <h1 class="display-2 text-white animated slideInDown mb-4 title">
+                                        <%= item.home_carousel_title %>
+                                    </h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2 desc"
+                                        id="carousel_description">
+                                        <%= item.home_carousel_description %>
+                                    </p>
+                                    <a href="#facilities"
+                                        class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">nos
+                                        installations</a>
+                                    <a href="#teachers"
+                                        class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">notre
+                                        personnel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- Facilities Start -->
+    <section id="facilities" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-3" id="title" data-i18n="school.title">Nos Installations Scolaires</h1>
+                <p id="para" data-i18n="school.description">
+                    Notre école est équipée de salles de classe ultramodernes, d'une bibliothèque complète, ainsi que de
+                    laboratoires
+                    de sciences et d'informatique modernes favorisant l’apprentissage pratique. Les élèves bénéficient
+                    également
+                    d’installations sportives spacieuses, d’une cafétéria hygiénique et d’un environnement sûr et
+                    bienveillant qui
+                    encourage l’excellence académique et l’épanouissement personnel.
+                </p>
+
+
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 fadeInUp" data-wow-delay="0.1s">
+                    <div class="facility-item">
+                        <div class="facility-icon bg-primary">
+                            <span class="bg-primary"></span>
+                            <i class="fa fa-bus-alt fa-3x text-primary"></i>
+                            <span class="bg-primary"></span>
+                        </div>
+                        <div class="facility-text bg-primary">
+                            <h3 class="text-primary mb-3" data-i18n="facilities.bus.title">Bus Scolaire</h3>
+                            <p class="mb-0" data-i18n="facilities.bus.description">Nos bus scolaires fiables et équipés
+                                de GPS assurent un transport sûr et
+                                ponctuel pour tous les élèves sur les itinéraires désignés.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="facility-item">
+                        <div class="facility-icon bg-success">
+                            <span class="bg-success"></span>
+                            <i class="fa fa-futbol fa-3x text-success"></i>
+                            <span class="bg-success"></span>
+                        </div>
+                        <div class="facility-text bg-success">
+                            <h3 class="text-success mb-3" data-i18n="facilities.playground.title">Terrain de Jeu</h3>
+                            <p class="mb-0" data-i18n="facilities.playground.description">Des terrains de jeu spacieux
+                                et bien entretenus favorisent le développement
+                                physique à travers diverses activités sportives et récréatives.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="facility-item">
+                        <div class="facility-icon bg-warning">
+                            <span class="bg-warning"></span>
+                            <i class="fa fa-home fa-3x text-warning"></i>
+                            <span class="bg-warning"></span>
+                        </div>
+                        <div class="facility-text bg-warning">
+                            <h3 class="text-warning mb-3" data-i18n="facilities.cantine.title">Cantine Saine</h3>
+                            <p class="mb-0" data-i18n="facilities.cantine.description">Notre cantine hygiénique propose
+                                une variété de repas nutritifs et
+                                fraîchement préparés qui soutiennent la santé et l’énergie des élèves.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="facility-item">
+                        <div class="facility-icon bg-info">
+                            <span class="bg-info"></span>
+                            <i class="fa fa-chalkboard-teacher fa-3x text-info"></i>
+                            <span class="bg-info"></span>
+                        </div>
+                        <div class="facility-text bg-info">
+                            <h3 class="text-info mb-3" data-i18n="facilities.learning.title">Apprentissage Positif</h3>
+                            <p class="mb-0" data-i18n="facilities.learning.description">Nous favorisons un environnement
+                                d’apprentissage bienveillant avec des
+                                salles de classe interactives et un corps enseignant formé, axé sur le développement et
+                                la créativité des élèves.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Facilities End -->
+
+
+    <!-- About Start -->
+    <section id="about" class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="mb-4" data-i18n="activities_title">En Savoir Plus sur Notre Travail et Nos Activités
+                        Culturelles</h1>
+                    <p data-i18n="activities_para_1">
+                        Notre établissement est engagé dans une éducation holistique qui va au-delà des matières
+                        académiques.
+                        Nous encourageons les élèves à explorer leurs passions, à exprimer leur créativité et à établir
+                        des liens
+                        significatifs à travers divers programmes culturels et parascolaires.
+                    </p>
+                    <p class="mb-4" data-i18n="activities_para_2">
+                        De l’art, de la musique et de la danse au théâtre, aux débats et aux événements communautaires —
+                        nous offrons
+                        une plateforme dynamique où les élèves peuvent s’épanouir intellectuellement et socialement.
+                        Ces expériences favorisent la confiance en soi, le leadership et un fort sentiment d'identité.
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <img class="img-fluid w-75 rounded-circle bg-light p-3" src="assets/img/about-1.jpg" alt="">
+                        </div>
+                        <div class="col-6 text-start" style="margin-top: -150px;">
+                            <img class="img-fluid w-100 rounded-circle bg-light p-3" src="assets/img/about-2.jpg"
+                                alt="">
+                        </div>
+                        <div class="col-6 text-end" style="margin-top: -150px;">
+                            <img class="img-fluid w-100 rounded-circle bg-light p-3" src="assets/img/about-3.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About End -->
+
+
+    <!-- Call To Action Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="bg-light rounded">
+                <div class="row g-0">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100 rounded" src="assets/img/call-to-action.jpg"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="h-100 d-flex flex-column justify-content-center p-5">
+                            <h1 class="mb-4" data-i18n="cta_title">Devenez Enseignant</h1>
+                            <p class="mb-4" data-i18n="cta_paragraph">
+                                Rejoignez notre équipe passionnée d’éducateurs et contribuez à façonner l’avenir des
+                                jeunes esprits.
+                                Nous valorisons l’engagement, la créativité et le dévouement à créer un environnement
+                                d’apprentissage
+                                positif où chaque élève peut s’épanouir.
+                            </p>
+                            <a class="btn btn-primary py-3 px-5" href="#contact" data-i18n="cta_button">Contactez-nous<i
+                                    class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call To Action End -->
+
+
+    <!-- Classes Start -->
+    <section id="events" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-3" data-i18n="events_section.title">Événements Scolaires</h1>
+                <p data-i18n="events_section.description">
+                    Notre école organise une variété d’événements captivants tout au long de l’année, notamment des
+                    festivals
+                    culturels, des compétitions académiques, des rencontres sportives et des célébrations
+                    communautaires.
+                    Ces événements favorisent la créativité, l’esprit d’équipe et un fort sentiment d’appartenance chez
+                    les élèves.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <%eventDetails?.forEach((item)=> { %>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="classes-item">
+                            <div class="bg-light rounded-circle w-75 mx-auto p-3">
+                                <img class="img-fluid rounded-circle" src="<%=item?.event_poster?.event_banner_photo%>"
+                                    alt="">
+                            </div>
+                            <div class="bg-light rounded p-4 pt-5 mt-n5">
+                                <p class="d-block text-center h3 mt-3 mb-4 title">
+                                    <%=item?.event_title%>
+                                </p>
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle flex-shrink-0" src="assets/img/user.jpg" alt=""
+                                            style="width: 45px; height: 45px;">
+                                        <div class="ms-3">
+                                            <h6 class="text-primary mb-1 desc">
+                                                <%=item?.event_organizer%>
+                                            </h6>
+                                        </div>
+                                    </div>
+
+                                    <%if(item?.event_status){%>
+                                        <span class="bg-success text-white rounded-pill py-2 px-3 status" href="">Open</span>
+                                        <%}else{%>
+                                            <span class="bg-danger text-white rounded-pill py-2 px-3 status"
+                                                href="">Closed</span>
+                                            <%}%>
+
+                                </div>
+                                <div class="row g-1">
+                                    <div class="col-4">
+                                        <div class="border-top border-3 border-primary pt-2">
+                                            <h6 class="text-primary mb-1">Event Date:</h6>
+                                            <small>
+                                                <%=item?.event_date%>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="border-top border-3 border-success pt-2">
+                                            <h6 class="text-success mb-1">Start time:</h6>
+                                            <small>
+                                                <%=item?.event_time?.event_start_time%>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="border-top border-3 border-warning pt-2">
+                                            <h6 class="text-warning mb-1">End time:</h6>
+                                            <small>
+                                                <%=item?.event_time?.event_end_time%>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%})%>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes End -->
+
+
+    <!-- Appointment Start -->
+    <section id="contact" class="container-xxl py-5">
+        <div class="container">
+            <div class="bg-light rounded">
+                <div class="row g-0">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="h-100 d-flex flex-column justify-content-center p-5">
+                            <h1 class="mb-4" data-i18n="contact.contact_us">Neem contact op</h1>
+                            <form id="contactForm" onsubmit="return false">
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="text" name="name" class="form-control border-0" id="gname"
+                                                placeholder="Bijv: Jan"
+                                                data-i18n-placeholder="contact.placeholder_name" />
+                                            <label for="gname" data-i18n="contact.guardian_name">Naam
+                                                ouder/verzorger</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="email" name="email" class="form-control border-0" id="gmail"
+                                                placeholder="Bijv: jan@example.com"
+                                                data-i18n-placeholder="contact.placeholder_email" />
+                                            <label for="gmail" data-i18n="contact.guardian_email">E-mailadres
+                                                ouder/verzorger</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="text" name="child_name" class="form-control border-0"
+                                                id="cname" placeholder="Bijv: Alice"
+                                                data-i18n-placeholder="contact.placeholder_child_name" />
+                                            <label for="cname" data-i18n="contact.child_name">Naam van het kind</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="text" name="child_age" class="form-control border-0" id="cage"
+                                                placeholder="Bijv: 2"
+                                                data-i18n-placeholder="contact.placeholder_child_age" />
+                                            <label for="cage" data-i18n="contact.child_age">Leeftijd van het
+                                                kind</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea name="message" class="form-control border-0" id="message"
+                                                style="height: 100px" placeholder="Laat hier een bericht achter"
+                                                data-i18n-placeholder="contact.placeholder_message"></textarea>
+                                            <label for="message" data-i18n="contact.message">Bericht</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" id="submit" type="submit"
+                                            data-i18n="contact.submit">Verzenden</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100 rounded" src="assets/img/appointment.jpg"
+                                style="object-fit: cover;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Appointment End -->
+
+
+    <!-- Team Start -->
+    <section id="teachers" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-3" data-i18n="popular_teachers.title">Enseignants Populaires</h1>
+                <p data-i18n="popular_teachers.description">
+                    Découvrez nos enseignants les plus respectés et inspirants, qui se surpassent pour accompagner le
+                    développement des élèves.
+                    Leur dévouement, leur expertise et leur passion pour l’enseignement laissent une empreinte durable
+                    en classe et au-delà.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <%staffDetails?.forEach((item)=> {%>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item position-relative">
+                            <img class="img-fluid rounded-circle w-75" src="<%=item?.staff_info?.staff_profile_photo%>"
+                                alt="">
+                            <div class="team-text">
+                                <h3>
+                                    <%=item?.staff_info?.first_name%>
+                                        <%=item?.staff_info?.last_name%>
+                                </h3>
+                                <p>
+                                    <%=item?.staff_experience_info?.qualification%>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <%})%>
+            </div>
+        </div>
+    </section>
+    <!-- Team End -->
+    <section id="gallery" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-3" data-i18n="gallery.title">Notre Galerie</h1>
+                <p data-i18n="gallery.description">
+                    Découvrez des moments de notre vie scolaire dynamique — des réussites académiques et célébrations
+                    culturelles
+                    aux événements sportifs et activités en classe. Notre galerie reflète l’esprit, l’énergie et les
+                    réussites de
+                    nos élèves et de notre personnel.
+                </p>
+            </div>
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
+                style="max-width: 100vw; margin: 0 auto; border-radius: 10px; overflow: hidden;">
+                <div class="carousel-inner">
+                    <% galleryDetails?.forEach(function(item, index) { %>
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                            <img class="d-block w-100" src="<%= item?.gallery_image_uri %>" alt="Slide <%= index + 1 %>"
+                                style="height: 80vh; object-fit: cover;">
+                        </div>
+                        <% }); %>
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"
+                    style="background-color: rgba(0,0,0,0.3); width: 50px;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"
+                    style="background-color: rgba(0,0,0,0.3); width: 50px;">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Testimonial Start -->
+    <section id="testimonials" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-3" data-i18n="testimonials.title">Ce Que Disent Nos Clients</h1>
+                <p data-i18n="testimonials.description">
+                    Écoutez les parents et partenaires qui ont vécu de près l’impact de notre école.
+                    Leurs témoignages reflètent notre engagement envers une éducation de qualité, le développement des
+                    élèves et un environnement communautaire bienveillant.
+                </p>
+            </div>
+
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <%testimonialData?.forEach((item)=> {%>
+
+                    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="desc fs-5">
+                            <%=item?.testimonial_description%>
+                        </p>
+                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="<%=item?.testimonial_image_uri%>"
+                                style="width: 90px; height: 90px;">
+                            <div class="ps-3">
+                                <h3 class="mb-1">
+                                    <%=item?.testimonial_person_name%>
+                                </h3>
+                                <span>Parent</span>
+                            </div>
+                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
+                        </div>
+                    </div>
+                    <%})%>
+
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4" data-i18n="footer.get_in_touch">Entrer en contact</h3>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3" data-i18n="footer.address"></i>123 Street, New
+                        York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3" data-i18n="footer.phone"></i>+32 471802424</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3" data-i18n="footer.email"></i>er.syedsaddam@gmail.com
+                    </p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4" data-i18n="footer.galery">Galerie de photos</h3>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="assets/img/classes-1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="assets/img/classes-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="assets/img/classes-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="assets/img/classes-4.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="assets/img/classes-5.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="assets/img/classes-6.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+    <script src="assets/js/api.js"></script>
+    <script src="https://unpkg.com/i18next@21.9.1/i18next.min.js"></script>
+    <script>
+        const supportedLangs = ['en', 'fr', 'de'];
+        let currLang = "en"
+
+        const translations = {
+            en: {},
+            fr: {},
+            de: {}
+        };
+
+        // Load all translations
+        Promise.all(
+            supportedLangs.map(lang =>
+                fetch(`locales/${lang}.json`).then(res => res.json()).then(data => {
+                    translations[lang] = data;
+                })
+            )
+        ).then(() => {
+            // Init i18next
+            i18next.init({
+                lng: 'en',
+                fallbackLng: 'en',
+                resources: {
+                    en: { translation: translations.en },
+                    fr: { translation: translations.fr },
+                    de: { translation: translations.de },
+                }
+            }, updateContent);
+
+            // Listen to language switcher
+            document.getElementById('languageSwitcher').addEventListener('change', e => {
+                const selectedLang = e.target.value;
+                if (supportedLangs.includes(selectedLang)) {
+                    currLang = selectedLang
+                    i18next.changeLanguage(selectedLang, updateContent);
+                }
+            });
+        });
+        async function loadTranslation(text) {
+            if(currLang == "en" || text=="") return text
+            const cached = localStorage.getItem(`translation_${text}_${currLang}`);
+            if (cached) {
+                return JSON.parse(cached); // Use cached translation
+            }
+
+            try {
+                const response = await fetchWithTimeout(`https://translateapi-omega.vercel.app/api/v1/en/${currLang}/${text}`)
+                const data = await response.json();
+                if (data?.translation) {
+                    localStorage.setItem(`translation_${text}_${currLang}`, JSON.stringify(data?.translation)); // Cache it
+                    return data?.translation
+                }
+                return text;
+            } catch (e) {
+                return text
+            }
+        }
+        // Update all DOM elements with [data-i18n]
+        async function updateContent() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.innerText = i18next.t(key);
+            });
+
+            const carouselTitles = document.querySelectorAll('.title');
+            const carouselDescs = document.querySelectorAll('.desc');
+            const status = document.querySelectorAll('.status');
+
+            for (const el of status) {
+                const original = el.innerText;
+                el.innerText = await loadTranslation(original);
+            }
+
+            for (const el of carouselTitles) {
+                const original = el.innerText;
+                el.innerText = await loadTranslation(original);
+            }
+
+            for (const el of carouselDescs) {
+                const original = el.innerText;
+                el.innerText = await loadTranslation(original);
+            }
+        }
+
+    </script>
+
+
+    <script>
+        const BACKEND_URL = "<%=BACKEND_URL%>"
+        document.getElementById("submit").addEventListener("click", async function (event) {
+            const contactForm = document.getElementById("contactForm");
+            const formData = new FormData(contactForm);
+            let payload = {}
+            for (const [key, value] of formData) {
+                payload[key] = value
+            }
+
+            const saveContactForm = await fetchWithTimeout(`${BACKEND_URL}/contact/update_contact_request_details`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            })
+            const response = await saveContactForm.json()
+            if (!response.success) {
+                alert(response.message)
+            }
+            //handle success
+
+
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/lib/wow/wow.min.js"></script>
+    <script src="assets/lib/easing/easing.min.js"></script>
+    <script src="assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Template Javascript -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

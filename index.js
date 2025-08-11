@@ -14,7 +14,7 @@ const {validateCreds}=require('./services/authService')
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, ""));
-
+app.use('/locales', express.static(path.join(__dirname, "src",'locales')));
 app.use(express.urlencoded({ extended: true }));
 app.use(sessionMiddleware);
 app.use(express.json());
@@ -26,8 +26,65 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", async (req, res) => {
+  const headers = {
+    "content-type": "application/json",
+  }
+  const settingDetails = await getSettingDetails(headers);
 
-app.get("/",requireAdminOrTeacher, async (req, res) => {
+  const galleryDetails = await getGalleryDetails(headers);
+  console.log(galleryDetails)
+
+  if (!galleryDetails?.success) {
+    //handle error
+    return
+  }
+
+  if (!settingDetails?.success) {
+    //handle error
+    return
+  }
+  const carouselData = settingDetails?.setting?.filter((item) => item.type === "home_carousel")
+  const eventData = settingDetails?.setting?.filter((item) => item.type === "event_info")
+  const staffData = settingDetails?.setting?.filter((item) => item.type === "staff_info")
+  const testimonialData = settingDetails?.setting?.filter((item) => item.type === "testimonial")
+  let eventDetails = []
+  let staffDetails = []
+  if (eventData?.length > 0) {
+    const payload = {
+      filters: {
+        event_id: eventData[0].event_ids
+      },
+      get_all: true
+    }
+    const events = await getEventDetails(headers, payload);
+    if (!events?.success) {
+      //handle error
+      return
+    }
+    eventDetails = events?.events
+  }
+
+  if (staffData?.length > 0) {
+    const payload = {
+      filters: {
+        staff_id: staffData[0].staff_ids
+      },
+      get_all: true
+    }
+    const staff = await getStaffDetails(headers, payload);
+    if (!staff?.success) {
+      //handle error
+      return
+    }
+    staffDetails = staff?.staffs
+  }
+
+  return res.render("home", { carouselData: carouselData || [], eventDetails: eventDetails || [], staffDetails: staffDetails || [], galleryDetails: galleryDetails?.gallery || [] ,testimonialData: testimonialData || [] });
+});
+
+
+app.get("/admin",requireAdminOrTeacher, async (req, res) => {
   return res.render("index");
 });
 app.get("/add_student", requireAdminOrTeacher, async (req, res) => {
