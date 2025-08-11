@@ -296,6 +296,7 @@ app.locals.BACKEND_URL = CONFIG?.BACKEND_URL;
 app.use((req, res) => {
   res.status(404).render('404', { url: req.originalUrl });
 });
-app.listen(CONFIG.PORT, () => {
-  console.log(`Server is running at http://localhost:${CONFIG.PORT}`);
-});
+// app.listen(CONFIG.PORT, () => {
+//   console.log(`Server is running at http://localhost:${CONFIG.PORT}`);
+// });
+module.exports = app;
