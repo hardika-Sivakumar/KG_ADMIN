@@ -1,6 +1,5 @@
 const fetchWithTimeout = async (url, options, timeout = 20000, maxRetries = 3) => {
   let attempt = 0;
-  console.log(url)
 
   while (attempt < maxRetries) {
     try {

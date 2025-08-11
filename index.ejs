@@ -293,7 +293,6 @@
             const staffData = await fetchData('/staff/get_staff_list', { get_all: true });
             const galleryData = await fetchData('/gallery/get_gallery_details'); // GET request
 
-            console.log(studentData, eventData, staffData, galleryData);
 
             if(!studentData?.success){
                 //handle error
@@ -302,7 +301,6 @@
                 document.getElementById("total_students").innerHTML = studentData?.total_students || 0;
                 const activeStudents=studentData?.students?.filter((student) => student?.student_status);
                 const inActiveStudents=studentData?.students?.filter((student) => !student?.student_status);
-                console.log(activeStudents, inActiveStudents);
                 document.getElementById("active_students").innerHTML = activeStudents?.length || 0;
                 document.getElementById("inActive_students").innerHTML = inActiveStudents?.length || 0;
             }

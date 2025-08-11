@@ -1,0 +1,77 @@
+{
+    "nav": {
+        "facilities": "Installations",
+        "about": "À propos de nous",
+        "events": "Événements",
+        "contact": "Contactez-nous",
+        "teachers": "Enseignants",
+        "gallery": "Galerie",
+        "testimonials": "Témoignages"
+    },
+    "school": {
+        "title": "Nos Installations Scolaires",
+        "description": "Notre école est équipée de salles de classe ultramodernes, d'une bibliothèque complète, ainsi que de laboratoires de sciences et d'informatique modernes favorisant l’apprentissage pratique. Les élèves bénéficient également d’installations sportives spacieuses, d’une cafétéria hygiénique et d’un environnement sûr et bienveillant qui encourage l’excellence académique et l’épanouissement personnel."
+    },
+    "facilities": {
+        "bus": {
+            "title": "Bus Scolaire",
+            "description": "Nos bus scolaires fiables et équipés de GPS assurent un transport sûr et ponctuel pour tous les élèves sur les itinéraires désignés."
+        },
+        "playground": {
+            "title": "Terrain de Jeu",
+            "description": "Des terrains de jeu spacieux et bien entretenus favorisent le développement physique à travers diverses activités sportives et récréatives."
+        },
+        "canteen": {
+            "title": "Cantine Saine",
+            "description": "Notre cantine hygiénique propose une variété de repas nutritifs et fraîchement préparés qui soutiennent la santé et l’énergie des élèves."
+        },
+        "learning": {
+            "title": "Apprentissage Positif",
+            "description": "Nous favorisons un environnement d’apprentissage bienveillant avec des salles de classe interactives et un corps enseignant formé, axé sur le développement et la créativité des élèves."
+        }
+    },
+    "activities_title": "En Savoir Plus sur Notre Travail et Nos Activités Culturelles",
+    "activities_para_1": "Notre établissement est engagé dans une éducation holistique qui va au-delà des matières académiques. Nous encourageons les élèves à explorer leurs passions, à exprimer leur créativité et à établir des liens significatifs à travers divers programmes culturels et parascolaires.",
+    "activities_para_2": "De l’art, de la musique et de la danse au théâtre, aux débats et aux événements communautaires — nous offrons une plateforme dynamique où les élèves peuvent s’épanouir intellectuellement et socialement. Ces expériences favorisent la confiance en soi, le leadership et un fort sentiment d'identité.",
+    "cta_title": "Devenez Enseignant",
+    "cta_paragraph": "Rejoignez notre équipe passionnée d’éducateurs et contribuez à façonner l’avenir des jeunes esprits. Nous valorisons l’engagement, la créativité et le dévouement à créer un environnement d’apprentissage positif où chaque élève peut s’épanouir.",
+    "cta_button": "Contactez-nous",
+    "events_section": {
+        "title": "Événements Scolaires",
+        "description": "Notre école organise une variété d’événements captivants tout au long de l’année, notamment des festivals culturels, des compétitions académiques, des rencontres sportives et des célébrations communautaires. Ces événements favorisent la créativité, l’esprit d’équipe et un fort sentiment d’appartenance chez les élèves."
+    },
+    "contact": {
+        "contact_us": "Contactez-nous",
+        "guardian_name": "Nom du parent/tuteur",
+        "guardian_email": "Courriel du parent/tuteur",
+        "child_name": "Nom de l'enfant",
+        "child_age": "Âge de l'enfant",
+        "message": "Message",
+        "submit": "Soumettre",
+        "placeholder_name": "Ex : Jean",
+        "placeholder_email": "Ex : jean@example.com",
+        "placeholder_child_name": "Ex : Alice",
+        "placeholder_child_age": "Ex : 2",
+        "placeholder_message": "Laissez un message ici"
+    },
+    "popular_teachers": {
+        "title": "Enseignants Populaires",
+        "description": "Découvrez nos enseignants les plus respectés et inspirants, qui se surpassent pour accompagner le développement des élèves. Leur dévouement, leur expertise et leur passion pour l’enseignement laissent une empreinte durable en classe et au-delà."
+    },
+    "gallery": {
+        "title": "Notre Galerie",
+        "description": "Découvrez des moments de notre vie scolaire dynamique — des réussites académiques et célébrations culturelles aux événements sportifs et activités en classe. Notre galerie reflète l’esprit, l’énergie et les réussites de nos élèves et de notre personnel."
+    },
+    "testimonials": {
+        "title": "Ce Que Disent Nos Clients",
+        "description": "Écoutez les parents et partenaires qui ont vécu de près l’impact de notre école. Leurs témoignages reflètent notre engagement envers une éducation de qualité, le développement des élèves et un environnement communautaire bienveillant."
+    },
+    "footer": {
+        "get_in_touch": "Entrer en contact",
+        "address": "123 Rue, New York, USA",
+        "phone": "+32 471802424",
+        "email": "er.syedsaddam@gmail.com",
+        "gallery": "Galerie de photos"
+    },
+    "join": "Rejoignez-nous"
+}

@@ -1,0 +1,77 @@
+{
+    "nav": {
+        "facilities": "Facilities",
+        "about": "About Us",
+        "events": "Events",
+        "contact": "Contact Us",
+        "teachers": "Teachers",
+        "gallery": "Gallery",
+        "testimonials": "Testimonials"
+    },
+    "school": {
+        "title": "Our School Facilities",
+        "description": "Our school is equipped with state-of-the-art classrooms, a full library, and modern science and computer labs that promote hands-on learning. Students also benefit from spacious sports facilities, a hygienic cafeteria, and a safe, nurturing environment that encourages academic excellence and personal development."
+    },
+    "facilities": {
+        "bus": {
+            "title": "School Bus",
+            "description": "Our reliable school buses equipped with GPS ensure safe and timely transport for all students along designated routes."
+        },
+        "playground": {
+            "title": "Playground",
+            "description": "Spacious and well-maintained playgrounds support physical development through various sports and recreational activities."
+        },
+        "canteen": {
+            "title": "Healthy Canteen",
+            "description": "Our hygienic canteen offers a variety of nutritious and freshly prepared meals that support students’ health and energy."
+        },
+        "learning": {
+            "title": "Positive Learning",
+            "description": "We foster a nurturing learning environment with interactive classrooms and a trained teaching staff focused on student development and creativity."
+        }
+    },
+    "activities_title": "Learn More About Our Work and Cultural Activities",
+    "activities_para_1": "Our institution is committed to holistic education that goes beyond academic subjects. We encourage students to explore their passions, express their creativity, and build meaningful connections through various cultural and extracurricular programs.",
+    "activities_para_2": "From art, music, and dance to theatre, debates, and community events — we offer a dynamic platform where students can thrive intellectually and socially. These experiences foster confidence, leadership, and a strong sense of identity.",
+    "cta_title": "Become a Teacher",
+    "cta_paragraph": "Join our passionate team of educators and help shape the future of young minds. We value commitment, creativity, and dedication to creating a positive learning environment where every student can thrive.",
+    "cta_button": "Contact Us",
+    "events_section": {
+        "title": "School Events",
+        "description": "Our school organizes a variety of engaging events throughout the year, including cultural festivals, academic competitions, sports meets, and community celebrations. These events foster creativity, teamwork, and a strong sense of belonging among students."
+    },
+    "contact": {
+        "contact_us": "Contact Us",
+        "guardian_name": "Parent/Guardian Name",
+        "guardian_email": "Parent/Guardian Email",
+        "child_name": "Child's Name",
+        "child_age": "Child's Age",
+        "message": "Message",
+        "submit": "Submit",
+        "placeholder_name": "Eg: John",
+        "placeholder_email": "Eg: john@example.com",
+        "placeholder_child_name": "Eg: Alice",
+        "placeholder_child_age": "Eg: 2",
+        "placeholder_message": "Leave a message here"
+    },
+    "popular_teachers": {
+        "title": "Popular Teachers",
+        "description": "Discover our most respected and inspiring teachers, who go above and beyond to support student development. Their dedication, expertise, and passion for teaching leave a lasting impact both in and out of the classroom."
+    },
+    "gallery": {
+        "title": "Our Gallery",
+        "description": "Explore moments from our vibrant school life — from academic achievements and cultural celebrations to sports events and classroom activities. Our gallery captures the spirit, energy, and successes of our students and staff."
+    },
+    "testimonials": {
+        "title": "What Our Clients Say",
+        "description": "Hear from parents and partners who have experienced the impact of our school firsthand. Their testimonials reflect our commitment to quality education, student development, and a caring community environment."
+    },
+    "footer": {
+        "get_in_touch": "Get In Touch",
+        "address": "123 Street, New York, USA",
+        "phone": "+32 471802424",
+        "email": "er.syedsaddam@gmail.com",
+        "gallery": "Photo Gallery"
+    },
+    "join": "Join Us"
+}

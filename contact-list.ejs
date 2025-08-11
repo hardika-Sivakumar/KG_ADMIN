@@ -289,13 +289,11 @@
             modal.addEventListener("show.bs.modal", function (event) {
                 const trigger = event.relatedTarget;
                 deleteContactId = trigger.getAttribute("data-contact_id");
-                console.log(deleteContactId)
 
             });
         });
 
         const handleDeleteContact = async() => {
-            console.log(deleteContactId)
             
             if(deleteContactId){
                 try{

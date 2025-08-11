@@ -684,7 +684,6 @@
           for (const [key, value] of formData.entries()) {
             if (listItemsKey.includes(key)) {
               payload[key] = formData.getAll(key);
-              console.log(formData.getAll(key));
               continue;
             }
             payload[key] = value instanceof File ? value.name : value;
@@ -742,7 +741,6 @@
             },
           };
 
-          console.log("Final Payload:", finalPayload);
 
           const saveTeacherRequest = await fetchWithTimeout(
             `${BACKEND_URL}/staff/update_new_staff_details`,

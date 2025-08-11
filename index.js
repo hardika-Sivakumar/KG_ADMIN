@@ -13,13 +13,13 @@ const { getContactDetails } = require("./services/contactService");
 const {validateCreds}=require('./services/authService')
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, ""));
-app.use('/locales', express.static(path.join(__dirname, "src",'locales')));
+app.set("views", __dirname);
+app.use('/assets', express.static(path.join(__dirname, "assets")));
+app.use('/locales', express.static(path.join(__dirname, "locales"))); 
 app.use(express.urlencoded({ extended: true }));
 app.use(sessionMiddleware);
 app.use(express.json());
 
-app.use("/", express.static(path.join(__dirname, "")));
 
 app.use((req, res, next) => {
   res.locals.role = req.session?.role ;
@@ -33,7 +33,6 @@ app.get("/", async (req, res) => {
   const settingDetails = await getSettingDetails(headers);
 
   const galleryDetails = await getGalleryDetails(headers);
-  console.log(galleryDetails)
 
   if (!galleryDetails?.success) {
     //handle error
@@ -105,7 +104,6 @@ app.get("/add_student", requireAdminOrTeacher, async (req, res) => {
     }
     studentDetails = studentData?.students?.[0];
   }
-  console.log(studentDetails?.students?.[0]);
 
   return res.render("add-student", { studentDetails: studentDetails ?? {},studentId:studentId ?? "" });
 });
@@ -141,14 +139,12 @@ app.get("/add_event",requireAdminOrTeacher, async (req, res) => {
         event_id: eventId,
       },
     });
-    console.log(eventData)
     if (!eventData.success) {
       //handle 500 server error
       return;
     }
     eventDetails = eventData?.events?.[0];
   }
-  console.log(eventDetails)
   return res.render("add-event",{eventDetails:eventDetails ?? {},eventId:eventId ?? ""});
 });
 app.post("/login", async (req, res) => {
@@ -157,7 +153,6 @@ app.post("/login", async (req, res) => {
     "content-type": "application/json",
   };
   const loginData = await validateCreds({ email, password, login_type }, headers);
-  console.log(loginData);
   if (!loginData.success) {
     //handle 500 server error
     return res.redirect("/login");
@@ -199,7 +194,6 @@ app.get("/student_details",requireAdminOrTeacher, async (req, res) => {
       student_id: studentId,
     },
   });
-  console.log(studentData);
   if (!studentData.success) {
     //handle 500 server error
     return;
@@ -225,7 +219,6 @@ app.get("/staff_lists",requireAdmin, async (req, res) => {
 
 app.get("/gallery",requireAdmin, async (req, res) => {
   const galleryData = await getGalleryDetails();
-  console.log(galleryData);
   if (!galleryData.success) {
     //handle 500 server error
     return;
@@ -240,7 +233,6 @@ app.get("/event_lists",requireAdminOrTeacher, async (req, res) => {
   const eventList = await getEventDetails(headers, {
     get_all: true,
   });
-  console.log(eventList);
   if (!eventList.success) {
     //handle 500 server error
     return;

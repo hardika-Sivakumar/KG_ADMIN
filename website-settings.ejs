@@ -549,7 +549,6 @@
         });
         const handleFileUpload = async (event) => {
             const file = event.target.files[0]
-            console.log(file)
             const reader = new FileReader();
             reader.onload = function (e) {
                 const imagePreview = document.getElementById("imagePreview");
@@ -559,7 +558,6 @@
             };
             reader.readAsDataURL(file);
             const url = await uploadFile(file, "/settings/website/" + file.name, BACKEND_URL)
-            console.log(url)
             if (!url) {
                 alert(url?.message)
                 return
@@ -576,9 +574,7 @@
             for (const [key, value] of formData.entries()) {
                 payload[key] = value instanceof File ? value.name : value
             }
-            console.log("calling1")
             if (!image_uri) return
-            console.log("calling2")
 
             if (modal_type == "carousel") {
                 renamedPayload['home_carousel_title'] = payload?.title
@@ -619,14 +615,12 @@
             let payload = {}
             if (select_type == "event") {
                 const selectedValues = Array.from(eventSelect.selectedOptions).map(option => option.value);
-                console.log(selectedValues)
                 payload['event_ids'] = selectedValues
                 payload['type'] = "event_info"
                 payload['setting_id'] = eventSettingId
             }
             else if (select_type == "staff") {
                 const selectedValues = Array.from(staffList.selectedOptions).map(option => option.value);
-                console.log(selectedValues)
                 payload['staff_ids'] = selectedValues
                 payload['type'] = "staff_info"
                 payload['setting_id'] = staffSettingId

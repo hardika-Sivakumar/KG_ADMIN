@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "facilities": "Faciliteiten",
+    "about": "Over ons",
+    "events": "Evenementen",
+    "contact": "Contact",
+    "teachers": "Leraren",
+    "gallery": "Galerij",
+    "testimonials": "Getuigenissen"
+  },
+  "school": {
+    "title": "Onze Schoolfaciliteiten",
+    "description": "Onze school is uitgerust met ultramoderne klaslokalen, een volledige bibliotheek en moderne wetenschaps- en computerlaboratoria die praktijkgericht leren bevorderen. Studenten profiteren ook van ruime sportfaciliteiten, een hygiënische cafetaria en een veilige, zorgzame omgeving die academische excellentie en persoonlijke ontwikkeling stimuleert."
+  },
+  "facilities": {
+    "bus": {
+      "title": "Schoolbus",
+      "description": "Onze betrouwbare schoolbussen met GPS zorgen voor veilig en tijdig vervoer van alle leerlingen op aangewezen routes."
+    },
+    "playground": {
+      "title": "Speelplaats",
+      "description": "Ruime en goed onderhouden speelplaatsen bevorderen de fysieke ontwikkeling via diverse sport- en recreatieactiviteiten."
+    },
+    "canteen": {
+      "title": "Gezonde Kantine",
+      "description": "Onze hygiënische kantine biedt een verscheidenheid aan voedzame, vers bereide maaltijden die de gezondheid en energie van leerlingen ondersteunen."
+    },
+    "learning": {
+      "title": "Positief Leren",
+      "description": "We stimuleren een zorgzame leeromgeving met interactieve klaslokalen en getraafd personeel gericht op ontwikkeling en creativiteit van de leerlingen."
+    }
+  },
+  "activities_title": "Meer te Weten Komen over Ons Werk en Onze Culturele Activiteiten",
+  "activities_para_1": "Onze instelling zet zich in voor holistisch onderwijs dat verder gaat dan alleen academische vakken. We moedigen leerlingen aan om hun passies te ontdekken, hun creativiteit te uiten en betekenisvolle verbindingen op te bouwen via diverse culturele en buitenschoolse programma’s.",
+  "activities_para_2": "Van kunst, muziek en dans tot theater, debatten en gemeenschapsevenementen — we bieden een dynamisch platform waar leerlingen intellectueel en sociaal kunnen groeien. Deze ervaringen bevorderen zelfvertrouwen, leiderschap en een sterk gevoel van identiteit.",
+  "cta_title": "Word een Leraar",
+  "cta_paragraph": "Word lid van ons gepassioneerde team van opvoeders en help mee de toekomst van jonge geesten vorm te geven. We waarderen toewijding, creativiteit en inzet om een positieve leeromgeving te creëren waarin elke leerling kan bloeien.",
+  "cta_button": "Neem contact op",
+  "events_section": {
+    "title": "School Evenementen",
+    "description": "Onze school organiseert het hele jaar door een verscheidenheid aan boeiende evenementen, waaronder culturele festivals, academische wedstrijden, sportbijeenkomsten en gemeenschapsvieringen. Deze evenementen bevorderen creativiteit, teamwork en een sterk gevoel van verbondenheid onder leerlingen."
+  },
+  "contact": {
+    "contact_us": "Neem contact op",
+    "guardian_name": "Naam ouder/verzorger",
+    "guardian_email": "E-mailadres ouder/verzorger",
+    "child_name": "Naam van het kind",
+    "child_age": "Leeftijd van het kind",
+    "message": "Bericht",
+    "submit": "Verzenden",
+    "placeholder_name": "Bijv: Jan",
+    "placeholder_email": "Bijv: jan@example.com",
+    "placeholder_child_name": "Bijv: Alice",
+    "placeholder_child_age": "Bijv: 2",
+    "placeholder_message": "Laat hier een bericht achter"
+  },
+  "popular_teachers": {
+    "title": "Populaire Leraren",
+    "description": "Ontdek onze meest gerespecteerde en inspirerende leraren die zich volledig inzetten voor de ontwikkeling van leerlingen. Hun toewijding, expertise en passie voor lesgeven maken een blijvende indruk binnen en buiten het klaslokaal."
+  },
+  "gallery": {
+    "title": "Onze Galerij",
+    "description": "Ontdek momenten uit ons levendige schoolleven — van academische successen en culturele vieringen tot sportevenementen en klasactiviteiten. Onze galerij weerspiegelt de geest, energie en prestaties van onze leerlingen en medewerkers."
+  },
+  "testimonials": {
+    "title": "Wat Onze Klanten Zeggen",
+    "description": "Luister naar ouders en partners die de impact van onze school van dichtbij hebben meegemaakt. Hun getuigenissen weerspiegelen onze toewijding aan kwaliteitsonderwijs, de ontwikkeling van leerlingen en een zorgzame gemeenschapsomgeving."
+  },
+  "footer": {
+    "get_in_touch": "Neem contact op",
+    "address": "123 Straat, New York, VS",
+    "phone": "+32 471802424",
+    "email": "er.syedsaddam@gmail.com",
+    "gallery": "Fotogalerij"
+  },
+  "join": "Doe met ons mee"
+}
