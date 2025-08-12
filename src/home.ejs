@@ -619,7 +619,7 @@
     </div>
     <script src="assets/js/api.js"></script>
     <script src="https://unpkg.com/i18next@21.9.1/i18next.min.js"></script>
-    <script>
+    <script type="module">
         const supportedLangs = ['en', 'fr', 'de'];
         let currLang = "en"
 
@@ -706,7 +706,8 @@
     </script>
 
 
-    <script>
+    <script type="module">
+        import { showToast } from '/assets/js/toast.js';
         const BACKEND_URL = "<%=BACKEND_URL%>"
         document.getElementById("submit").addEventListener("click", async function (event) {
             const contactForm = document.getElementById("contactForm");
@@ -725,9 +726,10 @@
             })
             const response = await saveContactForm.json()
             if (!response.success) {
-                alert(response.message)
+                showToast("danger", response?.message || "Failed to send message.");
             }
             //handle success
+            showToast("secondary", response?.message || "Message sent successfully.");
 
 
         })
