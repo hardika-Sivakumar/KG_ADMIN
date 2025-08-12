@@ -618,6 +618,7 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
     <script src="assets/js/api.js"></script>
+    <script src="assets/js/toast.js"></script>
     <script src="https://unpkg.com/i18next@21.9.1/i18next.min.js"></script>
     <script type="module">
         const supportedLangs = ['en', 'fr', 'de'];
@@ -707,7 +708,7 @@
 
 
     <script type="module">
-        import { showToast } from '/assets/js/toast.js';
+        
         const BACKEND_URL = "<%=BACKEND_URL%>"
         document.getElementById("submit").addEventListener("click", async function (event) {
             const contactForm = document.getElementById("contactForm");
