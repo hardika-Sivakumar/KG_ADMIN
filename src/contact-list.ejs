@@ -60,7 +60,6 @@
           <p><strong>Email:</strong> <span id="contactModalEmail"></span></p>
           <p><strong>Child Name:</strong> <span id="contactModalChildName"></span></p>
           <p><strong>Child Age:</strong> <span id="contactModalChildAge"></span></p>
-          <p><strong>Appointment Expected On:</strong> <span id="contactModalAppointmentDate"></span></p>
           <p><strong>Message:</strong> <span id="contactModalMessage"></span></p>
           <p><strong>Created On:</strong> <span id="contactModalCreatedOn"></span></p>
         </div>
@@ -323,15 +322,13 @@
       const trigger = event.relatedTarget;
       const contactRaw = trigger.getAttribute("data-contact");
       const contact = JSON.parse(contactRaw);
+      console.log(contact)
 
       document.getElementById("contactModalId").textContent = contact.contact_id || "N/A";
       document.getElementById("contactModalName").textContent = contact.name || "N/A";
       document.getElementById("contactModalEmail").textContent = contact.email || "N/A";
       document.getElementById("contactModalChildName").textContent = contact.child_name || "N/A";
       document.getElementById("contactModalChildAge").textContent = contact.child_age || "N/A";
-
-      const appointmentDate = contact?.appointment_expected_date;
-        document.getElementById("contactModalAppointmentDate").textContent = appointmentDate.split('T')[0];
 
       document.getElementById("contactModalMessage").textContent = contact.message || "N/A";
       document.getElementById("contactModalCreatedOn").textContent = contact.created_on || "N/A";
