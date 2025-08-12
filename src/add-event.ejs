@@ -330,8 +330,9 @@
             body: JSON.stringify(payload),
           },
         )
-        if(!saveEventRequest.success){
-          showToast("danger", "Failed to update event details.");
+        const data=await saveEventRequest.json()
+        if(!data?.success){
+          showToast("danger", data?.message || "Failed to update event details.");
           // showToast("error", "Failed to update event details.")
           return
         }

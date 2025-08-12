@@ -483,6 +483,7 @@
     <!-- /Main Wrapper -->
     <script src="assets/js/api.js">
     </script>
+    <script src="assets/js/toast.js"></script>
     <script src="assets/js/uploadFile.js"></script>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
 
@@ -599,12 +600,13 @@
                 },
                 body: JSON.stringify(renamedPayload)
             })
-            if (!saveSettingResponse.success) {
-                alert(saveSettingResponse.message)
+            if (!saveSettingResponse?.success) {
+                showToast("danger", saveSettingResponse?.message || "Failed to update setting.");
                 return
             }
             image_uri = undefined
             //handle success
+            showToast("secondary", saveSettingResponse?.message || "Setting updated successfully.");
 
 
         }
@@ -634,9 +636,10 @@
                 body: JSON.stringify(payload)
             })
             if (!saveSettingResponse.success) {
-                alert(saveSettingResponse.message)
+                showToast("danger", saveSettingResponse?.message || "Failed to update setting.");
                 return
             }
+            showToast("secondary", saveSettingResponse?.message || "Setting updated successfully.");
             //handle success
 
         }
