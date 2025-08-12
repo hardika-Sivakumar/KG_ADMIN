@@ -727,10 +727,10 @@
             })
             const response = await saveContactForm.json()
             if (!response.success) {
-                showToast("danger", response?.message || "Failed to send message.");
+                showToast("danger","Failed to send message.");
             }
             //handle success
-            showToast("secondary", response?.message || "Message sent successfully.");
+            showToast("secondary","Message sent successfully.");
 
 
         })
